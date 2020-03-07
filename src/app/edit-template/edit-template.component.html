@@ -122,10 +122,12 @@
               </div> 
               <div class="panel-body">
                <p>Question List will be show in below:</p>
+              
+              
                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
                 <div class="example-box" *ngFor="let movie of movies" cdkDrag>
-                  <div class="example-custom-placeholder" *cdkDragPlaceholder>   </div>
-                  <h6>{{movie}}</h6>
+                  <div class="example-custom-placeholder " *cdkDragPlaceholder>   </div>
+                  <h6>{{movie}} <span class="float-right"><button>dwd</button></span></h6>
                   <div class="question-card bg-light">
                   <ul>
                     <li><label><input type="radio" name="radio" disabled> Agree</label></li>
