@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sat Mar 07 2020 16:11:42 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/edit-template/edit-template.component.css
+* src/app/edit-template/edit-template.component.html
+* src/app/lesson-modal/lesson-modal.component.css
+* src/app/lesson-modal/lesson-modal.component.html
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:

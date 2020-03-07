@@ -33,9 +33,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
       `]
 })
 export class EditTemplateComponent implements OnInit {
-  movies = ['id: 11, name: Question 1 Question according to your requirements with option type?',
-    'id: 12, name: Question 1 Question according to your requirements with option type?',
-    'id: 13, name: Question 1 Question according to your requirements with option type?'
+  movies = ['Question 1: Question according to your requirements with option type?',
+    ' Question 2: Question according to your requirements with option type?',
+    ' Question 3: Question according to your requirements with option type?'
   ];
 
   
