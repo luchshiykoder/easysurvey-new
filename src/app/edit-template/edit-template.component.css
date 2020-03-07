@@ -3,7 +3,7 @@
 .modal.show .modal-dialog {
   -webkit-transform: none;
   transform: none;
-  max-width: 99%;
+  max-width: 80%;
 }
 #trigger-upload {
   color: white;
@@ -181,17 +181,16 @@ table {width: 100%;}
 .check-icon{color: green!important;}
 .btn-next{margin-top: 5px;}
 
-
+/* 
 @media screen {
   .modal-lg {
-      width: 90% !important;
-      max-width: calc(90%);
+      width: 80% !important;
+      max-width: calc(80%);
   }
   .modal-sm {
     width: 20% !important;
     max-width: calc(20%);
-}
-}
+} */
 .cross {
   float: right;
   font-size: 28px;
