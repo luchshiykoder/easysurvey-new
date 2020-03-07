@@ -148,7 +148,7 @@
       <div class="tab-pane active" [ngClass]="{'showTab':selectedUserTab == 4, 'hideTab':selectedUserTab != 4}"> <!-- stripe account tab -->
         <div class="panel panel-default">
             <div class="panel-heading">
-              <h6>Fill upload participant list for  Survey :  
+              <h6>Fill upload participant list for Survey :  
                 <app-add-demographic></app-add-demographic></h6>
             </div> 
             <div class="panel-body">
@@ -388,10 +388,12 @@
       </button>
     </div>
     <div class="modal-body">
+      
       <div class="stardard-area-bg"> 
         <h4 class="modal-title" id="modal-basic-title">Add Question </h4>
+        <div class="stardard-area"> 
       <form>
-
+        <!-- <div class="stardard-area"></div> -->
             <div class="form-group">
                 <label >Select Dimension </label>     &nbsp; 
          
@@ -1021,6 +1023,7 @@
           </div>
       </form>
       </div>
+      </div>
     </div>
 
   </ng-template>  
@@ -1059,13 +1062,14 @@
   <ng-template #dimensionList let-modal >
 
     <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Check your Dimension </h4>
+     
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
       <div class="stardard-area"> 
+        <h4 class="modal-title" id="modal-basic-title">Check your Dimension </h4>
       <mat-form-field>
         <mat-label>Search Dimension</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. education">
