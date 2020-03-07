@@ -315,7 +315,7 @@ table {width: 100%;}
       overflow: hidden;
     }
     
-    .example-box {
+    /* .example-box {
       padding: 20px 10px;
       border-right: solid 1px #ccc;
       color: rgba(0, 0, 0, 0.87);
@@ -353,7 +353,7 @@ table {width: 100%;}
     
     .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
       transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-    }
+    } */
     
     .example-list {
       width: 100%;
@@ -367,7 +367,7 @@ table {width: 100%;}
     }
     
     .example-box {
-      padding: 20px 10px;
+      padding: 4px 10px;
       border-bottom: solid 1px #ccc;
       color: rgba(0, 0, 0, 0.87);
       display: flex;

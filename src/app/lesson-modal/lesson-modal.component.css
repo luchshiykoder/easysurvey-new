@@ -15,7 +15,7 @@ input.typeOption{
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
+/* 
 .example-container {
     width: 400px;
     max-width: 100%;
@@ -70,4 +70,4 @@ input.typeOption{
   .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
-  
+   */
