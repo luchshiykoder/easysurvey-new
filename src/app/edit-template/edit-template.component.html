@@ -123,19 +123,25 @@
               <div class="panel-body">
                <p>Question List will be show in below:</p>
                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let Question of Questions" cdkDrag>
+                <div class="example-box" *ngFor="let movie of movies" cdkDrag>
                   <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-                  {{Question}}
-                 
-                </div>
-                <div class="example-box" *ngFor="let option of options" cdkDrag>
-                  <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-                  {{option}}
-                 
+                  <h6>{{movie}}</h6>    
+                  <h6 *ngFor="let hero of heroes">{{hero}}</h6>         
                 </div>
                 
               </div>
-              <!-- <div class="question-card bg-light">
+              <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <ul>                
+                  <li><p *ngFor="let hero of heroes">
+                    {{ hero }}
+                  </p>
+                 
+                  </li>
+                </ul>
+              </div> -->
+
+
+              <div class="question-card bg-light">
                 <h6><span>Question1:</span> Question according to your requirements with option type?</h6>
                 <ul>
                   <li><label><input type="radio" name="radio" disabled> Agree</label></li>
@@ -143,7 +149,7 @@
                   <li><label><input type="radio" name="radio" disabled>Disagree</label></li>
                   <li><label><input type="radio" name="radio" disabled>Strongy Agree</label></li>
                 </ul>
-              </div> -->
+              </div>
               <div class="question-card bg-light">
                 <h6><span>Question2:</span> Question according to your requirements with option type?</h6>
                 <ul>

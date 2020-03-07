@@ -33,19 +33,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
       `]
 })
 export class EditTemplateComponent implements OnInit {
-  Question = [
+  movies = [
     'Question 1- Question according to your requirements with option type?',
     'Question 2 -  Question according to your requirements with option type?',
     'Question 3 -  Question according to your requirements with option type?'
   ];
-  option = [
-    'oret',
-    'rtt',
-    'trt'
-  ];
+ heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.Question, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
 
   
