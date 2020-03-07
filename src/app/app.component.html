@@ -1,0 +1,36 @@
+<mat-sidenav-container class="example-container"  > 
+  <mat-sidenav #drawer class="example-sidenav" mode="side" >
+    <app-side-bar></app-side-bar>
+ </mat-sidenav>
+
+  <mat-sidenav-content >
+    
+    <mat-toolbar *ngIf="currentUser"> 
+
+            <div class="example-sidenav-content">
+              <button type="button" mat-button (click)="drawer.toggle()">
+                <i class="material-icons">
+                  menu
+                  </i>
+              </button>
+              <img src="../assets/logo.png" alt="user" width="120px">
+            </div>
+            <span class="example-fill-remaining-space"></span>
+            <span class="user-text">Welcome {{ title }} </span>
+            <button mat-button [matMenuTriggerFor]="menu">Admin Details <i class="material-icons">emoji_people </i></button>
+              <mat-menu #menu="matMenu">
+                <button class="info user-details"  mat-menu-item  (click)="resetPassword()"><i class="material-icons">cached</i> Change Password</button>
+                <button class="reddy user-details"  mat-menu-item (click)="logoutProfile()"><i class="material-icons">power_settings_new</i> Logout</button>
+              </mat-menu>
+            <!-- <button mat-button>Logout</button> -->
+     
+    </mat-toolbar>
+    
+    <div class="main-content" >
+        <router-outlet></router-outlet>  
+    </div>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>
+

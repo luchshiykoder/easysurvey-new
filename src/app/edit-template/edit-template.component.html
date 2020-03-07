@@ -1,0 +1,1106 @@
+<div class="header-surevy">
+<div class="row ">
+
+    <div class="col-lg-6">
+        <h6 style="line-height: 34px;"> Fill all these step to launch your Survey </h6>
+    </div>
+    <div class="col-lg-6 icon-update text-right">
+      <h6>Survey Name is : <strong>{{this.CurrSurvay.SurveryName}}</strong> &nbsp;
+        <button class="btn btn-secondary  btn-circle"><i class="material-icons">edit</i></button>&nbsp;
+        <button class="btn btn-danger  btn-circle"><i class="material-icons"> delete_forever </i></button>
+      </h6>
+    </div> 
+  </div>
+</div>
+
+<div class="row">
+  
+
+  <div class="col-sm-2"> <!-- required for floating -->
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs tabs-left list-form">
+      <li [ngClass]="{'active': tab.active}" *ngFor="let tab of tabs">
+        <a (click)="tabChange(tab)">{{tab.name}}</a>
+        <span class="close-icon float-right"><i class="material-icons">close</i></span>
+        <!-- <span class="check-icon float-right"><i class="material-icons">check</i></span> -->
+      </li>
+      
+    </ul><br>
+    <br>
+    <!-- <input id="Next" type="button" value=">" class="btn btn-primary" onclick="doTab('Next')" /> -->
+    <div class="text-center">
+    <button mat-raised-button  matTooltip="Save Data" (click)="LaunchSurvey()" class="btn-success"><i class="material-icons">
+      live_tv
+      </i> Launch Survey</button>
+    </div>
+  </div>
+
+  <div class="col-sm-10" style="    background: #fff;border-left: 1px solid #5dc6ef;">
+    <div class="tab-content">
+      <div class="tab-pane active" [ngClass]="{'showTab':selectedUserTab == 1, 'hideTab':selectedUserTab != 1}"> <!-- Profile tab -->
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h5 class="text-center">Welcome Template </h5>
+                  <p class="text-center">Please edit your welcome content format and you can check:   
+                    <button mat-raised-button matTooltip="Check Preview" (click)="open(welcome)">Preview<i class="material-icons">
+                    remove_red_eye
+                    </i></button>
+                  </p>
+                  <div class="avatar-upload">
+                    <div class="avatar-edit">
+                      <input #file type="file" accept='image/*' (change)="preview(file.files)" id="imageUpload" accept=".png, .jpg, .jpeg"/>
+                        <label for="imageUpload"><i class="material-icons">
+                          cloud_upload
+                          </i></label>
+                    </div>
+                    <div class="vertical-center">
+                      <img [src]="imgURL"width="100%" *ngIf="imgURL" >
+                    </div>
+                    <span>Upload Logo</span>
+                  </div>
+              </div> 
+          
+              <div class="panel-body">
+                <div class="stardard-area-full">
+                  <div class="stardard-area-bg stardard-area-fixed">
+                <angular-editor id="editor1" formControlName="htmlContent1" [config]="editorConfig"></angular-editor>
+                </div>
+                </div>
+                <button class="btn btn-primary btn-sm btn-next float-right" matTooltip="Save Details" (click)="SaveNextfun()" >Save / Next &rarr; </button> 
+              </div>  
+
+          </div>
+      </div>
+
+      <div class="tab-pane active" [ngClass]="{'showTab':selectedUserTab == 2, 'hideTab':selectedUserTab != 2}"> <!-- Change password tab -->
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h5 class="text-center">Email Template </h5>
+                <p class="text-center">Choose you email template type:  
+                  <label class="checkbox-inline"><input #invitaionarea type="checkbox"  name="size" (change)="0" > Invitation</label>&nbsp;
+                  <label class="checkbox-inline"><input #reminderarea  type="checkbox" name="size" (change)="0"> Reminder</label></p> 
+                 
+              </div> 
+              <div class="panel-body">
+                <div class="row" style="margin: 0;">
+                  <div class="col-sm-6" *ngIf="invitaionarea.checked">
+                    <div class="invitaion">
+                      <h6>Invitation Format: please write your invitation email content 
+                        <button mat-raised-button matTooltip="Check Preview" (click)="open(invitation)">Preview <i class="material-icons">
+                        remove_red_eye
+                        </i></button></h6>
+                      <angular-editor id="editor2" formControlName="htmlContent2" [config]="editorConfig"></angular-editor>
+                    </div>
+                   
+                  </div>
+                  <div class="col-sm-6" *ngIf="reminderarea.checked">
+                    <div class="invitaion">
+                      <h6>Reminder Format: please write your Reminder email content
+                         <button mat-raised-button matTooltip="Check Preview" (click)="open(reminder)">Preview <i class="material-icons">
+                        remove_red_eye
+                        </i></button></h6>
+                      <angular-editor id="editor2" formControlName="htmlContent2" [config]="editorConfig"></angular-editor>
+                    </div>
+                    <!-- <button class="btn btn-primary btn-sm btn-next" matTooltip="Save Details"  >Save / Next &rarr; </button>  -->
+                  </div>
+                  </div>
+                  <div class="col-sm-12"></div>
+                  <button class="btn btn-primary btn-sm btn-next float-right" matTooltip="Save Details" >Save / Next &rarr; </button> 
+              </div>  
+          </div>
+      </div>
+
+      <div class="tab-pane active" [ngClass]="{'showTab':selectedUserTab == 3, 'hideTab':selectedUserTab != 3}"> <!-- Admin tab -->
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                You can add Question according to your requirements with option type like Multiple chioce, CheckBox selection etc.
+                <button mat-raised-button (click)="open(addquestion)">+ Add Question </button>&nbsp;
+                <button mat-raised-button  color="primary" (click)="open(dimensionList)"><i class="material-icons">
+                  format_list_bulleted
+                  </i> Dimension List </button>
+                <hr>
+              </div> 
+              <div class="panel-body">
+               <p>Question List will be show in below:</p>
+              <div class="question-card bg-light">
+                <h6><span>Question1:</span> Question according to your requirements with option type?</h6>
+                <ul>
+                  <li><label><input type="radio" name="radio" disabled> Agree</label></li>
+                  <li><label><input type="radio" name="radio" disabled>Strongy Agree</label></li>
+                  <li><label><input type="radio" name="radio" disabled>Disagree</label></li>
+                  <li><label><input type="radio" name="radio" disabled>Strongy Agree</label></li>
+                </ul>
+              </div>
+              <div class="question-card bg-light">
+                <h6><span>Question2:</span> Question according to your requirements with option type?</h6>
+                <ul>
+                  <li><label><input type="radio" name="radio" disabled> Agree</label></li>
+                  <li><label><input type="radio" name="radio" disabled>Strongy Agree</label></li>
+                  <li><label><input type="radio" name="radio" disabled>Disagree</label></li>
+                  <li><label><input type="radio" name="radio" disabled>Strongy Agree</label></li>
+                </ul>
+              </div>
+              </div>  
+          </div>
+          <!-- <button class="btn btn-primary btn-sm btn-next float-right" matTooltip="Save Details" >Save / Next &rarr; </button>  -->
+      </div>
+
+      <div class="tab-pane active" [ngClass]="{'showTab':selectedUserTab == 4, 'hideTab':selectedUserTab != 4}"> <!-- stripe account tab -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h6>Fill upload participant list for  Survey :  
+                <app-add-demographic></app-add-demographic></h6>
+            </div> 
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                      <th>Full Name</th>
+                      <th>DOB</th>
+                    </tr>
+                  </thead>
+                    <tr *ngFor="let item of data">
+                      <td>{{item.fname}}</td>
+                      <td>{{item.dob}}</td>
+                    </tr>
+                </table>
+              </div>
+              <button mat-raised-button  matTooltip="Save Details" (click)="exportAsXLSX()" class="btn-info">First - <i class="material-icons">
+                cloud_download
+                </i> Download Excel Format Sheet </button> &nbsp;
+                <button mat-raised-button  matTooltip="Save Details">Second - <i class="material-icons">
+                  cloud_upload
+                  </i> Upload Respondent List </button>
+                <hr>
+               <div style="text-align: right;">
+                <button mat-raised-button  matTooltip="Save Data">Save &rarr; </button>
+               </div>
+            </div>    
+        </div>
+      </div> 
+      <div class="tab-pane active" [ngClass]="{'showTab':selectedUserTab == 5, 'hideTab':selectedUserTab != 5}"> <!-- stripe account tab -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              <h6>Fill end date and time for this Survey <i class="material-icons"> event_note </i> </h6>
+              <hr>
+            </div> 
+            <div class="panel-body">
+              <div class="col-sm-2">
+                <div class="form-group">
+                  <label>   End Date :  </label>
+                  <mat-form-field>
+                    <input matInput [matDatepicker] = "picker" placeholder = "Choose a date">
+                    <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                 </mat-form-field>
+               </div>
+              </div>
+              <hr>
+               <div>
+                <button mat-raised-button  matTooltip="Save Data" (click)="savedSurvey()" class="btn-warning"><i class="material-icons">
+                  save </i> Save </button>
+               </div>
+            </div>    
+        </div>
+      </div> 
+    </div>
+  </div>
+  </div>
+
+
+  <ng-template #welcome let-modal >
+    <div class="modal-body">
+      <span type="button" class="cross" aria-label="Close" (click)="modal.dismiss('Cross click')" aria-hidden="true">&times;</span>
+      <form>
+        <div class="form-group">
+          <img src="https://armezo.com/images/logo/armezo_logo.png" alt="" width="150px"/> 
+          <img style="float: right;" src="../assets/logo.png" alt="" width="150px"/> 
+        </div>
+        <div class="stardard-area-full"> 
+          <div class="stardard-area-bg"> 
+              <h4 style="text-align: center;margin-bottom: 30px;"> {{this.CurrSurvay.SurveryName}}</h4>
+              <p><b>Dear (username),</b></p>
+              <p>The objective of conducting this Annual Survey is to measure your experience on IT Services in 2019.</p>
+              <p>Kindly complete the survey before 17 January 2020.</p>
+              <p>This Online Survey is led by third party 'external' company and your responses will be kept anonymous.</p>
+              <p>The Survey will take approx. 10 minutes; all questions are compulsory.</p>
+              <p>We request you to complete this survey in one-go however if you get disconnected due to any reason; you can easily resume the survey by using the same link & access key.</p>
+              <p>We are eagerly looking forward for your response.</p>
+              <br>
+              <p>Warm Regards</p>
+              <p>Team Core HR</p>
+              <div class="text-center">
+                    <a href="" style="background: #0294ff;padding: 8px 18px;color: #FFFF;border-radius: 20px;    text-decoration: none;">	
+                <span style="font-size: 20px;position: relative;color:#0294ff;">&#9758;</span> Talke Survey</a>
+              </div>
+          </div>
+        </div>
+      </form>
+      <div class="footer">
+            <p>
+              <span>For technical support, please contact us at 
+              <a href="mailto:support@armezo.com">support@armezo.com</a> </span>
+              <span class="float-right">
+              © ARMEZO ™ Solutions Private Limited 2019. </span>
+            </p>
+      </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">back</button>
+    </div> -->
+    </div>
+  </ng-template>  
+
+
+
+
+  <ng-template #invitation let-modal>
+
+    <div class="modal-body">
+      <span type="button" class="cross" aria-label="Close" (click)="modal.dismiss('Cross click')" aria-hidden="true">&times;</span>
+      <form>
+        <div class="form-group">
+          <img src="https://armezo.com/images/logo/armezo_logo.png" alt="" width="150px"/> 
+          <img style="float: right;" src="../assets/logo.png" alt="" width="150px"/> 
+        </div>
+        <div class="stardard-area-full"> 
+          <div class="stardard-area-bg"> 
+              <h4 style="text-align: center;margin-bottom: 30px;"> {{this.CurrSurvay.SurveryName}}</h4>
+              <p><b>Welcome to Pernod Ricard Asia IT User Satisfaction Survey 2019.</b></p>
+              <p>We are pleased to invite you to share your feedback on IT Services for year 2019.</p>
+              <p>This survey is administered Online and you can easily access the below link on your computer and/or your mobile device.</p>
+              <p>We are delighted to announce that first 50 responses will get an exciting surprise gifts.</p>
+              <p>Please submit your response before Friday <b>(24 January 2020)</b>.</p>
+              <p>In case, you face any technical issues, please write to <b>support@armezo.com</b> for assistance.</p>
+              <p>Kindly click on the below link and enter your access key.</p>
+              <p><b>LINK: Take Survey</b></p>
+              <p><b>ACCESS KEY :  2FVWVK</b></p>
+              <br>
+              <p>We would like to have your objective, frank and fair input, to enable us to assess where do we stand in our endeavor in providing seamless IT experience. Your input would be extremely valuable and will enable us to chart our future course.</p>
+              <p>Regards,<br>
+                (on behalf of Pernod Ricard Asia IT)</p>
+              <!-- <div class="text-center">
+                    <a href="" style="background: #0294ff;padding: 8px 18px;color: #FFFF;border-radius: 20px;    text-decoration: none;">	
+                <span style="font-size: 20px;position: relative;color:#0294ff;">&#9758;</span> Talke Survey</a>
+              </div> -->
+          </div>
+        </div>
+      </form>
+      <!-- <div class="footer">
+            <p>
+              <span>For technical support, please contact us at 
+              <a href="mailto:support@armezo.com">support@armezo.com</a> </span>
+              <span class="float-right">
+              © ARMEZO ™ Solutions Private Limited 2019. </span>
+            </p>
+      </div> -->
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div> -->
+
+  </ng-template> 
+  
+  
+
+  <ng-template #reminder let-modal>
+    <!-- <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Reminder Tempalte Design </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div> -->
+    <div class="modal-body">
+      <span type="button" class="cross" aria-label="Close" (click)="modal.dismiss('Cross click')" aria-hidden="true">&times;</span>
+      <form>
+        <div class="form-group">
+          <img src="https://armezo.com/images/logo/armezo_logo.png" alt="" width="150px"/> 
+          <img style="float: right;" src="../assets/logo.png" alt="" width="150px"/> 
+        </div>
+        <div class="stardard-area-full"> 
+          <div class="stardard-area-bg"> 
+              <h4 style="text-align: center;margin-bottom: 30px;"> {{this.CurrSurvay.SurveryName}}</h4>
+              <p><b>Welcome to Pernod Ricard Asia IT User Satisfaction Survey 2019.</b></p>
+              <p>We are pleased to invite you to share your feedback on IT Services for year 2019.</p>
+              <p>This survey is administered Online and you can easily access the below link on your computer and/or your mobile device.</p>
+              <p>We are delighted to announce that first 50 responses will get an exciting surprise gifts.</p>
+              <p>Please submit your response before Friday <b>(24 January 2020)</b>.</p>
+              <p>In case, you face any technical issues, please write to <b>support@armezo.com</b> for assistance.</p>
+              <p>Kindly click on the below link and enter your access key.</p>
+              <p><b>LINK: Take Survey</b></p>
+              <p><b>ACCESS KEY :  2FVWVK</b></p>
+              <br>
+              <p>We would like to have your objective, frank and fair input, to enable us to assess where do we stand in our endeavor in providing seamless IT experience. Your input would be extremely valuable and will enable us to chart our future course.</p>
+              <p>Regards,<br>
+                (on behalf of Pernod Ricard Asia IT)</p>
+              <!-- <div class="text-center">
+                    <a href="" style="background: #0294ff;padding: 8px 18px;color: #FFFF;border-radius: 20px;    text-decoration: none;">	
+                <span style="font-size: 20px;position: relative;color:#0294ff;">&#9758;</span> Talke Survey</a>
+              </div> -->
+          </div>
+        </div>
+      </form>
+      <!-- <div class="footer">
+            <p>
+              <span>For technical support, please contact us at 
+              <a href="mailto:support@armezo.com">support@armezo.com</a> </span>
+              <span class="float-right">
+              © ARMEZO ™ Solutions Private Limited 2019. </span>
+            </p>
+      </div> -->
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div> -->
+    <!-- </div> -->
+  </ng-template>  
+
+
+  <!-- <ng-template #launch let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title"> End Date Saved <i class="material-icons">
+        check_circle_outline
+        </i></h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" style="text-align: center;">
+      <form>
+        <div class="form-group">
+          <p>If you want to Launch Now then click below:</p>
+          <button mat-raised-button  matTooltip="Save Details" class="warning-btn" (click)="CreateLaunch()">Launch <i class="material-icons">
+            videocam
+            </i></button>
+        </div>
+      </form>
+    </div>
+
+  </ng-template>   -->
+
+  
+  <ng-template #addquestion let-modal >
+
+    <div class="modal-header">
+     
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="stardard-area-bg"> 
+        <h4 class="modal-title" id="modal-basic-title">Add Question </h4>
+      <form>
+
+            <div class="form-group">
+                <label >Select Dimension </label>     &nbsp; 
+         
+                <button type="button" class="btn btn-info btn-sm" style="float: right;" (click)="open(addDimension)">
+                  Add New Dimension<i class="material-icons" style="font-size: 16px;">
+                    add
+                    </i>
+                </button>
+                <select class="form-control" id="" formControlName="dimension-name">
+                  <option>-Choose Dimension-</option>
+                  <option>Testing</option>
+                  <option>Engagement</option>
+                  <option>Development</option>
+                  <option>HR</option>
+                  <option>Marketing</option>
+                </select>
+                <!-- <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div> -->
+            </div>
+            
+            <div class="form-group">
+              <label >Choose option type</label>
+              <select  (change)="onChange($event)" class="form-control m4" id="" formControlName="replytype"  class="form-control select2" type="text" style="width: 100%;">
+                  <option value="radio">Single Choice</option>
+                  <option value="checkbox">Multiple Choice</option>
+                  <option value="input">Subjective Choice</option>
+              </select>
+
+              <div *ngIf="selectedType == 'radio'" class="option-margin mt-3">
+                <div class="row">
+                    <div class="col-md-12 no-padding">
+                      <div class="form-group">
+                        <label >Enter Question</label>
+                        <input type="text" formControlName="question" class="form-control"  />
+                      </div>
+                      <div class="form-group form-bg" >
+                        <label>Option 1: </label>&nbsp;
+                        <input type="radio" class="input-control-sm" disabled/>
+                        <input type="text" class="form-control-sm"/>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div>
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span> 
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Option 2: </label>&nbsp;
+                        <input type="radio" class="input-control-sm" disabled/>
+                        <input type="text" class="form-control-sm"/>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div>
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span> 
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Option 3: </label>&nbsp;
+                        <input type="radio" class="input-control-sm" disabled/>
+                        <input type="text" class="form-control-sm"/>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div>
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span> 
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Option 4: </label>&nbsp;
+                        <input type="radio" class="input-control-sm" disabled/>
+                        <input type="text" class="form-control-sm"/>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div>
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span> 
+                      </div>
+                      <hr>
+                      <div class="form-group">
+                        <label><input type="checkbox" /> Mandatory above</label>
+                       
+                      <button class="btn btn-dark btn-sm float-right" type="button"> <i class="material-icons" style="font-size: 16px;"> add </i>  Add Option</button>
+                      </div>
+                      <div class="text-center">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                      </div> 
+                    </div>
+                    
+                      <!-- <p>Mandatory <input type="checkbox" /></p> -->
+                </div>
+              </div>
+              
+              <div *ngIf="selectedType == 'checkbox'" class="option-margin  mt-3 ">
+                  <div class="row">
+                    <div class="col-md-12 no-padding">
+                      <div class="form-group">
+                        <label >Enter Question</label>
+                        <input type="text" formControlName="question" class="form-control"  />
+                      </div>
+                      <div class="form-group form-bg" >
+                        <label>Option 1: </label>&nbsp;
+                        <input type="checkbox" class="input-control-sm" disabled/>
+                        <input type="text" class="form-control-sm"/>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div>
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span> 
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Option 2: </label>&nbsp;
+                        <input type="checkbox" class="input-control-sm" disabled/>
+                        <input type="text" class="form-control-sm"/>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div>
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span> 
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Option 3: </label>&nbsp;
+                        <input type="checkbox" class="input-control-sm" disabled/>
+                        <input type="text" class="form-control-sm"/>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div>
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span> 
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Option 4: </label>&nbsp;
+                        <input type="checkbox" class="input-control-sm" disabled/>
+                        <input type="text" class="form-control-sm"/>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div>
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span> 
+                      </div>
+                      <hr>
+                      <div class="form-group">
+                        <label><input type="checkbox" /> Mandatory above</label>
+                       
+                      <button class="btn btn-dark btn-sm float-right" type="button"> <i class="material-icons" style="font-size: 16px;"> add </i>  Add Option</button>
+                      </div>
+                      <div class="text-center">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                      </div> 
+                    </div>
+                  </div>
+              </div>
+              <div *ngIf="selectedType == 'input'" class="option-margin  mt-3 ">
+                  <div class="row">
+                    <div class="col-md-12 no-padding">
+                      <div class="form-group">
+                        <label >Enter Question</label>
+                        <input type="text" formControlName="question" class="form-control"  />
+                      </div>
+                      <div class="form-group form-bg" >
+                        <label>Subject Option 1: </label>&nbsp;
+                        <textarea class="form-control-text" rows="" ></textarea>
+                        
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <!-- <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select> -->
+                        <!-- <input type="text" class="form-control-sm" placeholder="ImageText 1"/> -->
+
+                        <!-- <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div> -->
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Subject Option 2: </label>&nbsp;
+                        <textarea class="form-control-text" ></textarea>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <!-- <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select> -->
+                        <!-- <input type="text" class="form-control-sm" placeholder="ImageText 1"/> -->
+<!-- 
+                        <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div> -->
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Subject Option 3: </label>&nbsp;
+                        <textarea class="form-control-text" ></textarea>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <!-- <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/> -->
+
+                        <!-- <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div> -->
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
+                      </div>
+                      <div class="form-group form-bg">
+                        <label>Subject Option 4: </label>&nbsp;
+                        <textarea class="form-control-text" ></textarea>
+                        <select  id="sel1" class="form-control-sm">
+                          <option>-score-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <!-- <select  id="sel1" class="form-control-sm">
+                          <option>-image-</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/> -->
+
+                        <!-- <div class="custom-file fileInputProfileWrap">
+                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                            <div class="img-space">
+                                <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                    <img [src]="cardImageBase64" />
+                                </ng-container>
+                                <ng-template #elseTemplate>
+                                    <img src="./assets/demo.png" class="img-responsive">
+                                </ng-template>
+                            </div>
+                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
+                        </div> -->
+                        <span class="float-right delete-icon"><i class="material-icons">
+                              delete_forever
+                              </i></span>
+                        <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
+                      </div>
+                      <hr>
+                      <div class="form-group">
+                        <label><input type="checkbox" /> Mandatory above</label>
+                       
+                      <button class="btn btn-dark btn-sm float-right" type="button"> <i class="material-icons" style="font-size: 16px;"> add </i>  Add Option</button>
+                      </div>
+                      <div class="text-center">
+                        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+                      </div> 
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </form>
+      </div>
+    </div>
+
+  </ng-template>  
+  
+  <ng-template #addDimension let-modal >
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add your Dimension </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="stardard-area-bg">
+      <form>
+
+            <div class="form-group">
+                <label>Add Dimension </label>     &nbsp; 
+         
+                <input type="text" formControlName="dimension" class="form-control"  />
+            </div>
+            
+            <div class="form-group">
+              <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Add</button>
+            </div>
+            
+          
+      </form></div>
+    </div>
+  <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>  -->
+  </ng-template>  
+
+
+  <ng-template #dimensionList let-modal >
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Check your Dimension </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="stardard-area"> 
+      <mat-form-field>
+        <mat-label>Search Dimension</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. education">
+      </mat-form-field>
+      
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+        <!-- id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Dimension ID</th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Dimension Name  </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+      
+        <!-- survey Column -->
+        <ng-container matColumnDef="survey">
+          <th mat-header-cell *matHeaderCellDef>  Survey Name  </th>
+          <td mat-cell *matCellDef="let element"> {{element.survey}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    </div>
+
+  </ng-template>  

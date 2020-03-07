@@ -1,0 +1,266 @@
+<div class="row">
+  <div class="col-lg-12 dash-head text-center">
+    <!-- <h6 *ngIf="!show">POC ALL DETAILS</h6> -->
+    <h4 *ngIf="!show" style="padding: 10px 0;">  Armezo will be helpful for you to understand where your trends, now</h4>
+    <!--  -->
+  </div>
+</div>
+
+<div class="row" >
+  <div class="col-lg-4 col-sm-6 col-xs-4">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image">
+          <i class="material-icons info"> network_check </i>
+        </div>
+        <mat-card-title  >Create New Survey </mat-card-title>
+      
+        <mat-card-subtitle  class="info" *ngIf="!show">Start Survey?</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content *ngIf="!show" >
+        <p>Create your new survey for taking feedback of your users with online coversation.</p>
+      </mat-card-content>
+      <mat-card-actions >
+        <button mat-raised-button class="primary-btn" matTooltip="Click here to Create New Survey" (click)="onClickTypeSurvey()">Create New</button>
+        <button mat-raised-button color="info"  class="text-info" matTooltip="Check Your Saved Survey" (click)="toggle3()">Your Saved Survey</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+        
+  <div class="col-lg-4 col-sm-6 col-xs-4">
+    <mat-card class="example-card" *ngIf="!active">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image">
+          <i class="material-icons warning">alarm_on</i>
+        </div>
+        <mat-card-title>OnGoing Survey</mat-card-title>
+        <mat-card-subtitle  class="warning" *ngIf="!show">Running on </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content *ngIf="!show">
+        <p>Check your ongoing survey for multiple online business persepective coversation.</p>
+      </mat-card-content>
+      <mat-card-actions >
+        <button mat-raised-button  matTooltip="Edit/Update Survey" class="warning" (click)="onClickSelectSurvey()">Manage Survey</button>
+        <button mat-raised-button  matTooltip="Active Survey Details" class="warning-btn"  (click)="toggle1()">Index Survey</button>
+        <span class="badge text-info" style="font-weight: 100;">Last Survey: SBI- 25th Jan 2020, 11AM</span>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="col-lg-4 col-sm-6 col-xs-4">
+    <mat-card class="example-card" >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image">
+              <i class="material-icons reddy"> alarm_off</i>
+        </div>
+        <mat-card-title>Closed Survey</mat-card-title>
+        <mat-card-subtitle  class="reddy" *ngIf="!show">Completed </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content *ngIf="!show">
+        <p>Extend date and check your all completed surevy with all status score. Complete Details </p>
+      </mat-card-content>
+      <mat-card-actions >
+        <button mat-raised-button  matTooltip="All completed Survey"  (click)="onClickCompletedSurvey()" class="reddy" >Expired Survey </button>
+        <button mat-raised-button  matTooltip="Last Expire Survey"  (click)="toggle2()">Last Expired Survey: TATA- 10th May 2019, 7 AM  </button>
+      </mat-card-actions>
+    </mat-card>
+  </div> 
+</div>
+
+<div class="row ">
+  <div class="col-lg-12">
+    <div class="" *ngIf="!createNewSurvey">
+     
+      <div class="mat-card body-mat-card " >
+        <app-edit-template  *ngIf="!editSurveyDetails"></app-edit-template>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="" *ngIf="!savedsurvey">
+      <div class="mat-card mt-2">
+        <p>You and Launch your Survey and edit it before launch</p>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>  
+                <th>Survey Name </th>
+                <th>Start Date/Time</th>
+                <th>End Date/Time</th>
+                <th>Region</th>
+                <th>Total Participant</th>
+                <th>Launch</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SBI general</strong>  </td>
+                <td>20 June 2019 / 11am </td>
+                <td>20 June 2019 /12am</td>
+                <td>Phase 3</td>
+                <td>1000</td>
+                <td>
+                  <button mat-raised-button  matTooltip="20 June 2019 / 11am" class="warning-btn" disabled>Pending</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="info-btn"><i class="material-icons material-icon-sm">edit</i></button> &nbsp;
+                  <button mat-raised-button  matTooltip="" color="warn"><i class="material-icons material-icon-sm">close</i></button>
+                </td>
+              </tr>  
+              <tr>
+                <td><strong>SBI general</strong>  </td>
+                <td>20 June 2019 / 11am </td>
+                <td>20 June 2019 /12am</td>
+                <td>Okhla </td>
+                <td>4000</td>
+                <td>
+                  <button mat-raised-button  matTooltip="20 June 2019 / 11am" class="warning-btn" disabled>Pending</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="info-btn"><i class="material-icons material-icon-sm">edit</i></button> &nbsp;
+                  <button mat-raised-button  matTooltip="" color="warn"><i class="material-icons material-icon-sm">close</i></button>
+                </td>
+              </tr>   
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="" *ngIf="!onGoing">
+      <div class="mat-card mt-2">
+        <p>All List of On Going Survey</p> 
+        <div  *ngIf="!EditSelectedTemplate" class="body-mat-card">
+         <app-edit-template></app-edit-template>
+        </div>
+        <div class="table-responsive" *ngIf="!ListOnGoingSurvey">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Survey Name </th>
+                <th>Status</th>
+                <th>Start Date/Time</th>
+                <th>End Date/Time</th>
+                <th>Region</th>
+                <th>Attendent Participant</th>
+                <th>Total Participant</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              <tr>
+                <td><strong>TATAAIG </strong>  </td>
+                <td><span class="text-success">Active</span></td>
+                <td>04 January 2020 /2pm</td>
+                <td>20 January 2020 /7pm</td>
+                <td>Phase 3</td>
+                <td>500</td>
+                <td>1000</td>
+                <td>
+                  <button mat-raised-button  matTooltip="" class="info-btn"><i class="material-icons material-icon-sm"  (click)="EditSelectedSurvey()">edit</i></button> &nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12">
+    <div class="" *ngIf="!expireSurvey">
+      <div class="mat-card mt-2">
+        <div class="row">
+          <div class="col-lg-3">
+            Welcome on Expired survey name : {{+result}} 
+          </div>
+          <div class="col-lg-3">
+            <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
+            <p><strong>Had Expire:</strong> 20th Jan 2010/2PM</p>
+          </div>
+          
+          <div class="col-lg-3">
+            <p><strong>Total Participant</strong> - 1200</p>
+            <p><strong>Attendent Participant</strong> - 1000</p>
+            <p><strong>Pending Participant</strong> - 200</p>
+          </div>
+          <div class="col-lg-3"><app-bar-charts></app-bar-charts></div>
+        </div>
+        <p>If you want to Change the End Date of this Survey and edit survey then <button mat-raised-button color="info"  (click)="editSurvey()" class="text-info" matTooltip="Edit Options">Click Here</button></p>
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12">
+    <div class="" *ngIf="!onGoingSelectSurvey">
+      <div class="mat-card body-mat-card mt-2"> 
+        <div class="row">
+          <div class="col-lg-3">
+            Welcome on goning survey name : {{+result}} 
+          </div>
+          <div class="col-lg-3">
+            <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
+            <p><strong>Will Expire:</strong> 20th Jan 2010/2PM</p>
+          </div>
+          
+          <div class="col-lg-3">
+            <p><strong>Total Participant</strong> - 1200</p>
+            <p><strong>Attendent Participant</strong> - 300</p>
+            <p><strong>Pending Participant</strong> - 900</p>
+          </div>
+          <div class="col-lg-3"><app-bar-charts></app-bar-charts></div>
+        </div>
+        <p>If you want to Change the End Date of this Survey and edit survey then <button mat-raised-button color="info"  (click)="editSurvey()" class="text-info" matTooltip="Edit Options">Click Here</button></p>
+       
+        
+        <div  *ngIf="!EditSelectSurvey" ><hr>
+          <app-edit-template></app-edit-template>
+        </div>
+      
+        
+      </div>  
+     
+    </div>
+  </div>
+
+  <div class="col-lg-12">
+    <div class="" *ngIf="!closeSelectSurvey">
+      <div class="mat-card mt-2">
+        <p>All List of On Going Survey</p> 
+        <!-- <div  *ngIf="!EditSelectedTemplate">
+         <app-edit-template></app-edit-template>
+        </div> -->
+        <div class="table-responsive" >
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Survey Name </th>
+                <th>Status</th>
+                <th>Start Date/Time</th>
+                <th>End Date/Time</th>
+                <th>Region</th>
+                <th>Attendent Participant</th>
+                <th>Total Participant</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+              <tr>
+                <td><strong>TATAAIG </strong>  </td>
+                <td><span class="text-success">Active</span></td>
+                <td>04 January 2020 /2pm</td>
+                <td>20 January 2020 /7pm</td>
+                <td>Phase 3</td>
+                <td>500</td>
+                <td>1000</td>
+                <td>
+                  <button mat-raised-button  matTooltip="" class="info-btn"><i class="material-icons material-icon-sm" >edit</i></button> &nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

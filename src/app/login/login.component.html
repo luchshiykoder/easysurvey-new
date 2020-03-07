@@ -1,0 +1,71 @@
+
+
+  <mat-card class="mt-5">
+  <div class="card-body text-center">
+       <h2> <i class="material-icons" style="font-size: 58px;  color: #34a2b7;">
+          lock_open
+          </i></h2>
+        <h4>LOGIN </h4>
+        <p ><span>Already have an account? </span></p>
+        <div  *ngIf="error" class="alert alert-danger mt-3 mb-0 ">
+            <strong>Sorry!</strong> {{error}}
+          </div>
+        <!-- <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div> -->
+    </div>
+    <hr>
+    
+      <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" autofocus/>
+                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                      <div *ngIf="f.username.errors.required">Username is required</div>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
+              </div>
+              <button [disabled]="loading" class="btn btn-block btn-lg btn-info">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  Login
+              </button>
+              <div style="text-align: center;">
+              <p style="font-size: 12px;margin: 8px 0px 0px;" (click)="reset()">Or<br>Forgot Password? / Reset Password</p>
+            </div>
+          </form>
+      </div>
+  </mat-card>
+
+
+
+
+
+<style>
+  hr{    margin-top: 0rem;}
+  .mat-card {border-radius: 1.5em; width: 27%;
+    margin: 0 auto;
+ box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);}
+ input.form-control, input.form-control:focus {
+ outline: none;
+ z-index: 1;
+ position: relative;
+ background: none;
+ width: 100%;
+ height: 40px;
+ border: 0;
+ color: #34a2b7;padding: .375rem .0rem;
+ font-size: 16px;
+ font-weight: 400;
+ border-bottom: 1px solid #34a2b7;
+   border-radius: 0;
+   box-shadow: 0 0 0 0.2rem #fff;
+} 
+label{margin-bottom: 0;}
+
+ </style>
+
