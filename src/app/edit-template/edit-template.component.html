@@ -122,7 +122,20 @@
               </div> 
               <div class="panel-body">
                <p>Question List will be show in below:</p>
-              <div class="question-card bg-light">
+               <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let Question of Questions" cdkDrag>
+                  <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                  {{Question}}
+                 
+                </div>
+                <div class="example-box" *ngFor="let option of options" cdkDrag>
+                  <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                  {{option}}
+                 
+                </div>
+                
+              </div>
+              <!-- <div class="question-card bg-light">
                 <h6><span>Question1:</span> Question according to your requirements with option type?</h6>
                 <ul>
                   <li><label><input type="radio" name="radio" disabled> Agree</label></li>
@@ -130,7 +143,7 @@
                   <li><label><input type="radio" name="radio" disabled>Disagree</label></li>
                   <li><label><input type="radio" name="radio" disabled>Strongy Agree</label></li>
                 </ul>
-              </div>
+              </div> -->
               <div class="question-card bg-light">
                 <h6><span>Question2:</span> Question according to your requirements with option type?</h6>
                 <ul>
@@ -390,8 +403,9 @@
     <div class="modal-body">
       
       <div class="stardard-area-bg"> 
-        <h4 class="modal-title" id="modal-basic-title">Add Question </h4>
+       
         <div class="stardard-area"> 
+          <h4 class="modal-title" id="modal-basic-title">Add Question </h4><hr>
       <form>
         <!-- <div class="stardard-area"></div> -->
             <div class="form-group">
@@ -1068,6 +1082,7 @@
       </button>
     </div>
     <div class="modal-body">
+      <div class="stardard-area-bg"> 
       <div class="stardard-area"> 
         <h4 class="modal-title" id="modal-basic-title">Check your Dimension </h4>
       <mat-form-field>
@@ -1104,6 +1119,7 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+    </div>
     </div>
     </div>
 

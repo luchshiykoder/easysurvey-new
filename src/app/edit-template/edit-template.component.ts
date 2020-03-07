@@ -33,17 +33,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
       `]
 })
 export class EditTemplateComponent implements OnInit {
-  // timePeriods = [
-  //   'Bronze age',
-  //   'Iron age',
-  //   'Middle ages',
-  //   'Early modern period',
-  //   'Long nineteenth century'
-  // ];
+  Question = [
+    'Question 1- Question according to your requirements with option type?',
+    'Question 2 -  Question according to your requirements with option type?',
+    'Question 3 -  Question according to your requirements with option type?'
+  ];
+  option = [
+    'oret',
+    'rtt',
+    'trt'
+  ];
 
-  // drop(event: CdkDragDrop<string[]>) {
-  //   moveItemInArray(this.timePeriods, event.previousIndex, event.currentIndex);
-  // }
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.Question, event.previousIndex, event.currentIndex);
+  }
+
+  
   displayedColumns: string[] = ['id', 'name', 'status', 'survey'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   applyFilter(event: Event) {
