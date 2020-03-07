@@ -127,7 +127,9 @@
                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
                 <div class="example-box" *ngFor="let movie of movies" cdkDrag>
                   <div class="example-custom-placeholder " *cdkDragPlaceholder>   </div>
-                  <h6>{{movie}} <span class="float-right"><button>dwd</button></span></h6>
+                  <h6>{{movie}} <span class="float-right"><button class="btn btn-sm btn-info" (click)="open(addquestion)">Edit</button>&nbsp; <button class="btn btn-sm btn-danger"><i class="material-icons">
+                    delete
+                    </i></button></span></h6>
                   <div class="question-card bg-light">
                   <ul>
                     <li><label><input type="radio" name="radio" disabled> Agree</label></li>
