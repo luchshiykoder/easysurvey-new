@@ -83,7 +83,7 @@
               </div> 
               <div class="panel-body">
                 <div class="row" style="margin: 0;">
-                  <div class="col-sm-6" *ngIf="invitaionarea.checked">
+                  <div class="col-sm-12" *ngIf="invitaionarea.checked">
                     <div class="invitaion">
                       <h6>Invitation Format: please write your invitation email content 
                         <button mat-raised-button matTooltip="Check Preview" (click)="open(invitation)">Preview <i class="material-icons">
@@ -93,7 +93,7 @@
                     </div>
                    
                   </div>
-                  <div class="col-sm-6" *ngIf="reminderarea.checked">
+                  <div class="col-sm-12" *ngIf="reminderarea.checked">
                     <div class="invitaion">
                       <h6>Reminder Format: please write your Reminder email content
                          <button mat-raised-button matTooltip="Check Preview" (click)="open(reminder)">Preview <i class="material-icons">
@@ -114,8 +114,8 @@
           <div class="panel panel-default">
               <div class="panel-heading">
                 You can add Question according to your requirements with option type like Multiple chioce, CheckBox selection etc.
-                <button mat-raised-button (click)="open(addquestion)">+ Add Question </button>&nbsp;
-                <button mat-raised-button  color="primary" (click)="open(dimensionList)"><i class="material-icons">
+                <button mat-raised-button (click)="open(addquestion)" class="info-btn">+ Add Question </button>&nbsp;
+                <button mat-raised-button  color="dark-btn" (click)="open(dimensionList)"><i class="material-icons">
                   format_list_bulleted
                   </i> Dimension List </button>
                 <hr>
@@ -127,7 +127,7 @@
                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
                 <div class="example-box" *ngFor="let movie of movies" cdkDrag>
                   <div class="example-custom-placeholder " *cdkDragPlaceholder>   </div>
-                  <h6>{{movie}} <span class="float-right"><span style="font-size: 13px;">Page:1/1</span>&nbsp;<button class="btn btn-sm btn-success">Copy</button>&nbsp; <button class="btn btn-sm btn-info" (click)="open(addquestion)">Edit</button>&nbsp; <button class="btn btn-sm btn-danger">Delete</button></span></h6>
+                  <h6>{{movie}} <span class="float-right"><span style="font-size: 13px;">Page:1/1</span>&nbsp;<button class="btn btn-sm btn-info">Copy</button>&nbsp; <button class="btn btn-sm btn-secondary" (click)="open(addquestion)">Edit</button>&nbsp; <button class="btn btn-sm btn-danger">Delete</button></span></h6>
                   <div class="question-card bg-light">
                   <ul>
                     <li><label><input type="radio" name="radio" disabled> Agree</label></li>
@@ -143,8 +143,8 @@
                 
               </div> <br>
 
-              <button mat-raised-button (click)="open(addquestion)">+ Add Question </button>&nbsp;
-                <button mat-raised-button  color="info">x Break Page</button>
+              <button mat-raised-button (click)="open(addquestion)" class="info-btn">+ Add Question </button>&nbsp;
+                <button mat-raised-button  color="btn-secondary">x Break Page</button>
               <!-- <div class="question-card bg-light">
                 <h6><span>Question1:</span> Question according to your requirements with option type?</h6>
                 <ul>

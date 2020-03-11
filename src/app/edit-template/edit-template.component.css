@@ -3,7 +3,12 @@
 .modal.show .modal-dialog {
   -webkit-transform: none;
   transform: none;
-  max-width: 80%;
+  max-width: 100%;
+  margin: 0;
+
+}
+.modal.show .modal-dialog .modal-content{
+  height: 100vh;overflow: auto;
 }
 #trigger-upload {
   color: white;
@@ -202,9 +207,10 @@ table {width: 100%;}
   right: 8px;
   top: 1px;
 }
-.stardard-area{padding:10px;margin: 0 auto;box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);}
+.stardard-area{border-radius: 10px;padding:10px;margin: 0 auto;box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);}
 .stardard-area-bg{width: 902px;
   margin: 0 auto;
+
   /* background: #efefef; */
   padding: 20px;
   border-radius: 11px;
