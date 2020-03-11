@@ -40,27 +40,41 @@
       <div class="tab-pane active" [ngClass]="{'showTab':selectedUserTab == 1, 'hideTab':selectedUserTab != 1}"> <!-- Profile tab -->
           <div class="panel panel-default">
               <div class="panel-heading">
-                <h5 class="text-center">Welcome Template <button mat-raised-button matTooltip="Check Preview" class="float-right" (click)="open(welcome)">Preview<i class="material-icons">
-                  remove_red_eye
-                  </i></button></h5>
+                <h5 class="text-center">
+                  <span style="    position: relative;"> Welcome Template
+                    <div class="avatar-upload">
+                      <div class="avatar-edit">
+                        <input #file type="file" accept='image/*' (change)="preview(file.files)" id="imageUpload" accept=".png, .jpg, .jpeg"/>
+                          <label for="imageUpload"><i class="material-icons">
+                            cloud_upload
+                            </i></label>
+                      </div>
+                      <div class="vertical-center">
+                        <img [src]="imgURL"width="100%" *ngIf="imgURL" >
+                      </div>
+                      <span>Upload Logo</span>
+                    </div>
+                  </span>
                   
-                  <div class="avatar-upload">
-                    <div class="avatar-edit">
-                      <input #file type="file" accept='image/*' (change)="preview(file.files)" id="imageUpload" accept=".png, .jpg, .jpeg"/>
-                        <label for="imageUpload"><i class="material-icons">
-                          cloud_upload
-                          </i></label>
-                    </div>
-                    <div class="vertical-center">
-                      <img [src]="imgURL"width="100%" *ngIf="imgURL" >
-                    </div>
-                    <span>Upload Logo</span>
-                  </div>
+                  <button class="btn btn-primary btn-sm btn-next float-right"  matTooltip="Check Preview" (click)="open(welcome)" style="margin: 0;">Preview <i class="material-icons" style="font-size: 12px;">
+                  remove_red_eye
+                  </i></button>
+                 
+                </h5>
+                  <!-- <span  class="float-right" style="    font-size: 10px;
+                  position: absolute;
+                  right: 102px;
+                  top: 0px;
+              ">Please edit your welcome content<br> format and you can check:</span> -->
+                  
+                
               </div> 
           
               <div class="panel-body">
                 <div class="stardard-area-full">
+                 
                   <div class="stardard-area-bg stardard-area-fixed">
+                   
                 <angular-editor id="editor1" formControlName="htmlContent1" [config]="editorConfig"></angular-editor>
                 </div>
                 </div>

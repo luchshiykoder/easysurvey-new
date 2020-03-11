@@ -70,14 +70,14 @@
   border: 1px solid #2dadc2;
 }
 .avatar-upload {
-  height: 88px;
-  width: 98px;
+  height: 90px;
+  width: 90px;
   position: absolute;
   border: 7px solid #ffffff;
-  /* border-radius: 50%; */
-  left: 9px;
-  top: -9px;
+  right: -101px;
+  top: -44px;
   background: #e4e4e4;
+  border-radius: 50%;
 } 
 .avatar-upload  .avatar-edit {
     position: absolute;
@@ -145,6 +145,7 @@
   transform: translate(-50%, -50%);
   left: 50%;
   width:62px;
+
 }
 table {width: 100%;}
 .mat-form-field {font-size: 14px;width: 100%;}
@@ -238,7 +239,7 @@ table {width: 100%;}
     box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
   }
   .stardard-area-fixed{overflow: auto;
-  height: 330px;
+  height: 450px;
   }
   .footer{ 
     padding: 5px 0px;
