@@ -340,8 +340,8 @@ selectedUserTab = 1;
          // console.log('showTab');
       }
     } 
-    movies: number[] = [1, 2, 3];
-    copy() {
-      this.movies.push(this.movies.length + 1)
-   }
+  movies: number[] = [1, 2, 3];
+  copy() {
+    this.movies.push(this.movies.length + 1)
+ }
 }
