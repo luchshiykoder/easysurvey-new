@@ -18,14 +18,14 @@
     background: #464646; 
   }
 .body-mat-card {min-height: 550px;
-    overflow: auto;    margin-top: 7px;
+    overflow: auto;    margin-top: 4px;
 
   }
 .material-icons{
-    font-size: 40px;
+    font-size: 23px;
     transition: .15s box-shadow ease,.15s transform ease;
 }
-.material-icon-sm{   font-size: 20px;}
+.material-icon-sm{   font-size: 17px;}
 mat-grid-tile{
     padding-top: calc(((11% - 0px) * 1) + 0px);
 }
@@ -72,6 +72,19 @@ mat-card{width:100%;}
 :host /deep/ .mat-tab-body-wrapper {
     flex: 1 1 auto;
 }
+.mat-card-header .mat-card-title{font-size: 17px;    margin-bottom: 8px;}
+.mat-card-actions {
+    margin-left: -0;
+    margin-right: -8px;
+ padding: 0;
+}
+.mat-card-avatar {
+   height: 10px; 
+ width: 20px;
+    /* border-radius: 50%; */
+    /* flex-shrink: 0; */
+    /* object-fit: cover;*/}
+
 .container {
     position: relative;
     width: 100%;
@@ -100,10 +113,7 @@ mat-card{width:100%;}
 #content::after, #main-content::after {
     clear: both;
 }
-/* .mat-card{color:#fff;}
-.mat-card1{background-color: #007bff;}
-.mat-card3{background-color: #ef5350;}
-.mat-card2{background-color: #66bb6a;} */
+
 .example-card{
     transition: all 0.5s ease-in-out;}
 .example-card:hover{
