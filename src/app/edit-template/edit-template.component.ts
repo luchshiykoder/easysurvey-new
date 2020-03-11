@@ -66,11 +66,15 @@ export class EditTemplateComponent implements OnInit {
   checkTabSelection:boolean
   data: any = [{
     fname: 'NA',
-    dob: 'NA'
+    dob: 'NA',
+    email: 'NA',
+    mobile:'NA'
   },
   {
     fname: 'NA',
-    dob: 'NA'
+    dob: 'NA',
+    email: 'NA',
+    mobile:'NA'
   }];
 
   selectedType = '';
@@ -87,13 +91,13 @@ export class EditTemplateComponent implements OnInit {
     this.modalService.open(welcome, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
   }
   //Invitation Template Model
-  open1(invitation) {
-    this.modalService.open(invitation, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
-  }
+  // open1(invitation) {
+  //   this.modalService.open(invitation, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
+  // }
   //Reminder Template Model
-  open2(reminder) {
-    this.modalService.open(reminder, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
-  }
+  // open2(reminder) {
+  //   this.modalService.open(reminder, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
+  // }
  //Add AddDimension Model
   open3(addDimension) {
   this.modalService.open(addDimension, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
@@ -340,8 +344,8 @@ selectedUserTab = 1;
          // console.log('showTab');
       }
     } 
-  movies: number[] = [1, 2, 3];
-  copy() {
-    this.movies.push(this.movies.length + 1)
- }
+//   movies: number[] = [1, 2, 3];
+//   copy() {
+//     this.movies.push(this.movies.length + 1)
+//  }
 }

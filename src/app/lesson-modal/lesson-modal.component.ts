@@ -19,8 +19,8 @@ export class LessonModalComponent implements OnInit {
     
   }
   todo = [
-    'Email ID',
-    'Phone Number',
+    'Address',
+    'Zone',
     'Option1',
     'Option2',
     'Option3',
@@ -30,7 +30,9 @@ export class LessonModalComponent implements OnInit {
 
   done = [
     'Full Name',
-    'Date of Birth'
+    'Date of Birth',
+    'Email ID',
+    'Mobile'
   ];
 
   drop(event: CdkDragDrop<string[]>) {

@@ -16,7 +16,7 @@
               <img src="../assets/logo.png" alt="user" width="120px">
             </div>
             <span class="example-fill-remaining-space"></span>
-            <span class="user-text">Welcome {{ title }} </span>
+            <span class="user-text">Welcome {{ currentUser.firstName }} {{ currentUser.lastName }}</span>
             <button mat-button [matMenuTriggerFor]="menu">Admin Details <i class="material-icons">emoji_people </i></button>
               <mat-menu #menu="matMenu">
                 <button class="info user-details"  mat-menu-item  (click)="resetPassword()"><i class="material-icons">cached</i> Change Password</button>
