@@ -37,8 +37,15 @@ export class EditTemplateComponent implements OnInit {
     ' Question 2: Question according to your requirements with option type?',
     ' Question 3: Question according to your requirements with option type?'
   ];
+ 
+    _ref:any;   
+    removeObject(){
+      this._ref.destroy();
+    }   
+    save(){
+      alert('Saved Successfully!');
+    }
 
-  
 
 
  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];

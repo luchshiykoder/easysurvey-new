@@ -382,7 +382,7 @@ table {width: 100%;}
       box-shadow: 0 2px 4px 4px rgba(128, 128, 128, 0.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(35, 31, 31, 0.12);
       padding: 10px;
     }
-    
+    .example-box  .btn{padding: 0px 9px;}
     .cdk-drag-preview {
       box-sizing: border-box;
       border-radius: 4px;
