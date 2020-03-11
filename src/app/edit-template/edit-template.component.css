@@ -42,12 +42,18 @@
       font-size: 14px;
       position: relative;
       bottom: -9px;}
+      .form-control-textarea{ 
+        border: 1px solid #ced4da;
+        padding: 0px 6px;
+        border-radius: 4px;
+        width: 69%;
+        font-size: 14px;
+        /* position: relative; */
+        vertical-align: bottom;}
     #file{
       display:none;
     }
-    .form-control-text:hover{
-      height: 50px;;
-    }
+ 
 
 
 
@@ -276,7 +282,7 @@ table {width: 100%;}
 .delete-img{position: absolute; top: 5px;left: 45px;}
 .delete-icon{    padding-top: 10px;color: red;}
 .form-bg{    margin: 1px 0px;
-  background: #cccccc;
+  background: #ececec;
   padding: 4px 8px;
   border-radius: 6px;}
   .question-card{

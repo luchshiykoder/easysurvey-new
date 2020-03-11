@@ -50,7 +50,7 @@ export class GridListComponent implements OnInit {
       this._surveyDataService.CreateSurvey(this.CurrSurvey);
       Swal.fire(
         `Survey Name: ${text}`,
-        'Your Survey has been Created, now!',
+        'You have successfully created the survey, now!',
         'success'
       ) 
       this.show = true;

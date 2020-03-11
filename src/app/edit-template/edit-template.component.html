@@ -89,7 +89,10 @@
                         <button mat-raised-button matTooltip="Check Preview" (click)="open(invitation)">Preview <i class="material-icons">
                         remove_red_eye
                         </i></button></h6>
+                        <div class="stardard-area-full"><div class="stardard-area-bg stardard-area-fixed">
                       <angular-editor id="editor2" formControlName="htmlContent2" [config]="editorConfig"></angular-editor>
+                      </div>
+                      </div>
                     </div>
                    
                   </div>
@@ -99,7 +102,10 @@
                          <button mat-raised-button matTooltip="Check Preview" (click)="open(reminder)">Preview <i class="material-icons">
                         remove_red_eye
                         </i></button></h6>
+                        <div class="stardard-area-full"><div class="stardard-area-bg stardard-area-fixed">
                       <angular-editor id="editor2" formControlName="htmlContent2" [config]="editorConfig"></angular-editor>
+                      </div>
+                      </div>
                     </div>
                     <!-- <button class="btn btn-primary btn-sm btn-next" matTooltip="Save Details"  >Save / Next &rarr; </button>  -->
                   </div>
@@ -856,10 +862,10 @@
                         <input type="text" formControlName="question" class="form-control"  />
                       </div>
                       <div class="form-group form-bg" >
-                        <label>Subject Option 1: </label>&nbsp;
-                        <textarea class="form-control-text" rows="" ></textarea>
+                        <label>Subjective Option: </label>&nbsp;
+                        <textarea class="form-control-textarea" rows="2" ></textarea>
                         
-                        <select  id="sel1" class="form-control-sm">
+                        <!-- <select  id="sel1" class="form-control-sm">
                           <option>-score-</option>
                           <option>1</option>
                           <option>2</option>
@@ -869,7 +875,7 @@
                           <option>2</option>
                           <option>3</option>
                           <option>4</option>
-                        </select>
+                        </select> -->
                         <!-- <select  id="sel1" class="form-control-sm">
                           <option>-image-</option>
                           <option>1</option>
@@ -900,138 +906,7 @@
                               </i></span>
                         <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
                       </div>
-                      <div class="form-group form-bg">
-                        <label>Subject Option 2: </label>&nbsp;
-                        <textarea class="form-control-text" ></textarea>
-                        <select  id="sel1" class="form-control-sm">
-                          <option>-score-</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                        <!-- <select  id="sel1" class="form-control-sm">
-                          <option>-image-</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select> -->
-                        <!-- <input type="text" class="form-control-sm" placeholder="ImageText 1"/> -->
-<!-- 
-                        <div class="custom-file fileInputProfileWrap">
-                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
-                            <div class="img-space">
-                                <ng-container *ngIf="isImageSaved; else elseTemplate">
-                                    <img [src]="cardImageBase64" />
-                                </ng-container>
-                                <ng-template #elseTemplate>
-                                    <img src="./assets/demo.png" class="img-responsive">
-                                </ng-template>
-                            </div>
-                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
-                        </div> -->
-                        <span class="float-right delete-icon"><i class="material-icons">
-                              delete_forever
-                              </i></span>
-                        <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
-                      </div>
-                      <div class="form-group form-bg">
-                        <label>Subject Option 3: </label>&nbsp;
-                        <textarea class="form-control-text" ></textarea>
-                        <select  id="sel1" class="form-control-sm">
-                          <option>-score-</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                        <!-- <select  id="sel1" class="form-control-sm">
-                          <option>-image-</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/> -->
-
-                        <!-- <div class="custom-file fileInputProfileWrap">
-                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
-                            <div class="img-space">
-                                <ng-container *ngIf="isImageSaved; else elseTemplate">
-                                    <img [src]="cardImageBase64" />
-                                </ng-container>
-                                <ng-template #elseTemplate>
-                                    <img src="./assets/demo.png" class="img-responsive">
-                                </ng-template>
-                            </div>
-                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
-                        </div> -->
-                        <span class="float-right delete-icon"><i class="material-icons">
-                              delete_forever
-                              </i></span>
-                        <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
-                      </div>
-                      <div class="form-group form-bg">
-                        <label>Subject Option 4: </label>&nbsp;
-                        <textarea class="form-control-text" ></textarea>
-                        <select  id="sel1" class="form-control-sm">
-                          <option>-score-</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                        <!-- <select  id="sel1" class="form-control-sm">
-                          <option>-image-</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/> -->
-
-                        <!-- <div class="custom-file fileInputProfileWrap">
-                            <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
-                            <div class="img-space">
-                                <ng-container *ngIf="isImageSaved; else elseTemplate">
-                                    <img [src]="cardImageBase64" />
-                                </ng-container>
-                                <ng-template #elseTemplate>
-                                    <img src="./assets/demo.png" class="img-responsive">
-                                </ng-template>
-                            </div>
-                            <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
-                        </div> -->
-                        <span class="float-right delete-icon"><i class="material-icons">
-                              delete_forever
-                              </i></span>
-                        <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
-                      </div>
+                     
                       <hr>
                       <div class="form-group">
                         <label><input type="checkbox" /> Mandatory above</label>

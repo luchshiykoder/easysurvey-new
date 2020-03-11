@@ -72,13 +72,13 @@ export class AppComponent {
     logoutProfile(){
      
       Swal.fire({
-        title: 'Are you sure?',
+        title: 'Are you sure you want to logout?',
         text: "You won't be able to see Your Survey Details",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, Logout it!'
+        confirmButtonText: 'Yes'
       }).then((result) => {
         if (result.value) {
       
