@@ -147,8 +147,10 @@ table {width: 100%;}
   margin: 0;
   padding-bottom: 1em;
   padding-left: 20px;
+  cursor: pointer;
 
 }
+.list-form li:hover { color: #c00;}
 .list-form li span{   color: #c00; line-height: 32px;}
 .list-form li:before {
   content: '';
