@@ -38,6 +38,7 @@ export class EditTemplateComponent implements OnInit {
     ' Question 3: Question according to your requirements with option type?'
   ];
  
+ 
     _ref:any;   
     removeObject(){
       this._ref.destroy();
@@ -339,4 +340,8 @@ selectedUserTab = 1;
          // console.log('showTab');
       }
     } 
+    movies: number[] = [1, 2, 3];
+    copy() {
+      this.movies.push(this.movies.length + 1)
+   }
 }
