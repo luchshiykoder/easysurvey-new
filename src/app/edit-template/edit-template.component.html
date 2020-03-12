@@ -142,7 +142,7 @@
                 <hr>
               </div> 
               <div class="panel-body">
-               <p>Question List will be show in below:</p>
+               <!-- <p>Question List will be show in below:</p> -->
               
               
                <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
@@ -267,7 +267,7 @@
       <span type="button" class="cross" aria-label="Close" (click)="modal.dismiss('Cross click')" aria-hidden="true">&times;</span>
       <form>
         <div class="form-group">
-          <img src="https://armezo.com/images/logo/armezo_logo.png" alt="" width="150px"/> 
+          <img src="../assets/logo.png" alt="" width="150px"/> 
           <img style="float: right;" src="../assets/logo.png" alt="" width="150px"/> 
         </div>
         <div class="stardard-area-full"> 
@@ -487,7 +487,7 @@
                       <label>Choose option type here: </label>
 
                       <label>  
-                        <input type="radio" name="option" value="TextOption" (click)="setradio('TextOption')" [checked]='true' ngModel>  
+                        <input type="radio" name="option" value="TextOption" (click)="setradio('TextOption')" [checked]='true' [(ngModel)]="radioSelected">  
                          Text Options  
                     </label>
              
@@ -923,7 +923,7 @@
                           <option>3</option>
                           <option>4</option>
                         </select>
-                        <select  id="sel1" class="form-control-sm">
+                        <!-- <select  id="sel1" class="form-control-sm">
                           <option>-image-</option>
                           <option>1</option>
                           <option>2</option>
@@ -933,8 +933,8 @@
                           <option>2</option>
                           <option>3</option>
                           <option>4</option>
-                        </select>
-                        <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
+                        </select> -->
+                        <!-- <input type="text" class="form-control-sm" placeholder="ImageText 1"/>
 
                         <div class="custom-file fileInputProfileWrap">
                             <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
@@ -947,7 +947,7 @@
                                 </ng-template>
                             </div>
                             <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
-                        </div>
+                        </div> -->
                         <span class="float-right delete-icon"><i class="material-icons">
                               delete_forever
                               </i></span>
@@ -968,7 +968,7 @@
                           <option>3</option>
                           <option>4</option>
                         </select>
-                        <select  id="sel1" class="form-control-sm">
+                        <!-- <select  id="sel1" class="form-control-sm">
                           <option>-image-</option>
                           <option>1</option>
                           <option>2</option>
@@ -992,7 +992,7 @@
                                 </ng-template>
                             </div>
                             <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
-                        </div>
+                        </div> -->
                         <span class="float-right delete-icon"><i class="material-icons">
                               delete_forever
                               </i></span>
@@ -1013,7 +1013,7 @@
                           <option>3</option>
                           <option>4</option>
                         </select>
-                        <select  id="sel1" class="form-control-sm">
+                        <!-- <select  id="sel1" class="form-control-sm">
                           <option>-image-</option>
                           <option>1</option>
                           <option>2</option>
@@ -1037,7 +1037,7 @@
                                 </ng-template>
                             </div>
                             <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
-                        </div>
+                        </div> -->
                         <span class="float-right delete-icon"><i class="material-icons">
                               delete_forever
                               </i></span>
@@ -1058,7 +1058,7 @@
                           <option>3</option>
                           <option>4</option>
                         </select>
-                        <select  id="sel1" class="form-control-sm">
+                        <!-- <select  id="sel1" class="form-control-sm">
                           <option>-image-</option>
                           <option>1</option>
                           <option>2</option>
@@ -1082,7 +1082,7 @@
                                 </ng-template>
                             </div>
                             <span class="delete-icon delete-img" (click)="removeImage()" *ngIf="isImageSaved"><i class="material-icons">close</i> </span>
-                        </div>
+                        </div> -->
                         <span class="float-right delete-icon"><i class="material-icons">
                               delete_forever
                               </i></span>
@@ -1154,12 +1154,13 @@
                         <!-- <span class="text-right" style="font-size: 12px;color: red;">{{imageError}}</span>  -->
                       </div>
                      
-                      <hr>
+                      
                       <div class="form-group">
                         <label><input type="checkbox" /> Mandatory above</label>
                        
                       <button class="btn btn-dark btn-sm float-right" type="button"> <i class="material-icons" style="font-size: 16px;"> add </i>  Add Option</button>
                       </div>
+                      <hr>
                       <div class="text-center">
                         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
                       </div> 
@@ -1207,13 +1208,8 @@
 
   <ng-template #dimensionList let-modal >
 
-    <div class="modal-header">
-     
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
     <div class="modal-body">
+      <span type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"aria-hidden="true">&times;</span>
       <div class="stardard-area-bg"> 
       <div class="stardard-area"> 
         <h4 class="modal-title" id="modal-basic-title">Check your Dimension </h4>

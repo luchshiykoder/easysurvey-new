@@ -348,13 +348,14 @@ selectedUserTab = 1;
 //   copy() {
 //     this.movies.push(this.movies.length + 1)
 //  }
-private selectedLink: string="Male";        
+private selectedLink: 
+  string="TextOption";        
   
   setradio(e: string): void   
   {  
   
-    this.selectedLink = e;  
-          
+    this.selectedLink = e;   
+
   }  
   
     isSelected(name: string): boolean  
