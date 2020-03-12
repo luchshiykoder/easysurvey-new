@@ -28,6 +28,8 @@ export class GridListComponent implements OnInit {
   public EditSelectSurvey:boolean = true;
   public EditSelectedTemplate:boolean = true;
   public ListOnGoingSurvey:boolean = false;
+  public menuToggle:boolean = true;
+  public main:boolean = false;
   CurrSurvey:ISurvey ={
     SurveryName :"",
     Respodant:{Name:"",Email:"",DOB:""},
@@ -61,6 +63,9 @@ export class GridListComponent implements OnInit {
       this.savedsurvey =true;
       this.createNewSurvey = !this.onGoingSelectSurvey;
       this.text=text;
+      this.menuToggle = false;
+      this.main = true;
+
      
      
     }    console.log(text);
@@ -93,6 +98,8 @@ export class GridListComponent implements OnInit {
     this.closeSelectSurvey =true;
     this.createNewSurvey = !this.onGoingSelectSurvey;
     this.text=text;
+    this.menuToggle = false;
+    this.main = true;
    
   }
 })() // FOR asnc end point of TYPE SURVEY NAME 
@@ -182,6 +189,8 @@ export class GridListComponent implements OnInit {
       this.closeSelectSurvey =true;
       this.createNewSurvey = true;
       this.savedsurvey = true;
+      this.menuToggle = false;
+      this.main = true;
     }
   })() // FOR asnc end point of selected survey name 
   }
@@ -229,6 +238,8 @@ export class GridListComponent implements OnInit {
       this.createNewSurvey = true;
       this.closeSelectSurvey = !this.closeSelectSurvey;
       this.savedsurvey = true;
+      this.menuToggle = false;
+      this.main = true;
   
   }
   
@@ -256,6 +267,12 @@ editSurvey(){
 EditSelectedSurvey(){
   this.EditSelectedTemplate = !this.EditSelectedTemplate;
   this.ListOnGoingSurvey = !this.ListOnGoingSurvey;
+}
+
+onClickTypeSurvey1(){
+ this.menuToggle = true;
+ this.main = !this.main;
+  
 }
   
 }

@@ -6,10 +6,14 @@
   </div>
 </div>
 
-<div class="row" >
-  <div class="col-lg-12">swqks</div>
+<div class="row">
+  <div class="col-lg-12" *ngIf="!menuToggle">
+      <p type="button" matTooltip="Open Menu"  class=" float-right text-danger" (click)="onClickTypeSurvey1()">Menu<i class="material-icons">
+        menu_open
+        </i></p>
+  </div>
   <div class="col-lg-4 col-sm-6 col-xs-4">
-    <mat-card class="example-card">
+    <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
           <i class="material-icons info"> network_check </i>
@@ -29,7 +33,7 @@
   </div>
         
   <div class="col-lg-4 col-sm-6 col-xs-4">
-    <mat-card class="example-card" *ngIf="!active">
+    <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
           <i class="material-icons warning">alarm_on</i>
@@ -49,7 +53,7 @@
   </div>
 
   <div class="col-lg-4 col-sm-6 col-xs-4">
-    <mat-card class="example-card" >
+    <mat-card class="example-card" *ngIf="!main" >
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
               <i class="material-icons reddy"> alarm_off</i>
