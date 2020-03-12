@@ -149,15 +149,15 @@
 table {width: 100%;}
 .mat-form-field {font-size: 14px;width: 100%;}
 .mat-cell, .mat-footer-cell {font-size: 12px;}
-.tabs-left, .tabs-right {border-bottom: none; padding-top: 2px;}
-.tabs-left {display: block; padding-right: 10px;}
+.tabs-left, .tabs-right {border-bottom: none; padding-top: 0px;}
+.tabs-left {display: block; padding-right: 0px;}
 .tabs-right {border-left: 1px solid #5dc6ef;}
 .tabs-left>li, .tabs-right>li {float: none;}
 .list-form li {
   position: relative;
   margin: 0;
   padding-bottom: 1em;
-  padding-left: 20px;
+  padding-left: 27px;
   cursor: pointer;
 
 }
@@ -168,20 +168,20 @@ table {width: 100%;}
   background-color: #d0d0d0;
   position: absolute;
   bottom: -6px;
-  top: 15px;
-  left: 6px;
+  top: 0px;
+  left: 10px;
   width: 3px;
 }
 .list-form li a{    font-size: 14px;}
-.list-form li:last-child:before{  bottom: 24px;}
+.list-form li:last-child:before{  bottom: 0px;}
 .list-form li.active a{    color: #cc0100;}
 .list-form li:after {
   content: '';
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E"); */
   position: absolute;
   left: 0;
-  height: 15px;
-  width: 15px;    top: 4px;
+  height: 22px;
+  width: 22px;    top: 0px;
 }
 .showTab{display: block !important;}
 .hideTab{
@@ -522,7 +522,7 @@ input[type="radio"], input[type="checkbox"] {
     
     .StepProgress {
       position: relative;
-      padding-left: 45px;
+     
       list-style: none;}
       
       .StepProgress::before {
@@ -530,7 +530,7 @@ input[type="radio"], input[type="checkbox"] {
         content: '';
         position: absolute;
         top: 0;
-        left: 15px;
+        left: 10px;
         width: 10px;
         height: 100%;
         border-left: 2px solid #CCC;
@@ -540,9 +540,9 @@ input[type="radio"], input[type="checkbox"] {
         position: relative;
         counter-increment: list;}
         
-        .StepProgress-item:not(:last-child) {
+        /* .StepProgress-item:not(:last-child) {
           padding-bottom: 20px;
-        }
+        } */
         
         .StepProgress-item::before {
           display: inline-block;
@@ -553,14 +553,14 @@ input[type="radio"], input[type="checkbox"] {
           width: 10px;
         }
         
-        .StepProgress-item ::after {
+        .StepProgress-item::after {
           content: '';
           display: inline-block;
           position: absolute;
           top: 0;
           left: -37px;
-          width: 12px;
-          height: 12px;
+          width: 17px;
+          height: 17px;
           border: 2px solid #CCC;
           border-radius: 50%;
           background-color: #FFF;
@@ -570,14 +570,29 @@ input[type="radio"], input[type="checkbox"] {
           .StepProgress-item::before {
             border-left: 2px solid green;
           }
-          .StepProgress-item.is-done
-          .StepProgress-item::after {
+          .StepProgress-item.is-done::before {
+            border-left: 2px solid green;
+        }
+        .StepProgress-item::before {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            left: -30px;
+            height: 100%;
+            width: 10px;}
+            .StepProgress-item:not(:last-child) {
+              padding-bottom: 20px;
+          }
+          .StepProgress-item {
+              position: relative;
+              counter-increment: list;
+          }
+          .StepProgress-item.is-done::after {
             content: "✔";
             font-size: 10px;
             color: #FFF;
             text-align: center;
             border: 2px solid green;
-            background-color: green;
-          }
+            background-color: green;}
 
-        
+            

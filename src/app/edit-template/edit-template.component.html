@@ -18,32 +18,45 @@
 
   <div class="col-sm-2"> <!-- required for floating -->
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs tabs-left list-form">
+    <!-- <ul class="nav nav-tabs tabs-left list-form">
       <li [ngClass]="{'active': tab.active}" *ngFor="let tab of tabs">
+        <a (click)="tabChange(tab)">{{tab.name}}</a>
+        <span class="close-icon float-right"><i class="material-icons">close</i></span>
+        <span class="check-icon float-right"><i class="material-icons">check</i></span>
+      </li>
+
+
+      
+    </ul><br> -->
+    <ul class="nav nav-tabs tabs-left list-form StepProgress">
+      <li class="StepProgress-item is-done" [ngClass]="{'active': tab.active}" *ngFor="let tab of tabs">
         <a (click)="tabChange(tab)">{{tab.name}}</a>
         <!-- <span class="close-icon float-right"><i class="material-icons">close</i></span> -->
         <span class="check-icon float-right"><i class="material-icons">check</i></span>
       </li>
+
       
-    </ul><br>
-    <div class="wrapper">
+      
+    </ul>
+    <!-- <br>
+
+    
       <ul class="StepProgress">
-        <li class="StepProgress-item is-done"><strong>Post a contest</strong></li>
-        <li class="StepProgress-item is-done"><strong>Award an entry</strong>
-          Got more entries that you love? Buy more entries anytime! Just hover on your favorite entry and click the Buy button
-        </li>
-        <li class="StepProgress-item current"><strong>Post a contest</strong></li>
-        <li class="StepProgress-item"><strong>Handover</strong></li>
-        <li class="StepProgress-item"><strong>Provide feedback</strong></li>
+        <li class="StepProgress-item is-done"><strong>Welcome Template</strong></li>
+        <li class="StepProgress-item is-done"><strong>Email Template</strong></li>
+        <li class="StepProgress-item current"><strong>Add Question</strong></li>
+        <li class="StepProgress-item"><strong>Respondent</strong></li>
+        <li class="StepProgress-item"><strong>End date</strong></li>
       </ul>
-      </div>
-    <br>
+  
+    <br> -->
+    
     <!-- <input id="Next" type="button" value=">" class="btn btn-primary" onclick="doTab('Next')" /> -->
-    <div class="text-center">
+    <!-- <div class="text-center">
     <button mat-raised-button  matTooltip="Save Data" (click)="LaunchSurvey()" class="btn-success"><i class="material-icons">
       live_tv
       </i> Launch Survey</button>
-    </div>
+    </div> -->
   </div>
 
   <div class="col-sm-10" style="    background: #fff;border-left: 1px solid #5dc6ef;">
