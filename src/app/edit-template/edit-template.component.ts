@@ -214,10 +214,10 @@ fileChangeEvent(fileInput: any) {
           return false;
       }
 
-      if (!_.includes(allowed_types, fileInput.target.files[0].type)) {
-          this.imageError = 'Only Images are allowed ( JPG | PNG )';
-          return false;
-      }
+      // if (!_.includes(allowed_types, fileInput.target.files[0].type)) {
+      //     this.imageError = 'Only Images are allowed ( JPG | PNG )';
+      //     return false;
+      // }
       const reader = new FileReader();
       reader.onload = (e: any) => {
           const image = new Image();
@@ -348,7 +348,7 @@ selectedUserTab = 1;
 //   copy() {
 //     this.movies.push(this.movies.length + 1)
 //  }
-private selectedLink: string="TextOption";        
+private selectedLink: string="";        
   
   setradio(e: string): void   
   {  

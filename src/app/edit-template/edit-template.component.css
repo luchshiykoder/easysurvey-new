@@ -174,7 +174,7 @@ table {width: 100%;}
 }
 .list-form li a{    font-size: 14px;}
 .list-form li:last-child:before{  height:0;}
-.list-form li.active a{    color: #cc0100;}
+.list-form li.active a{  color: green;}
 .list-form li:after {
   content: "×";
   padding: 0px 5px;
@@ -600,7 +600,7 @@ input[type="radio"], input[type="checkbox"] {
             border: 2px solid green;
             background-color: green;}
 
-
+           
             @media only screen and (max-width: 768px) {
               .stardard-area-bg {
                   max-width: 100%;

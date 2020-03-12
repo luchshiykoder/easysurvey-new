@@ -123,9 +123,16 @@
                   <div class="col-sm-12" *ngIf="invitaionarea.checked">
                     <div class="invitaion">
                       <h6>Invitation Format: please write your invitation email content 
-                        <button mat-raised-button matTooltip="Send Invivation" >Send Invivation on your mail address <i class="material-icons">
+                        <button mat-raised-button matTooltip="Send Invivation" >Send Invitation on your mail address <i class="material-icons">
                         remove_red_eye
                         </i></button></h6>
+                        
+                        <div class="form-group">
+                          <label class="" for="subject">Subject:</label>
+                         
+                            <input type="email" class=" col-sm-12 form-control" id="subject" placeholder="Enter subject ">
+                         
+                        </div>
                         <div class="stardard-area-full"><div class="stardard-area-bg stardard-area-fixed">
                       <angular-editor id="editor2" formControlName="htmlContent2" [config]="editorConfig"></angular-editor>
                       <button class="btn btn-primary btn-sm btn-next" matTooltip="Save Details"  >Save / Next &rarr; </button> 
@@ -462,7 +469,7 @@
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" aria-hidden="true">&times;</span>
       </button>
-    </div> -->
+    </div>  -->
     <div class="modal-body">
       <span type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" aria-hidden="true">×</span>
       <div class="stardard-area-bg"> 
