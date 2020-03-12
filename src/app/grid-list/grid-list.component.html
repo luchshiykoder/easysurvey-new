@@ -8,7 +8,7 @@
 
 <div class="row">
   <div class="col-lg-12" *ngIf="!menuToggle">
-      <p type="button" matTooltip="Open Menu"  class=" float-right text-danger" (click)="onClickTypeSurvey1()">Menu<i class="material-icons">
+      <p  matTooltip="Open Menu"  class=" text-right text-danger" (click)="onClickTypeSurvey1()">Menu<i class="material-icons">
         menu_open
         </i></p>
   </div>
@@ -92,35 +92,54 @@
               <tr>  
                 <th>Survey Name </th>
                 <th>Start Date/Time</th>
-                <th>End Date/Time</th>
-                <th>Region</th>
-                <th>Total Participant</th>
-                <th>Launch</th>
+                <th>Welcome Template</th>
+                <th>Email Template</th>
+                <th>Add Question</th>
+                <th>End Date</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>SBI general</strong>  </td>
+                <td><span class="text-danger">SBI general </span> </td>
                 <td>20 June 2019 / 11am </td>
-                <td>20 June 2019 /12am</td>
-                <td>Phase 3</td>
-                <td>1000</td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i>
+                  </td>
                 <td>
-                  <button mat-raised-button  matTooltip="20 June 2019 / 11am" class="warning-btn" disabled>Pending</button> &nbsp;
-                  <button mat-raised-button  matTooltip="" class="info-btn"><i class="material-icons material-icon-sm">edit</i></button> &nbsp;
-                  <button mat-raised-button  matTooltip="" color="warn"><i class="material-icons material-icon-sm">close</i></button>
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
                 </td>
               </tr>  
               <tr>
-                <td><strong>SBI general</strong>  </td>
+                <td><span class="text-danger">SBI general</span>  </td>
                 <td>20 June 2019 / 11am </td>
-                <td>20 June 2019 /12am</td>
-                <td>Okhla </td>
-                <td>4000</td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-success">
+                  check
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i>
+                  </td>
                 <td>
-                  <button mat-raised-button  matTooltip="20 June 2019 / 11am" class="warning-btn" disabled>Pending</button> &nbsp;
-                  <button mat-raised-button  matTooltip="" class="info-btn"><i class="material-icons material-icon-sm">edit</i></button> &nbsp;
-                  <button mat-raised-button  matTooltip="" color="warn"><i class="material-icons material-icon-sm">close</i></button>
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info">Edit</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger">Delete</button>
                 </td>
               </tr>   
             </tbody>

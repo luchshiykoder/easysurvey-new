@@ -274,5 +274,8 @@ onClickTypeSurvey1(){
  this.main = !this.main;
   
 }
+draftEdit(){
+  this.createNewSurvey = !this.onGoingSelectSurvey;
+}
   
 }
