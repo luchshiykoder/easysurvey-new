@@ -70,14 +70,13 @@
   border: 1px solid #2dadc2;
 }
 .avatar-upload {
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 97px;
   position: absolute;
-  border: 7px solid #ffffff;
+  border: 8px solid #ffffff;
   right: -101px;
-  top: -44px;
+  top: -49px;
   background: #e4e4e4;
-  border-radius: 50%;
 } 
 .avatar-upload  .avatar-edit {
     position: absolute;
@@ -239,7 +238,7 @@ table {width: 100%;}
     box-shadow: 0 0 12px rgba(58, 51, 46, 0.26);
   }
   .stardard-area-fixed{overflow: auto;
-  height: 440px;
+  height: 470px;
   }
   .footer{ 
     padding: 5px 0px;
@@ -285,10 +284,15 @@ table {width: 100%;}
 }
 .delete-img{position: absolute; top: 5px;left: 45px;}
 .delete-icon{    padding-top: 10px;color: red;}
-.form-bg{    margin: 1px 0px;
+.form-bg{    margin: 1px 0px;position: relative;
   background: #ececec;
   padding: 4px 8px;
   border-radius: 6px;}
+  label {
+    display: inline-block;
+    margin-bottom: 2px;}
+    .form-group {
+      margin-bottom: 13px;}
   .question-card{
     /* margin: 5px 0px; */
   /* box-shadow:0 2px 4px 4px rgba(128, 128, 128, 0.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(35, 31, 31, 0.12);
