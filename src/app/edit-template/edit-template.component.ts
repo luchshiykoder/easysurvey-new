@@ -357,7 +357,8 @@ private selectedLink: string="Male";
           
   }  
   
-    isSelected(name: string): boolean   
+    isSelected(name: string): boolean  
+
   {  
   
         if (!this.selectedLink) { // if no radio button is selected, always return false so every nothing is shown  

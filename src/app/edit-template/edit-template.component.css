@@ -283,7 +283,7 @@ table {width: 100%;}
     cursor: not-allowed!important;
 }
 .delete-img{position: absolute; top: 5px;left: 45px;}
-.delete-icon{    padding-top: 10px;color: red;}
+.delete-icon{    padding-top: 3px;color: red;}
 .form-bg{    margin: 1px 0px;position: relative;
   background: #ececec;
   padding: 4px 8px;
