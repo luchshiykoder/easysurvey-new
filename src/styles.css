@@ -9,3 +9,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .info-btn{background-color:rgb(93, 198, 239);color:#fff;}
 .warning-btn{background-color:rgb(0, 175, 22);color:#fff;}
 .reddy-btn{background-color:rgb(222, 13, 13);color:#fff;}
+.swal2-title {
+    position: relative;
+    max-width: 100%;
+    margin: 0 0 .4em;
+    padding: 0;
+    color: #595959;
+    font-size: 1.6em;}
