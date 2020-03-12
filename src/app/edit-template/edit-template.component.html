@@ -29,10 +29,10 @@
       
     </ul><br> -->
     <ul class="nav nav-tabs tabs-left list-form StepProgress">
-      <li class="StepProgress-item is-done" [ngClass]="{'active': tab.active}" *ngFor="let tab of tabs">
+      <li class="StepProgress-item " [ngClass]="{'active': tab.active}" *ngFor="let tab of tabs">
         <a (click)="tabChange(tab)">{{tab.name}}</a>
         <!-- <span class="close-icon float-right"><i class="material-icons">close</i></span> -->
-        <span class="check-icon float-right"><i class="material-icons">check</i></span>
+        <!-- <span class="check-icon float-right"><i class="material-icons">check</i></span> -->
       </li>
 
       
@@ -52,11 +52,11 @@
     <br> -->
     
     <!-- <input id="Next" type="button" value=">" class="btn btn-primary" onclick="doTab('Next')" /> -->
-    <!-- <div class="text-center">
+ <div class="text-center">
     <button mat-raised-button  matTooltip="Save Data" (click)="LaunchSurvey()" class="btn-success"><i class="material-icons">
       live_tv
       </i> Launch Survey</button>
-    </div> -->
+    </div>
   </div>
 
   <div class="col-sm-10" style="    background: #fff;border-left: 1px solid #5dc6ef;">
@@ -114,8 +114,8 @@
               <div class="panel-heading">
                 <h5 class="text-center">Email Template </h5>
                 <p class="text-center">Choose you email template type:  
-                  <label class="checkbox-inline"><input #invitaionarea type="checkbox"  name="size" (change)="0" > Invitation</label>&nbsp;
-                  <label class="checkbox-inline"><input #reminderarea  type="checkbox" name="size" (change)="0"> Reminder</label></p> 
+                  <label class="checkbox-inline"><input #invitaionarea type="radio"  name="size" (change)="0" > Invitation</label>&nbsp;
+                  <label class="checkbox-inline"><input #reminderarea  type="radio" name="size" (change)="0"> Reminder</label></p> 
                  
               </div> 
               <div class="panel-body">
@@ -511,7 +511,7 @@
                       <label>Choose option type here: </label>
 
                       <label>  
-                        <input type="radio" name="option" value="TextOption" (click)="setradio('TextOption')" [checked]='true' [(ngModel)]="radioSelected">  
+                        <input type="radio" name="option" value="TextOption" (click)="setradio('TextOption')"  ngModel>  
                          Text Options  
                     </label>
              

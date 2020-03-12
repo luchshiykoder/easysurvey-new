@@ -214,10 +214,10 @@ fileChangeEvent(fileInput: any) {
           return false;
       }
 
-      // if (!_.includes(allowed_types, fileInput.target.files[0].type)) {
-      //     this.imageError = 'Only Images are allowed ( JPG | PNG )';
-      //     return false;
-      // }
+      if (!_.includes(allowed_types, fileInput.target.files[0].type)) {
+          this.imageError = 'Only Images are allowed ( JPG | PNG )';
+          return false;
+      }
       const reader = new FileReader();
       reader.onload = (e: any) => {
           const image = new Image();
@@ -348,18 +348,16 @@ selectedUserTab = 1;
 //   copy() {
 //     this.movies.push(this.movies.length + 1)
 //  }
-private selectedLink: 
-  string="TextOption";        
+private selectedLink: string="TextOption";        
   
   setradio(e: string): void   
   {  
   
-    this.selectedLink = e;   
-
+    this.selectedLink = e;  
+          
   }  
   
-    isSelected(name: string): boolean  
-
+    isSelected(name: string): boolean   
   {  
   
         if (!this.selectedLink) { // if no radio button is selected, always return false so every nothing is shown  
@@ -369,4 +367,5 @@ private selectedLink:
         return (this.selectedLink === name); // if current radio button is selected, return true, else return false  
     }  
   
+
 }
