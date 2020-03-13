@@ -30,6 +30,7 @@ export class GridListComponent implements OnInit {
   public ListOnGoingSurvey:boolean = false;
   public menuToggle:boolean = true;
   public main:boolean = false;
+  public informationSurvey:boolean = false;
   CurrSurvey:ISurvey ={
     SurveryName :"",
     Respodant:{Name:"",Email:"",DOB:""},
@@ -190,6 +191,8 @@ export class GridListComponent implements OnInit {
       this.createNewSurvey = true;
       this.savedsurvey = true;
       this.menuToggle = false;
+      this.informationSurvey = false;
+      this.EditSelectSurvey = true;
       this.main = true;
     }
   })() // FOR asnc end point of selected survey name 
@@ -259,11 +262,20 @@ CreateLaunch(){
  // this.closeSelectSurvey = !this.createNewSurvey;
 }
 
-editSurvey(){
 
+
+detailSurvey(){
   this.show = true;
-  this.EditSelectSurvey = !this.EditSelectSurvey;
+  this.EditSelectSurvey = false; 
+  this.informationSurvey = !this.informationSurvey;
+ 
 }
+// editSurvey(){
+
+//   this.show = true;
+//   this.EditSelectSurvey = !this.EditSelectSurvey; 
+//   this.informationSurvey = false;
+// }
 EditSelectedSurvey(){
   this.EditSelectedTemplate = !this.EditSelectedTemplate;
   this.ListOnGoingSurvey = !this.ListOnGoingSurvey;

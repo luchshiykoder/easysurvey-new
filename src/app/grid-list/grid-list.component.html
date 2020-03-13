@@ -102,7 +102,7 @@
             </thead>
             <tbody>
               <tr>
-                <td><span class="text-danger">SBI general </span> </td>
+                <td><span class="text-primary">SBI general </span> </td>
                 <td>20 June 2019 / 11am </td>
                 <td><i class="material-icons text-danger">
                   close
@@ -123,7 +123,7 @@
                 </td>
               </tr>  
               <tr>
-                <td><span class="text-danger">SBI general</span>  </td>
+                <td><span class="text-primary">SBI general</span>  </td>
                 <td>20 June 2019 / 11am </td>
                 <td><i class="material-icons text-danger">
                   close
@@ -219,8 +219,19 @@
   <div class="col-lg-12">
     <div class="" *ngIf="!onGoingSelectSurvey">
       <div class="mat-card body-mat-card mt-2"> 
-        <div class="row">
-          <div class="col-lg-3">
+       
+        <p>If you want to Change the End Date of this Survey and edit survey then 
+        <button mat-raised-button color="info"  (click)="editSurvey()" class="text-info" matTooltip="Edit Options">Edit Survey</button>
+        <!-- &nbsp;<button mat-raised-button color="info"  (click)="detailSurvey()" class="text-primary" matTooltip="detail survey">Check details</button> -->
+      </p>
+       
+        
+        <div  *ngIf="!EditSelectSurvey" ><hr>
+          <app-edit-template></app-edit-template>
+        </div>
+     <div  >
+       hello
+          <!-- <div class="col-lg-3">
             Welcome on goning survey name : {{+result}} 
           </div>
           <div class="col-lg-3">
@@ -233,15 +244,8 @@
             <p><strong>Attendent Participant</strong> - 300</p>
             <p><strong>Pending Participant</strong> - 900</p>
           </div>
-          <div class="col-lg-3"><app-bar-charts></app-bar-charts></div>
+          <div class="col-lg-3"><app-bar-charts></app-bar-charts></div> -->
         </div>
-        <p>If you want to Change the End Date of this Survey and edit survey then <button mat-raised-button color="info"  (click)="editSurvey()" class="text-info" matTooltip="Edit Options">Click Here</button></p>
-       
-        
-        <div  *ngIf="!EditSelectSurvey" ><hr>
-          <app-edit-template></app-edit-template>
-        </div>
-      
         
       </div>  
      
