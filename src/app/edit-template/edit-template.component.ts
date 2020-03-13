@@ -122,10 +122,13 @@ export class EditTemplateComponent implements OnInit {
       console.log(this.CurrSurvay);
     });
   }
+
   public editSurveyDetails:boolean = true;
   public createNewSurvey:boolean = true;
   public main:boolean = true;
   public launchSurvey:boolean = true;
+  public golaunchButton:boolean = false;
+  public launchSurveyArea:boolean = true;
   
 
 
@@ -259,7 +262,7 @@ removeImage() {
 }
 
 //Saved Survey after fill all details 
-savedSurvey(){
+savedSurvey(){  
   Swal.fire({
   
     icon: 'success',
@@ -268,52 +271,53 @@ savedSurvey(){
     //'success'.
     //launch:false,
    // timer: 1500
-  }
+  })
+  this.golaunchButton=true;
+
   
-  )
-  // alert('ihui');
   
-  // this.main = false;
+  
 }
 
+// LaunchSurvey(){
+//   alert('hello');
+//   this.launchSurveyArea = !this.launchSurveyArea;
+//   this.show = true;
+//   this.main = false;
+
+// }
 //Launch Survey after Saved all details 
-LaunchSurvey(){
-  const swal = Swal.mixin({
-  })
-  Swal.fire({
-    title: 'Are you sure for Launching this Survey?',
-    text: "You would be able to update this after launch!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#28a745',
-    cancelButtonColor: '#dc3545',
-    confirmButtonText: 'Yes, launch it!',
-    cancelButtonText: 'No, cancel!',
-    reverseButtons: true
-  }).then((result) => {
-    if (result.value) {
+// LaunchSurvey(){
+//   const swal = Swal.mixin({
+//   })
+//   Swal.fire({
+//     title: 'Are you sure for Launching this Survey?',
+//     text: "You would be able to update this after launch!",
+//     icon: 'warning',
+//     showCancelButton: true,
+//     confirmButtonColor: '#28a745',
+//     cancelButtonColor: '#dc3545',
+//     confirmButtonText: 'Yes, launch it!',
+//     cancelButtonText: 'No, cancel!',
+//     reverseButtons: true
+//   }).then((result) => {
+//     if (result.value) {
 
 
-      swal.fire(
-        'Survey Launched :)',
-        'You can check this survey details in OnGoing list',
-        'success'
-      )
+//       swal.fire(
+//         'Survey Launched :)',
+//         'You can check this survey details in OnGoing list',
+//         'success'
+//       )
 
-    } else if (
-      /* Read more about handling dismissals below */
-      result.dismiss === Swal.DismissReason.cancel
-    ) {
-      // swal.fire(
-      //   'Not Launch!',
-      //   'This will be saved in draft :)',
-      //   'error'
-      // )
-
-      //go to route to respodent pan
-    }
-  })
-}
+//     } else if (
+//       Read more about handling dismissals below */
+//       result.dismiss === Swal.DismissReason.cancel
+//     ) {
+  
+//     }
+//   })
+// }
 
 
 //Tabs on Create survey details 

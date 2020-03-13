@@ -32,6 +32,7 @@ export class GridListComponent implements OnInit {
   public main:boolean = false;
   public informationSurvey:boolean = false;
   public launchSurvey:boolean = true;
+  public launchSurveyArea:boolean = true;
   CurrSurvey:ISurvey ={
     SurveryName :"",
     Respodant:{Name:"",Email:"",DOB:""},
@@ -73,7 +74,13 @@ export class GridListComponent implements OnInit {
     }    console.log(text);
   })() // FOR asnc end point of TYPE SURVEY NAME 
   } // FOR TYPE SURVEY NAME 
-
+  LaunchSurvey(){
+    //alert('hello');
+    this.launchSurveyArea = false;
+    this.show = true;
+    this.main = false;
+  
+  }
  //Type new Survey Name 
  onClickSavedSurvey(){
   (async () => {
