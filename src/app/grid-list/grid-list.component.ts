@@ -265,17 +265,17 @@ CreateLaunch(){
 
 
 detailSurvey(){
-  this.show = true;
-  this.EditSelectSurvey = false; 
-  this.informationSurvey = !this.informationSurvey;
- 
-}
-// editSurvey(){
+  //this.show = true;
+  this.informationSurvey = false;
+  this.EditSelectSurvey =true; 
 
-//   this.show = true;
-//   this.EditSelectSurvey = !this.EditSelectSurvey; 
-//   this.informationSurvey = false;
-// }
+}
+editSurvey(){
+
+  //this.show = true;
+  this.EditSelectSurvey = !this.EditSelectSurvey; 
+  this.informationSurvey = false;
+}
 EditSelectedSurvey(){
   this.EditSelectedTemplate = !this.EditSelectedTemplate;
   this.ListOnGoingSurvey = !this.ListOnGoingSurvey;

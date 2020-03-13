@@ -26,3 +26,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin: 0.5em auto!important;
 }
 .swal2-popup {height: 20em!important;}
+.swal2-select {
+
+  padding: 4px 12px!important;
+
+  font-size: 17px!important;}
+  .swal2-input {
+    height: 2.5em!important;
+
+    font-size: 17px!important;
+  }

@@ -152,7 +152,7 @@
   <div class="col-lg-12">
     <div class="" *ngIf="!onGoing">
       <div class="mat-card mt-2">
-        <p>All List of On Going Survey</p> 
+        <p>All List of Expired Survey</p> 
         <div  *ngIf="!EditSelectedTemplate" class="body-mat-card">
          <app-edit-template></app-edit-template>
         </div>
@@ -181,7 +181,8 @@
                 <td>500</td>
                 <td>1000</td>
                 <td>
-                  <button mat-raised-button  matTooltip="" class="info-btn"><i class="material-icons material-icon-sm"  (click)="EditSelectedSurvey()">edit</i></button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -219,33 +220,42 @@
   <div class="col-lg-12">
     <div class="" *ngIf="!onGoingSelectSurvey">
       <div class="mat-card body-mat-card mt-2"> 
-       
-        <p>If you want to Change the End Date of this Survey and edit survey then 
-        <button mat-raised-button color="info"  (click)="editSurvey()" class="text-info" matTooltip="Edit Options">Edit Survey</button>
-        <!-- &nbsp;<button mat-raised-button color="info"  (click)="detailSurvey()" class="text-primary" matTooltip="detail survey">Check details</button> -->
-      </p>
+       <h6> Welcome on goning survey name : {{+result}} 
+        <span class="float-right">
+          <span>If you want to update in this HCL SURVEY then click here <button   (click)="editSurvey()" class="btn-sm  btn-danger" matTooltip="Edit Options">Edit Survey</button></span>
+          <span >
+            &nbsp;<button   (click)="detailSurvey()" class="btn-primary btn-sm" matTooltip="detail survey">back to details</button></span>
+      </span>
+
+       </h6>
+        
+
        
         
         <div  *ngIf="!EditSelectSurvey" ><hr>
           <app-edit-template></app-edit-template>
         </div>
-     <div  >
-       hello
-          <!-- <div class="col-lg-3">
-            Welcome on goning survey name : {{+result}} 
-          </div>
-          <div class="col-lg-3">
+     <div *ngIf="!informationSurvey" >
+      <hr>
+      <div class="row">
+       
+         
+          <div class="col-lg-4">
             <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
             <p><strong>Will Expire:</strong> 20th Jan 2010/2PM</p>
           </div>
           
-          <div class="col-lg-3">
+          <div class="col-lg-4">
             <p><strong>Total Participant</strong> - 1200</p>
             <p><strong>Attendent Participant</strong> - 300</p>
             <p><strong>Pending Participant</strong> - 900</p>
           </div>
-          <div class="col-lg-3"><app-bar-charts></app-bar-charts></div> -->
+          <div class="col-lg-4"><app-bar-charts></app-bar-charts></div> 
         </div>
+        </div>
+
+
+
         
       </div>  
      
