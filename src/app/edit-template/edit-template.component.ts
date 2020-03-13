@@ -128,7 +128,7 @@ export class EditTemplateComponent implements OnInit {
   public main:boolean = true;
   public launchSurvey:boolean = true;
   public golaunchButton:boolean = false;
-  public launchSurveyArea:boolean = true;
+ public launchSurveyArea:boolean = true;
   
 
 
@@ -260,32 +260,18 @@ removeImage() {
   this.cardImageBase64 = null;
   this.isImageSaved = false;
 }
-
-//Saved Survey after fill all details 
-savedSurvey(){  
-  Swal.fire({
-  
-    icon: 'success',
-    title: 'Your Details Saved for this Survey',
-    showConfirmButton: true,
-    //'success'.
-    //launch:false,
-   // timer: 1500
-  })
+saveSurvey(){
   this.golaunchButton=true;
-
-  
-  
-  
+  this.launchSurveyArea=true;
 }
+golaunchButtonSurvey(){
+  alert('go to respondent list of area');
 
-// LaunchSurvey(){
-//   alert('hello');
-//   this.launchSurveyArea = !this.launchSurveyArea;
-//   this.show = true;
-//   this.main = false;
+}
+//Saved Survey after fill all details 
 
-// }
+
+
 //Launch Survey after Saved all details 
 // LaunchSurvey(){
 //   const swal = Swal.mixin({

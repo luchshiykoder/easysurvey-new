@@ -32,7 +32,7 @@ export class GridListComponent implements OnInit {
   public main:boolean = false;
   public informationSurvey:boolean = false;
   public launchSurvey:boolean = true;
-  public launchSurveyArea:boolean = true;
+   public launchSurveyArea:boolean = true;
   public golaunchButton:boolean =true;
   CurrSurvey:ISurvey ={
     SurveryName :"",
@@ -75,7 +75,7 @@ export class GridListComponent implements OnInit {
     }    console.log(text);
   })() // FOR asnc end point of TYPE SURVEY NAME 
   } // FOR TYPE SURVEY NAME 
- 
+
   savedSurvey(){  
     Swal.fire({
     
@@ -86,12 +86,13 @@ export class GridListComponent implements OnInit {
       //launch:false,
      // timer: 1500
     })
-    this.golaunchButton=true;
+ 
   
     
     
     
   }
+
  //Type new Survey Name 
  onClickSavedSurvey(){
   (async () => {

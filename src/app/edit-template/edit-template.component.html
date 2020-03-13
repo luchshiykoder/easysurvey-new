@@ -52,12 +52,12 @@
     <br> -->
     
     <!-- <input id="Next" type="button" value=">" class="btn btn-primary" onclick="doTab('Next')" /> -->
- <!-- <div class=""  *ngIf="golaunchButton">
-    <button mat-raised-button  matTooltip="Save Data" (click)="LaunchSurvey()" class="btn-success"><i class="material-icons">
+ <div class=""  *ngIf="golaunchButton">
+    <button mat-raised-button  matTooltip="Save Data"    class="btn-success" (click)="golaunchButtonSurvey()"><i class="material-icons">
       live_tv
       </i> Go for launch </button>
     </div>
-  </div> -->
+  </div>
 
   <div class="col-sm-10" style="    background: #fff;border-left: 1px solid #5dc6ef;">
     <div class="tab-content">
@@ -293,7 +293,7 @@
               <hr>
                <div>
 
-                  <button class="btn btn-primary  btn-sm btn-next" matTooltip="Save Details" (click)="savedSurvey()" > Save / Next &rarr; </button> 
+                  <button class="btn btn-primary  btn-sm btn-next" matTooltip="Save Details" (click)="saveSurvey()" > Save / Next &rarr; </button> 
                </div>
             </div>    
         </div>

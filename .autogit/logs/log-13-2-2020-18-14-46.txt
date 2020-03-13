@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Fri Mar 13 2020 18:14:46 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/edit-template/edit-template.component.html
+
+
+Created files:
+* .autogit/logs/log-13-2-2020-17-44-34.txt
+
+
+Deleted files:
+
+
+Renamed files:
