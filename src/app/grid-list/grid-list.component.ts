@@ -139,6 +139,7 @@ export class GridListComponent implements OnInit {
     this.createNewSurvey = true;
     this.savedsurvey =  !this.savedsurvey;
   }
+  
   // FOR asnc start point of selected survey name 
   onClickSelectSurvey() {
 

@@ -266,9 +266,9 @@ savedSurvey(){
     //launch:false,
    // timer: 1500
   })
-  alert('ihui');
-  this.show = true;
-  this.main = false;
+  // alert('ihui');
+  // this.show = false;
+  // this.main = false;
 }
 
 //Launch Survey after Saved all details 
@@ -287,20 +287,25 @@ LaunchSurvey(){
     reverseButtons: true
   }).then((result) => {
     if (result.value) {
+
+
       swal.fire(
         'Survey Launched :)',
         'You can check this survey details in OnGoing list',
         'success'
       )
+
     } else if (
       /* Read more about handling dismissals below */
       result.dismiss === Swal.DismissReason.cancel
     ) {
-      swal.fire(
-        'Not Launch!',
-        'This will be saved in draft :)',
-        'error'
-      )
+      // swal.fire(
+      //   'Not Launch!',
+      //   'This will be saved in draft :)',
+      //   'error'
+      // )
+
+      //go to route to respodent pan
     }
   })
 }
