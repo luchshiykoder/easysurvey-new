@@ -280,7 +280,7 @@
                 <th>Region</th>
                 <th>Attendent Participant</th>
                 <th>Total Participant</th>
-                <th>Edit</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -294,7 +294,8 @@
                 <td>500</td>
                 <td>1000</td>
                 <td>
-                  <button mat-raised-button  matTooltip="" class="info-btn"><i class="material-icons material-icon-sm" >edit</i></button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
                 </td>
               </tr>
             </tbody>

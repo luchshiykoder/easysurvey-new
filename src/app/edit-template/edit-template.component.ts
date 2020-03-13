@@ -262,8 +262,8 @@ savedSurvey(){
     title: 'Your Details Saved for this Survey',
     showConfirmButton: true,
     //'success'.
-    launch:false,
-    timer: 1500
+    //launch:false,
+   // timer: 1500
   })
 }
 

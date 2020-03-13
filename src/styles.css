@@ -13,10 +13,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
    
 #swal2-title {
     margin: 0px;
-    font-size: 17px;
+    font-size: 18px;
     margin-bottom: 12px;
     font-weight: 700;
-
+  
   }
   .swal2-styled {
     padding: .45em 1.5em!important;
@@ -26,7 +26,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .swal2-checkbox, .swal2-file, .swal2-input, .swal2-radio, .swal2-select, .swal2-textarea {
     margin: 0.5em auto!important;
 }
-.swal2-popup {height: 15em!important;}
+.swal2-popup {height: 20em!important;}
 .swal2-select {
 
   padding: 4px 12px!important;
