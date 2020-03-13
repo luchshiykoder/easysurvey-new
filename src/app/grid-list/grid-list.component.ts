@@ -33,6 +33,7 @@ export class GridListComponent implements OnInit {
   public informationSurvey:boolean = false;
   public launchSurvey:boolean = true;
   public launchSurveyArea:boolean = true;
+  public golaunchButton:boolean =true;
   CurrSurvey:ISurvey ={
     SurveryName :"",
     Respodant:{Name:"",Email:"",DOB:""},
@@ -74,12 +75,22 @@ export class GridListComponent implements OnInit {
     }    console.log(text);
   })() // FOR asnc end point of TYPE SURVEY NAME 
   } // FOR TYPE SURVEY NAME 
-  LaunchSurvey(){
-    //alert('hello');
-    this.launchSurveyArea = false;
-    this.show = true;
-    this.main = false;
+ 
+  savedSurvey(){  
+    Swal.fire({
+    
+      icon: 'success',
+      title: 'Your Details Saved for this Survey',
+      showConfirmButton: true,
+      //'success'.
+      //launch:false,
+     // timer: 1500
+    })
+    this.golaunchButton=true;
   
+    
+    
+    
   }
  //Type new Survey Name 
  onClickSavedSurvey(){
