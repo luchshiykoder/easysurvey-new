@@ -123,6 +123,7 @@ export class EditTemplateComponent implements OnInit {
   }
   public editSurveyDetails:boolean = true;
   public createNewSurvey:boolean = true;
+  public main:boolean = true;
   
 
 
@@ -265,6 +266,9 @@ savedSurvey(){
     //launch:false,
    // timer: 1500
   })
+  alert('ihui');
+  this.show = true;
+  this.main = false;
 }
 
 //Launch Survey after Saved all details 
