@@ -8,6 +8,7 @@ import {PeriodicElement}  from './../Interfaces/PeriodicElement';
 import {MatTableDataSource} from '@angular/material/table';
 import {ExcelService} from '../_services/excel.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {GridListComponent} from '../grid-list/grid-list.component'
 import {tableDragger} from 'table-dragger'
 
 //List of All Saved Dimensions 
@@ -124,6 +125,7 @@ export class EditTemplateComponent implements OnInit {
   public editSurveyDetails:boolean = true;
   public createNewSurvey:boolean = true;
   public main:boolean = true;
+  public launchSurvey:boolean = true;
   
 
 
@@ -259,15 +261,18 @@ removeImage() {
 //Saved Survey after fill all details 
 savedSurvey(){
   Swal.fire({
+  
     icon: 'success',
     title: 'Your Details Saved for this Survey',
     showConfirmButton: true,
     //'success'.
     //launch:false,
    // timer: 1500
-  })
+  }
+  
+  )
   // alert('ihui');
-  // this.show = false;
+  
   // this.main = false;
 }
 

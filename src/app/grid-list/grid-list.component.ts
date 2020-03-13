@@ -31,6 +31,7 @@ export class GridListComponent implements OnInit {
   public menuToggle:boolean = true;
   public main:boolean = false;
   public informationSurvey:boolean = false;
+  public launchSurvey:boolean = true;
   CurrSurvey:ISurvey ={
     SurveryName :"",
     Respodant:{Name:"",Email:"",DOB:""},
