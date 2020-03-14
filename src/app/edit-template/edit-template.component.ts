@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
-import Swal from 'sweetalert2';
+//import Swal from 'sweetalert2';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import {ISurvey} from "../Interfaces/ISurvey";
 import {SurveyDataService} from "../_services/DataServices/survey.data.service";
@@ -9,7 +9,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {ExcelService} from '../_services/excel.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {GridListComponent} from '../grid-list/grid-list.component'
-import {tableDragger} from 'table-dragger'
+//import {tableDragger} from 'table-dragger'
 
 //List of All Saved Dimensions 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -262,10 +262,10 @@ removeImage() {
 }
 saveSurvey(){
   this.golaunchButton=true;
-  this.launchSurveyArea=true;
+  this.launchSurveyArea=false;
 }
 golaunchButtonSurvey(){
-  alert('go to respondent list of area');
+  this.golaunchButton=false;
 
 }
 //Saved Survey after fill all details 
