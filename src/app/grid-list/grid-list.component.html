@@ -1,3 +1,4 @@
+
 <div class="row">
   <div class="col-lg-12 dash-head text-center">
     <!-- <h6 *ngIf="!show">POC ALL DETAILS</h6> -->
@@ -81,6 +82,16 @@
       <div class="mat-card body-mat-card " >
         <app-edit-template  *ngIf="!editSurveyDetails"></app-edit-template>
       </div>
+      <div class="col-lg-12">
+        <div class="" *ngIf="!launchSurveyArea">
+         
+          <div class="mat-card body-mat-card " >
+            <div class="text-center">
+              launchSurvey area
+              </div>
+          </div>
+        </div>
+      </div> 
     </div>
   </div>
   <div class="col-lg-12">
@@ -192,7 +203,7 @@
     </div>
   </div>
  <div class="col-lg-12">
-    <div class="" >
+    <div class="" *ngIf="!launchSurveyArea">
      
       <div class="mat-card body-mat-card " >
         <div class="text-center">

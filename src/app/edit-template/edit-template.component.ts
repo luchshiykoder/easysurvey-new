@@ -262,10 +262,11 @@ removeImage() {
 }
 saveSurvey(){
   this.golaunchButton=true;
-  this.launchSurveyArea=false;
+  //this.launchSurveyArea=false;
 }
 golaunchButtonSurvey(){
-  this.golaunchButton=false;
+  this.launchSurveyArea=false;
+  this.main=true;
 
 }
 //Saved Survey after fill all details 
