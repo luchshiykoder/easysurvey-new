@@ -296,7 +296,8 @@
             <tbody>
             
               <tr>
-                <td><strong>TATAAIG </strong> <br><strong (click)="detailcompltedSurveyGraph()">Details survey</strong> </td>
+                <td><strong>TATAAIG </strong> <br>
+                  <span style="cursor:pointer;" class="badge badge-secondary" (click)="detailcompltedSurveyGraph()">Details survey</span>  </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
                 <td>20 January 2020 /7pm</td>
@@ -311,6 +312,8 @@
               <tr>
                 <td colspan="8" style="padding: 0;">
                 <div *ngIf="!compltedSurveyGraph">
+                <div style="    padding: 38px;
+                background: #74ada7">
                   <div class="row">
                     
          
@@ -326,12 +329,14 @@
                     </div>
                     <div class="col-lg-4"><app-bar-charts></app-bar-charts></div> 
                   </div>
+                  </div>
                 
                 </div>
               </td>
               </tr>
               <tr>
-                <td><strong>TATAAIG </strong> <br><strong (click)="detailcompltedSurveyGraph()">Details survey</strong> </td>
+                <td><strong>TATAAIG </strong> <br>
+                  <span class="badge badge-secondary" style="cursor:pointer;">Details survey</span> </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
                 <td>20 January 2020 /7pm</td>
