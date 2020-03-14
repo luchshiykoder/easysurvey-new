@@ -39,8 +39,6 @@ export class EditTemplateComponent implements OnInit {
     ' Question 3: Question according to your requirements with option type?'
   ];
  
-  public show:boolean = false;
-  public buttonName:any = 'Show';
  
     _ref:any;   
     removeObject(){
@@ -130,12 +128,12 @@ export class EditTemplateComponent implements OnInit {
   public main:boolean = true;
   public launchSurvey:boolean = true;
   public golaunchButton:boolean = false;
-  public launchSurveyArea:boolean = true;
-
+ public launchSurveyArea:boolean = true;
+  
 
 
 //Text Editors
-
+show = false;
 //htmlContent = '';
 editorConfig: AngularEditorConfig = {
   editable: true,
@@ -266,19 +264,11 @@ saveSurvey(){
   this.golaunchButton=true;
   //this.launchSurveyArea=false;
 }
-
-
 golaunchButtonSurvey(){
-  this.show = !this.show;
-  this.golaunchButton= false;
-  this.launchSurveyArea = true;
+  this.launchSurveyArea=false;
+  
 
-  if(this.show)  
-  this.buttonName = "GoTo Launch Survey";
-else
-  this.buttonName = "Send Launch Survey";
 }
-
 //Saved Survey after fill all details 
 
 
