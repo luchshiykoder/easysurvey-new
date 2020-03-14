@@ -124,6 +124,7 @@ export class GridListComponent implements OnInit {
     this.text=text;
     this.menuToggle = false;
     this.main = true;
+    
    
   }
 })() // FOR asnc end point of TYPE SURVEY NAME 

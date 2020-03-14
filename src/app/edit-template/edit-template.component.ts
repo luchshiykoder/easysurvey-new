@@ -92,9 +92,9 @@ export class EditTemplateComponent implements OnInit {
     this.modalService.open(welcome, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
   }
   //Invitation Template Model
-  // open1(invitation) {
-  //   this.modalService.open(invitation, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
-  // }
+  open1(invitation) {
+    this.modalService.open(invitation, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
+  }
   //Reminder Template Model
   // open2(reminder) {
   //   this.modalService.open(reminder, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
@@ -270,6 +270,9 @@ golaunchButtonSurvey(){
   this.hideAfterReady=true;
   this.golaunchButton=false;
 
+}
+editSurveyName(){
+  alert('qoehdiued');
 }
 //Saved Survey after fill all details 
 

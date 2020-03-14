@@ -77,9 +77,9 @@
         </h6>
     </div>
     <div class="col-lg-6 icon-update text-right">
-      <h6>Survey Name is : <strong>{{this.CurrSurvay.SurveryName}}</strong> &nbsp;
-        <button class="btn btn-secondary  btn-circle"><i class="material-icons">edit</i></button>&nbsp;
-        <button class="btn btn-danger  btn-circle"><i class="material-icons"> delete_forever </i></button>
+      <h6>Survey Name is : <strong  contenteditable="true"  placement="top" ngbTooltip="Tooltip on top">{{this.CurrSurvay.SurveryName}}</strong> &nbsp;
+        <button class="btn btn-secondary  btn-circle" (click)="editSurveyName()"><i class="material-icons">edit</i></button>
+        <!-- <button class="btn btn-danger  btn-circle"><i class="material-icons"> delete_forever </i></button> -->
       </h6>
     </div> 
   </div>
