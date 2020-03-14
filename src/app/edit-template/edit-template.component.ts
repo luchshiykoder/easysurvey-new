@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
-//import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import {ISurvey} from "../Interfaces/ISurvey";
 import {SurveyDataService} from "../_services/DataServices/survey.data.service";
@@ -271,9 +271,33 @@ golaunchButtonSurvey(){
   this.golaunchButton=false;
 
 }
-editSurveyName(){
-  alert('qoehdiued');
-}
+editSurveyName(){  
+    (async () => {
+      const { value: text } = await Swal.fire({
+        allowOutsideClick: false,
+     
+        title: 'Re-Enter Survey Name',
+        input: 'text',
+        inputPlaceholder: 'Enter New Survey Name'
+      })
+      
+      if (text) {
+       // this.CurrSurvey.SurveryName = text;
+       // this._surveyDataService.CreateSurvey(this.CurrSurvey);
+        Swal.fire(
+          `Survey Name: ${text}`,
+          'You have successfully changed the survey name!',
+          'success'
+        )       
+       
+      }    console.log(text);
+    })() // FOR asnc end point of TYPE SURVEY NAME 
+    } // FOR TYPE SURVEY NAME 
+ 
+
+// editSurveyName(){
+//   alert('qoehdiued');
+// }
 //Saved Survey after fill all details 
 
 

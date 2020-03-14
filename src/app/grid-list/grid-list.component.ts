@@ -79,22 +79,23 @@ export class GridListComponent implements OnInit {
   })() // FOR asnc end point of TYPE SURVEY NAME 
   } // FOR TYPE SURVEY NAME 
 
-  savedSurvey(){  
-    Swal.fire({
+  // savedSurvey(){  
+  //   Swal.fire({
     
-      icon: 'success',
-      title: 'Your Details Saved for this Survey',
-      showConfirmButton: true,
-      //'success'.
-      //launch:false,
-     // timer: 1500
-    })
+  //     icon: 'success',
+
+  //    // title: 'Your Details Saved for this Survey',
+  //     showConfirmButton: true,
+  //     //'success'.
+  //     //launch:false,
+  //    // timer: 1500
+  //   })
  
   
     
     
     
-  }
+  // }
 
  //Type new Survey Name 
  onClickSavedSurvey(){
