@@ -1,16 +1,16 @@
 <div class="row ">
   <div class="col-lg-12">
     <div class="" *ngIf="!launchSurveyArea">
-      
+      <p>1. Choose your user form the list to send Invitation/Reminder mail, list given below.</p>
+      <p>2. Choose type of mail : 
+        <select class="form-control-sm" id="" formControlName="mail-type">
+          <option>-type-mail-</option>
+          <option>Invitaion</option>
+          <option>Reminder</option>
+       </select>&nbsp; <button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Mail</button>
+      </p>
       <div class="mat-card body-mat-card mt-4" >
-        <p>1. Choose your user form the list to send Invitation/Reminder mail, list given below.</p>
-          <p>2. Choose mail type : 
-            <select class="form-control-sm" id="" formControlName="mail-type">
-              <option>-type-mail-</option>
-              <option>Invitaion</option>
-              <option>Reminder</option>
-           </select>&nbsp; <button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Mail</button>
-          </p>
+      
 
         <div class="text-left">
         
