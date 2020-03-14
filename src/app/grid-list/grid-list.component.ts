@@ -34,12 +34,15 @@ export class GridListComponent implements OnInit {
   public launchSurvey:boolean = true;
    public launchSurveyArea:boolean = true;
   public golaunchButton:boolean =true;
+  public compltedSurveyGraph:boolean = true;
   CurrSurvey:ISurvey ={
     SurveryName :"",
     Respodant:{Name:"",Email:"",DOB:""},
    // welcomeMsg:""
   };
- 
+  detailcompltedSurveyGraph(){
+    this.compltedSurveyGraph=false
+  }
   //Type new Survey Name 
   onClickTypeSurvey(){
     (async () => {
@@ -163,46 +166,46 @@ export class GridListComponent implements OnInit {
   // FOR asnc start point of selected survey name 
   onClickSelectSurvey() {
 
-    (async () => {
+    // (async () => {
    
-    const { value: survey } = await Swal.fire({
-      allowOutsideClick: false,
-      title: 'Select Survey Name',
-      input: 'select',
-      inputOptions: {
+    // const { value: survey } = await Swal.fire({
+    //   allowOutsideClick: false,
+    //   title: 'Select Survey Name',
+    //   input: 'select',
+    //   inputOptions: {
 
-        HCL: 'HCL',
-        TATAAIG: 'TATAAIG',
-        CRISIL: 'CRISIL',
-        ARMEZO: 'ARMEZO'
-      },
-      inputPlaceholder: 'Select a survey',
-      showCancelButton: true,
-      cancelButtonColor: '#d33',
-      inputValidator: (value) => {
+    //     HCL: 'HCL',
+    //     TATAAIG: 'TATAAIG',
+    //     CRISIL: 'CRISIL',
+    //     ARMEZO: 'ARMEZO'
+    //   },
+    //   inputPlaceholder: 'Select a survey',
+    //   showCancelButton: true,
+    //   cancelButtonColor: '#d33',
+    //   inputValidator: (value) => {
        
-        return new Promise((resolve) => {
+    //     return new Promise((resolve) => {
           
-          if (value === '') {
-            resolve('You need to select :)')
+    //       if (value === '') {
+    //         resolve('You need to select :)')
             
             
-          }else{
-            resolve();
+    //       }else{
+    //         resolve();
              
-          } 
+    //       } 
           
-        })
-      }
-    })
+    //     })
+    //   }
+    // })
     
-    if (survey) {
-      Swal.fire(
-        `You selected: ${survey}`,
-        'To continee click the button!',
-        'success',
+    // if (survey) {
+    //   Swal.fire(
+    //     `You selected: ${survey}`,
+    //     'To continee click the button!',
+    //     'success',
         
-      )                                                                                                     
+    //   )                                                                                                     
       this.show = true;
       this.onGoing = true;
       this.expireSurvey =true;
@@ -216,8 +219,8 @@ export class GridListComponent implements OnInit {
       this.EditSelectSurvey = true;
       this.main = true;
     }
-  })() // FOR asnc end point of selected survey name 
-  }
+  // })() // FOR asnc end point of selected survey name 
+
 
  // FOR asnc start point of selected survey name 
  onClickCompletedSurvey() {

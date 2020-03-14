@@ -46,7 +46,7 @@
         <p>Check your ongoing survey for multiple online business persepective coversation.</p>
       </mat-card-content>
       <mat-card-actions >
-        <button mat-raised-button  matTooltip="Edit/Update Survey" class="warning" (click)="onClickSelectSurvey()">Manage Survey</button>
+        <!-- <button mat-raised-button  matTooltip="Edit/Update Survey" class="warning" (click)="onClickSelectSurvey()">Manage Survey</button> -->
         <button mat-raised-button  matTooltip="Active Survey Details" class="warning-btn"  (click)="toggle1()">Index Survey</button>
         <span class="badge text-info" style="font-weight: 100;">Last Survey: SBI- 25th Jan 2020, 11AM</span>
       </mat-card-actions>
@@ -59,7 +59,7 @@
         <div mat-card-avatar class="example-header-image">
               <i class="material-icons reddy"> alarm_off</i>
         </div>
-        <mat-card-title>Closed Survey</mat-card-title>
+        <mat-card-title>Completed Survey</mat-card-title>
         <mat-card-subtitle  class="reddy" *ngIf="!show">Completed </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content *ngIf="!show">
@@ -152,7 +152,7 @@
   <div class="col-lg-12">
     <div class="" *ngIf="!onGoing">
       <div class="mat-card mt-2">
-        <p>All List of Expired Survey</p> 
+        <p>All List of onGoing Survey</p> 
         <div  *ngIf="!EditSelectedTemplate" class="body-mat-card">
          <app-edit-template></app-edit-template>
         </div>
@@ -173,7 +173,7 @@
             <tbody>
             
               <tr>
-                <td><strong>TATAAIG </strong>  </td>
+                <td><strong><button class="btn btn-sm btn-primary" (click)="onClickSelectSurvey()">TATAAIG </button></strong>  </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
                 <td>20 January 2020 /7pm</td>
@@ -275,7 +275,7 @@
   <div class="col-lg-12">
     <div class="" *ngIf="!closeSelectSurvey">
       <div class="mat-card mt-2">
-        <p>All List of On Going Survey</p> 
+        <p>All List of Completed Survey</p> 
         <!-- <div  *ngIf="!EditSelectedTemplate">
          <app-edit-template></app-edit-template>
         </div> -->
@@ -296,7 +296,42 @@
             <tbody>
             
               <tr>
-                <td><strong>TATAAIG </strong>  </td>
+                <td><strong>TATAAIG </strong> <br><strong (click)="detailcompltedSurveyGraph()">Details survey</strong> </td>
+                <td><span class="text-success">Active</span></td>
+                <td>04 January 2020 /2pm</td>
+                <td>20 January 2020 /7pm</td>
+                <td>Phase 3</td>
+                <td>500</td>
+                <td>1000</td>
+                <td>
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="8" style="padding: 0;">
+                <div *ngIf="!compltedSurveyGraph">
+                  <div class="row">
+                    
+         
+                    <div class="col-lg-4">
+                      <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
+                      <p><strong>Will Expire:</strong> 20th Jan 2010/2PM</p>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                      <p><strong>Total Participant</strong> - 1200</p>
+                      <p><strong>Attendent Participant</strong> - 300</p>
+                      <p><strong>Pending Participant</strong> - 900</p>
+                    </div>
+                    <div class="col-lg-4"><app-bar-charts></app-bar-charts></div> 
+                  </div>
+                
+                </div>
+              </td>
+              </tr>
+              <tr>
+                <td><strong>TATAAIG </strong> <br><strong (click)="detailcompltedSurveyGraph()">Details survey</strong> </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
                 <td>20 January 2020 /7pm</td>
@@ -311,6 +346,7 @@
             </tbody>
           </table>
         </div>
+       
       </div>
     </div>
   </div>
