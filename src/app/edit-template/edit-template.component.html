@@ -1,7 +1,68 @@
-<div class="header-surevy">
 <div class="row ">
+  <div class="col-lg-12">
+    <div class="" *ngIf="!launchSurveyArea">
+      <button type="button" class="btn btn-outline-primary" (click)="open(invitation)">Launch for All</button>&nbsp;
+      <button type="button" class="btn btn-outline-secondary">Selected mail for Survey</button>&nbsp;
+      <button type="button" class="btn btn-outline-success">Reminder mail for Survey</button>
+     
+      <div class="mat-card body-mat-card mt-4" >
+     
+        <div class="text-left">
+        
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr> 
+                  <th><input type="checkbox"></th> 
+                  <th>Emp Name</th>
+                  <th>Email Id</th>
+                  <th>Mobile No.</th>
+                  <th>Address</th>
+                  <th>Dimension</th>
+                  <th>Date</th>
+                  <!-- <th>Action</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td><span class="text-primary">Rahul </span> </td>
+                  <td>rahul@gmail.com </td>
+                  <td>9990007252</td>
+                  <td>Noida</td>
+                  <td>HR</td>
+                  <td>15, March 2020</td>
+                  <!-- <td>
+                    <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                    <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
+                  </td> -->
+                </tr>  
+                <tr>
+                  <td><input type="checkbox"></td>
+                  <td><span class="text-primary">Mayank khanna </span> </td>
+                  <td>mayank.khanna@gmail.com </td>
+                  <td>9811458258</td>
+                  <td>Agra</td>
+                  <td>HR</td>
+                  <td>15, March 2020</td>
+                  <!-- <td>
+                    <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info">Edit</button> &nbsp;
+                    <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger">Delete</button>
+                  </td> -->
+                </tr>   
+              </tbody>
+            </table>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div> 
+  </div>
 
-    <div class="col-lg-6">
+<div class="header-surevy" *ngIf="!hideAfterReady">
+    <div class="row ">
+
+     <div class="col-lg-6">
         <h6 > Fill all these step to launch your Survey
         <span class=""  *ngIf="golaunchButton">
           <button   matTooltip="Save Data"    class="btn-sm btn btn-success" (click)="golaunchButtonSurvey()"><i class="material-icons" style="font-size: 13px;">
@@ -18,76 +79,7 @@
     </div> 
   </div>
 </div>
-<div class="row ">
-<div class="col-lg-12">
-  <div class="" *ngIf="!launchSurveyArea">
-   
-    <div class="mat-card body-mat-card " >
-      <div class="text-center">
-        <div class="table-responsive">
-          <table class="table table-bordered">
-            <thead>
-              <tr>  
-                <th>Survey Name </th>
-                <th>Start Date/Time</th>
-                <th>Welcome Template</th>
-                <th>Email Template</th>
-                <th>Add Question</th>
-                <th>End Date</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><span class="text-primary">SBI general </span> </td>
-                <td>20 June 2019 / 11am </td>
-                <td><i class="material-icons text-danger">
-                  close
-                  </i></td>
-                <td><i class="material-icons text-danger">
-                  close
-                  </i></td>
-                <td><i class="material-icons text-danger">
-                  close
-                  </i></td>
-                <td><i class="material-icons text-danger">
-                  close
-                  </i>
-                  </td>
-                <td>
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
-                </td>
-              </tr>  
-              <tr>
-                <td><span class="text-primary">SBI general</span>  </td>
-                <td>20 June 2019 / 11am </td>
-                <td><i class="material-icons text-danger">
-                  close
-                  </i></td>
-                <td><i class="material-icons text-danger">
-                  close
-                  </i></td>
-                <td><i class="material-icons text-success">
-                  check
-                  </i></td>
-                <td><i class="material-icons text-danger">
-                  close
-                  </i>
-                  </td>
-                <td>
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info">Edit</button> &nbsp;
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger">Delete</button>
-                </td>
-              </tr>   
-            </tbody>
-          </table>
-        </div>
-        </div>
-    </div>
-  </div>
-</div> 
-</div>
+
 <div class="row " *ngIf="!hideAfterReady">
   
   <div class="col-sm-2"> <!-- required for floating -->
@@ -417,7 +409,7 @@
 
 
 
-<!-- 
+
   <ng-template #invitation let-modal>
 
     <div class="modal-body">
@@ -444,8 +436,7 @@
               <p>Regards,<br>
                 (on behalf of Pernod Ricard Asia IT)</p>
               <div class="text-center">
-                    <a href="" style="background: #0294ff;padding: 8px 18px;color: #FFFF;border-radius: 20px;    text-decoration: none;">	
-                <span style="font-size: 20px;position: relative;color:#0294ff;">&#9758;</span> Talke Survey</a>
+                <button class="btn btn-sm btn-info" type="button" disabled>Take Survey</button>
               </div>
           </div>
         </div>
@@ -459,12 +450,12 @@
             </p>
       </div>
     </div>
-    <div class="modal-footer">
+    <!-- <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-    </div>
+    </div> -->
 
   </ng-template> 
-   -->
+  
   
 
   <!-- <ng-template #reminder let-modal>
