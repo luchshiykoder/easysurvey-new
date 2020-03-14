@@ -13,7 +13,10 @@
         <button type="button" matTooltip="Open Menu"   class="btn btn-sm btn-secondary" (click)="onClickTypeSurvey1()" style="line-height: 0;"><i class="material-icons material-icons-sm">
           menu_open
           </i></button>
+
   </div>
+  
+  
   <div class="col-lg-4 col-sm-6 col-xs-4">
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
@@ -82,18 +85,10 @@
       <div class="mat-card body-mat-card " >
         <app-edit-template  *ngIf="!editSurveyDetails"></app-edit-template>
       </div>
-      <div class="col-lg-12">
-        <div class="" *ngIf="!launchSurveyArea">
-         
-          <div class="mat-card body-mat-card " >
-            <div class="text-center">
-              launchSurvey area
-              </div>
-          </div>
-        </div>
-      </div> 
+      
     </div>
   </div>
+  
   <div class="col-lg-12">
     <div class="" *ngIf="!savedsurvey">
       <div class="mat-card mt-2">

@@ -129,6 +129,7 @@ export class EditTemplateComponent implements OnInit {
   public launchSurvey:boolean = true;
   public golaunchButton:boolean = false;
  public launchSurveyArea:boolean = true;
+ public hideAfterReady:boolean =false;
   
 
 
@@ -266,7 +267,8 @@ saveSurvey(){
 }
 golaunchButtonSurvey(){
   this.launchSurveyArea=false;
-  
+  this.hideAfterReady=true;
+  this.golaunchButton=false;
 
 }
 //Saved Survey after fill all details 

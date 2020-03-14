@@ -2,7 +2,13 @@
 <div class="row ">
 
     <div class="col-lg-6">
-        <h6 > Fill all these step to launch your Survey </h6>
+        <h6 > Fill all these step to launch your Survey
+        <span class=""  *ngIf="golaunchButton">
+          <button   matTooltip="Save Data"    class="btn-sm btn btn-success" (click)="golaunchButtonSurvey()"><i class="material-icons" style="font-size: 13px;">
+            live_tv
+            </i> Go for launch, Ready? </button>
+          </span>
+        </h6>
     </div>
     <div class="col-lg-6 icon-update text-right">
       <h6>Survey Name is : <strong>{{this.CurrSurvay.SurveryName}}</strong> &nbsp;
@@ -12,10 +18,78 @@
     </div> 
   </div>
 </div>
-
-<div class="row">
+<div class="row ">
+<div class="col-lg-12">
+  <div class="" *ngIf="!launchSurveyArea">
+   
+    <div class="mat-card body-mat-card " >
+      <div class="text-center">
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>  
+                <th>Survey Name </th>
+                <th>Start Date/Time</th>
+                <th>Welcome Template</th>
+                <th>Email Template</th>
+                <th>Add Question</th>
+                <th>End Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="text-primary">SBI general </span> </td>
+                <td>20 June 2019 / 11am </td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i>
+                  </td>
+                <td>
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
+                </td>
+              </tr>  
+              <tr>
+                <td><span class="text-primary">SBI general</span>  </td>
+                <td>20 June 2019 / 11am </td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i></td>
+                <td><i class="material-icons text-success">
+                  check
+                  </i></td>
+                <td><i class="material-icons text-danger">
+                  close
+                  </i>
+                  </td>
+                <td>
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info">Edit</button> &nbsp;
+                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger">Delete</button>
+                </td>
+              </tr>   
+            </tbody>
+          </table>
+        </div>
+        </div>
+    </div>
+  </div>
+</div> 
+</div>
+<div class="row " *ngIf="!hideAfterReady">
   
-
   <div class="col-sm-2"> <!-- required for floating -->
     <!-- Nav tabs -->
     <!-- <ul class="nav nav-tabs tabs-left list-form">
@@ -52,11 +126,7 @@
     <br> -->
     
     <!-- <input id="Next" type="button" value=">" class="btn btn-primary" onclick="doTab('Next')" /> -->
- <div class=""  *ngIf="golaunchButton">
-    <button mat-raised-button  matTooltip="Save Data"    class="btn-success" (click)="golaunchButtonSurvey()"><i class="material-icons">
-      live_tv
-      </i> Go for launch </button>
-    </div>
+
   </div>
 
   <div class="col-sm-10" style="    background: #fff;border-left: 1px solid #5dc6ef;">
@@ -1296,13 +1366,3 @@
   </ng-template>  
 
   
-  <div class="col-lg-12">
-    <div class="" *ngIf="!launchSurveyArea">
-     
-      <div class="mat-card body-mat-card " >
-        <div class="text-center">
-          launchSurvey area
-          </div>
-      </div>
-    </div>
-  </div> 
