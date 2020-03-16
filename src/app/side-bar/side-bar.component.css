@@ -3,23 +3,18 @@
     text-transform: uppercase;
     letter-spacing: 1px;
       height: 30px;
-
       font-size: 13px;
 }
 .mat-nav-list a:hover{
     background-color:#015ba5;
 }
 .profile-info{
-    background: #000e1b;
     text-align: center;
-    padding: 1px 0px;
-    margin-bottom: 10px;
- 
 }
 .user-img{
     overflow: hidden;
     margin: 0 auto;
-    border:5px solid #2d323e;
+    border:5px solid #d4d4d4;
 }
 .profile-info img{
     max-width: 100%;
@@ -27,22 +22,15 @@
 .example-ripple-container {
     cursor: pointer;
     text-align: center;
-  
-    
     height: auto;
     padding: 0;
-  
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-  
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
   }
-
-
-
   .user-img{
     padding: 20px;
     background-color: #fff;
