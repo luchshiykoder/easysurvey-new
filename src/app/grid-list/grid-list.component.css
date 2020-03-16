@@ -129,16 +129,21 @@ color: #fff;
 .table-bordered td, .table-bordered th {
  border: 1px solid none;
 }
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 6px solid #ffffff;}
 .table thead th {
     vertical-align: bottom;
     border-bottom: 1px solid #dee2e6;
     background: #5b5959;}
     .table tr  {
-        background-color: #ffffff;
-        padding-top: 7px;
-        padding-bottom: 7px;
-        color: #979797;
-        font-size: 11px;}
+        background-color: #eeeeee;
+        /* padding-top: 7px; */
+        /* padding-bottom: 7px; */
+        /* color: #979797; */
+        /* font-size: 11px; */
+        text-align: center;}
 /* 
 
 .checkmark {
