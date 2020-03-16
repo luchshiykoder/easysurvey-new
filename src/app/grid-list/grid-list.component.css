@@ -120,7 +120,7 @@ mat-card{width:100%;}
     transition: .3s;
 transform: translateY(-0.25rem);
 box-shadow: 0 2.25rem 1.5rem -1.5rem rgba(33,37,41,.3),0 0 1.5rem .5rem rgba(33,37,41,.05);
-background: #055b84;
+background: #58666d;
 color: #fff;
 }
  /* .example-card:hover .material-icons{

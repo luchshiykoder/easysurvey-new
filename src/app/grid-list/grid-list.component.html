@@ -21,12 +21,11 @@
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
-          <!-- <i class="material-icons info"> network_check </i> -->
-          <i class="fa fa-tachometer info"> </i>
+          <img src="../assets/start.png" width="25">
         </div>
         <mat-card-title>Create New Survey </mat-card-title>
       
-        <mat-card-subtitle  class="info" *ngIf="!show">Start Survey?</mat-card-subtitle>
+        <mat-card-subtitle  class="start" *ngIf="!show">Start Survey?</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content *ngIf="!show" >
         <p>Create your new survey for taking feedback of your users with online coversation.</p>
@@ -42,18 +41,18 @@
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
-          <i class="material-icons warning">alarm_on</i>
+          <img src="../assets/ongoing.png" width="25">
         </div>
         <mat-card-title>OnGoing Survey</mat-card-title>
-        <mat-card-subtitle  class="warning" *ngIf="!show">Running on </mat-card-subtitle>
+        <mat-card-subtitle  class="working" *ngIf="!show">Running on </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content *ngIf="!show">
         <p>Check your ongoing survey for multiple online business persepective coversation.</p>
       </mat-card-content>
       <mat-card-actions >
         <!-- <button mat-raised-button  matTooltip="Edit/Update Survey" class="warning" (click)="onClickSelectSurvey()">Manage Survey</button> -->
-        <button mat-raised-button  matTooltip="Active Survey Details" class="warning-btn"  (click)="toggle1()">Index Survey</button>
-        <span class="badge text-info" style="font-weight: 100;">Last Survey: SBI- 25th Jan 2020, 11AM</span>
+        <button mat-raised-button  matTooltip="Active Survey Details" class="working-btn"  (click)="toggle1()">Index Survey</button>
+        <span class="badge working" style="font-weight: 100;">Last Survey: SBI- 25th Jan 2020, 11AM</span>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -62,17 +61,17 @@
     <mat-card class="example-card" *ngIf="!main" >
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
-              <i class="material-icons reddy"> alarm_off</i>
+           <img src="../assets/complete.png" width="25">
         </div>
         <mat-card-title>Completed Survey</mat-card-title>
-        <mat-card-subtitle  class="reddy" *ngIf="!show">Completed </mat-card-subtitle>
+        <mat-card-subtitle  class="text-success" *ngIf="!show">Completed </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content *ngIf="!show">
         <p>Extend date and check your all completed surevy with all status score. Complete Details </p>
       </mat-card-content>
       <mat-card-actions >
-        <button mat-raised-button  matTooltip="All completed Survey"  (click)="onClickCompletedSurvey()" class="reddy" >Expired Survey </button>
-        <span class="badge text-danger" style="font-weight: 100;">Last Expired Survey: TATA- 10th May 2019, 7 AM </span>
+        <button mat-raised-button  matTooltip="All completed Survey"  (click)="onClickCompletedSurvey()" class="complete" >Completed Survey </button>
+        <span class="badge text-success" style="font-weight: 100;">Last Expired Survey: TATA- 10th May 2019, 7 AM </span>
         <!-- <button mat-raised-button  matTooltip="Last Expire Survey"  (click)="toggle2()">Last Expired Survey: TATA- 10th May 2019, 7 AM  </button> -->
       </mat-card-actions>
     </mat-card>

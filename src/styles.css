@@ -3,11 +3,11 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .info{color:rgb(93, 198, 239);}
-.warning{color:rgb(0, 175, 22);}
-.reddy{color:rgb(222, 13, 13);}
-
+.complete{color:rgb(0, 175, 22);}
+.start{color:rgb(222, 13, 13);}
+.working{color:#f89d13;}
 .info-btn{background-color:rgb(93, 198, 239);color:#fff;}
-.warning-btn{background-color:rgb(0, 175, 22);color:#fff;}
+.working-btn{background-color:#f89d13;color:#fff;}
 .reddy-btn{background-color:rgb(222, 13, 13);color:#fff;}
 p{font-size: 14px;}
    
