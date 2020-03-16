@@ -43,9 +43,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +77,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ChartsModule,MatFormFieldModule,
     MatDialogModule,
     HttpClientModule, AngularEditorModule, MatChipsModule, MatTableModule, MatDatepickerModule, MatInputModule,MatNativeDateModule,
-    AngularFontAwesomeModule//MatPaginator,// MatSort,//MatTableDataSource// FlexLayoutModule,
+    AngularFontAwesomeModule,FontAwesomeModule//MatPaginator,// MatSort,//MatTableDataSource// FlexLayoutModule,
    
   ],
   entryComponents:[LessonModalComponent],

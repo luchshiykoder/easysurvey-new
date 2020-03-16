@@ -4,31 +4,24 @@
  </mat-sidenav>
 
   <mat-sidenav-content >
-    
     <mat-toolbar *ngIf="currentUser"> 
-
             <div class="example-sidenav-content">
               <button type="button" mat-button (click)="drawer.toggle()"  matTooltip="All Details">
-             <img src="../assets/logo.png" alt="user" width="120px">
+               <img src="../assets/logo.png" alt="user" width="120px">
               </button>
-             
             </div>
             <span class="example-fill-remaining-space"></span>
-            <span class="user-text"><i class="fas fa-user-tie"></i>Welcome </span>
+            <span class="user-text">Welcome </span>
             <button mat-button [matMenuTriggerFor]="menu"  matTooltip="Logout">{{ currentUser.firstName }} {{ currentUser.lastName }} <i class="fa fa-user" aria-hidden="true"></i></button>
               <mat-menu #menu="matMenu">
-                <button class="info user-details"  mat-menu-item  (click)="resetPassword()"><i class="material-icons">cached</i> Change Password</button>
-                <button class="reddy user-details"  mat-menu-item (click)="logoutProfile()"><i class="material-icons">power_settings_new</i> Logout</button>
+                <button class="info user-details"  mat-menu-item  (click)="resetPassword()"><i class="fa fa-keyboard-o"></i> Change Password</button>
+                <button class="reddy user-details"  mat-menu-item (click)="logoutProfile()"><i class="fa fa-lock"></i> Logout</button>
               </mat-menu>
-            <!-- <button mat-button>Logout</button>
-      -->
     </mat-toolbar>
-    
+
     <div class="main-content" >
         <router-outlet></router-outlet>  
     </div>
   </mat-sidenav-content>
-
-
 </mat-sidenav-container>
 

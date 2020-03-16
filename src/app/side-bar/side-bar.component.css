@@ -1,4 +1,4 @@
-/* .mat-nav-list a{
+ .mat-nav-list a{
     color:#fff;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -12,14 +12,11 @@
 .profile-info{
     background: #000e1b;
     text-align: center;
-    padding: 20px 0px;
-    margin-bottom: 0px;
+    padding: 1px 0px;
+    margin-bottom: 10px;
  
 }
 .user-img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
     border:5px solid #2d323e;
@@ -43,16 +40,10 @@
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
   }
-  .example-ripple-container h3{
-    font-weight: 400;
-    font-size: 15px;
-  }
-  
-  /** Styles to make the demo look better. */
-  /* .example-ripple-checkbox {
-    margin: 6px 12px 6px 0;
-  }
-  
-  .example-ripple-form-field {
-    margin: 0 12px 0 0;
-  } */ 
+
+
+
+  .user-img{
+    padding: 20px;
+    background-color: #fff;
+}
