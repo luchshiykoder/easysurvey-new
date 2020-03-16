@@ -282,11 +282,13 @@ editSurveyName(){
       })
       
       if (text) {
+        
+        //const answers = JSON.stringify(result.value)
        // this.CurrSurvey.SurveryName = text;
-       // this._surveyDataService.CreateSurvey(this.CurrSurvey);
+       //this._surveyDataService.CreateSurvey(this.CurrSurvey);
         Swal.fire(
-          `Survey Name: ${text}`,
-          'You have successfully changed the survey name!',
+          //`Survey Name ${answers}`,
+          'You have successfully changed the survey name, now!',
           'success'
         )       
        
