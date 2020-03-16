@@ -1,22 +1,16 @@
 
 <div class="row">
   <div class="col-lg-12 dash-head text-center">
-    <!-- <h6 *ngIf="!show">POC ALL DETAILS</h6> -->
     <h4 *ngIf="!show" style="padding: 10px 0;">  Armezo will be helpful for you to understand where your trends, now</h4>
-    <!--  -->
   </div>
 </div>
 
 <div class="row">
   <div class="col-lg-12" *ngIf="!menuToggle">
-     
-        <button type="button" matTooltip="Open Menu"   class="btn btn-sm btn-secondary" (click)="onClickTypeSurvey1()" style="line-height: 0;"><i class="material-icons material-icons-sm">
-          menu_open
-          </i></button>
-
+        <button type="button" matTooltip="Open Menu"   class="btn  btn-outline-secondary btn-sm" (click)="onClickTypeSurvey1()">
+          <i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
   </div>
-  
-  
+
   <div class="col-lg-4 col-sm-6 col-xs-4">
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
@@ -24,7 +18,6 @@
           <img src="../assets/start.png" width="25">
         </div>
         <mat-card-title>Create New Survey </mat-card-title>
-      
         <mat-card-subtitle  class="start" *ngIf="!show">Start Survey?</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content *ngIf="!show" >
@@ -50,7 +43,6 @@
         <p>Check your ongoing survey for multiple online business persepective coversation.</p>
       </mat-card-content>
       <mat-card-actions >
-        <!-- <button mat-raised-button  matTooltip="Edit/Update Survey" class="warning" (click)="onClickSelectSurvey()">Manage Survey</button> -->
         <button mat-raised-button  matTooltip="Active Survey Details" class="working-btn"  (click)="toggle1()">Index Survey <i class="fa fa-hourglass-start" aria-hidden="true"></i></button>
         <span class="badge working" style="font-weight: 100;">Last Survey: SBI- 25th Jan 2020, 11AM</span>
       </mat-card-actions>
@@ -72,7 +64,6 @@
       <mat-card-actions >
         <button mat-raised-button  matTooltip="All completed Survey"  (click)="onClickCompletedSurvey()" class="complete" >Completed Survey <i class="fa fa-check" aria-hidden="true"></i> </button>
         <span class="badge text-success" style="font-weight: 100;">Last Expired Survey: TATA- 10th May 2019, 7 AM </span>
-        <!-- <button mat-raised-button  matTooltip="Last Expire Survey"  (click)="toggle2()">Last Expired Survey: TATA- 10th May 2019, 7 AM  </button> -->
       </mat-card-actions>
     </mat-card>
   </div> 
@@ -81,11 +72,9 @@
 <div class="row ">
   <div class="col-lg-12">
     <div class="" *ngIf="!createNewSurvey">
-     
       <div class="mat-card body-mat-card " >
         <app-edit-template  *ngIf="!editSurveyDetails"></app-edit-template>
       </div>
-      
     </div>
   </div>
   
@@ -207,31 +196,6 @@
       </div>
     </div>
   </div> 
-<!-- 
-  <div class="col-lg-12">
-    <div class="" *ngIf="!expireSurvey">
-      <div class="mat-card mt-2">
-        <div class="row">
-          <div class="col-lg-3">
-            Welcome on Expired survey name : {{+result}} 
-          </div>
-          <div class="col-lg-3">
-            <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
-            <p><strong>Had Expire:</strong> 20th Jan 2010/2PM</p>
-          </div>
-          
-          <div class="col-lg-3">
-            <p><strong>Total Participant</strong> - 1200</p>
-            <p><strong>Attendent Participant</strong> - 1000</p>
-            <p><strong>Pending Participant</strong> - 200</p>
-          </div>
-          <div class="col-lg-3"><app-bar-charts></app-bar-charts></div>
-        </div>
-        <p>If you want to Change the End Date of this Survey and edit survey then <button mat-raised-button color="info"  (click)="editSurvey()" class="text-info" matTooltip="Edit Options">Click Here</button></p>
-       
-      </div>
-    </div>
-  </div> -->
 
   <div class="col-lg-12">
     <div class="" *ngIf="!onGoingSelectSurvey">
@@ -241,40 +205,28 @@
           <span>If you want to update in this HCL SURVEY then click here <button   (click)="editSurvey()" class="btn-sm  btn-danger" matTooltip="Edit Options">Edit Survey</button></span>
           <span >
             &nbsp;<button   (click)="detailSurvey()" class="btn-primary btn-sm" matTooltip="detail survey">back to details</button></span>
-      </span>
-
+          </span>
        </h6>
-        
-
-       
-        
         <div  *ngIf="!EditSelectSurvey" ><hr>
           <app-edit-template></app-edit-template>
         </div>
-     <div *ngIf="!informationSurvey" >
-      <hr>
-      <div class="row">
-       
-         
-          <div class="col-lg-4">
-            <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
-            <p><strong>Will Expire:</strong> 20th Jan 2010/2PM</p>
+        <div *ngIf="!informationSurvey" >
+          <hr>
+          <div class="row">
+            <div class="col-lg-4">
+              <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
+              <p><strong>Will Expire:</strong> 20th Jan 2010/2PM</p>
+            </div>
+            
+            <div class="col-lg-4">
+              <p><strong>Total Participant</strong> - 1200</p>
+              <p><strong>Attendent Participant</strong> - 300</p>
+              <p><strong>Pending Participant</strong> - 900</p>
+            </div>
+            <div class="col-lg-4"><app-bar-charts></app-bar-charts></div> 
           </div>
-          
-          <div class="col-lg-4">
-            <p><strong>Total Participant</strong> - 1200</p>
-            <p><strong>Attendent Participant</strong> - 300</p>
-            <p><strong>Pending Participant</strong> - 900</p>
-          </div>
-          <div class="col-lg-4"><app-bar-charts></app-bar-charts></div> 
         </div>
-        </div>
-
-
-
-        
       </div>  
-     
     </div>
   </div>
 
@@ -282,9 +234,6 @@
     <div class="" *ngIf="!closeSelectSurvey">
       <div class="mat-card mt-2">
         <p>All List of Completed Survey</p> 
-        <!-- <div  *ngIf="!EditSelectedTemplate">
-         <app-edit-template></app-edit-template>
-        </div> -->
         <div class="table-responsive" >
           <table class="table table-bordered">
             <thead>
@@ -321,13 +270,11 @@
                 <div style="    padding: 38px;
                 background: #74ada7">
                   <div class="row">
-                    
-         
                     <div class="col-lg-4">
                       <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
                       <p><strong>Will Expire:</strong> 20th Jan 2010/2PM</p>
                     </div>
-                    
+
                     <div class="col-lg-4">
                       <p><strong>Total Participant</strong> - 1200</p>
                       <p><strong>Attendent Participant</strong> - 300</p>
@@ -336,7 +283,6 @@
                     <div class="col-lg-4"><app-bar-charts></app-bar-charts></div> 
                   </div>
                   </div>
-                
                 </div>
               </td>
               </tr>

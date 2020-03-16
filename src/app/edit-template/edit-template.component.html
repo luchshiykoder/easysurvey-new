@@ -64,7 +64,7 @@
   </div> 
   </div>
 
-<div class="header-surevy" *ngIf="!hideAfterReady">
+<div class="header-survey save-btn" *ngIf="!hideAfterReady">
     <div class="row ">
 
      <div class="col-lg-6">
@@ -78,7 +78,7 @@
     </div>
     <div class="col-lg-6 icon-update text-right">
       <h6>Survey Name is : <strong     style="padding: 10px;">{{this.CurrSurvay.SurveryName}}</strong> &nbsp;
-        <span class="btn btn-secondary btn-circle" (click)="editSurveyName()" matTooltip="Edit Survey Name here"><i class="material-icons">edit</i></span>
+        <span class="btn btn-danger btn-circle" (click)="editSurveyName()" matTooltip="Edit Survey Name here"><i class="material-icons">edit</i></span>
         <!-- <button class="btn btn-danger  btn-circle"><i class="material-icons"> delete_forever </i></button> -->
       </h6>
     </div> 
@@ -140,7 +140,11 @@
               <div class="stardard-area-full">
                
                 <div class="stardard-area-bg stardard-area-fixed">
-                  <div  >
+                  <div  style="position: relative;
+                  width: 250px;
+                  height: 250px;
+                  margin: 0 auto;
+                 ">
                     <div class="avatar-upload">
                       <div class="avatar-edit">
                         <input #file type="file" accept='image/*' (change)="preview(file.files)" id="imageUpload" accept=".png, .jpg, .jpeg"/>
@@ -155,7 +159,7 @@
                     </div>
                    
                   </div>
-                  <div>Upload Logo</div>
+                  <!-- <div>Upload Logo</div> -->
                   <br>
               <!-- <angular-editor id="editor1" formControlName="htmlContent1" [config]="editorConfig"></angular-editor> -->
               <!-- <button class="btn btn-primary btn-sm btn-next " matTooltip="Save Details" (click)="SaveNextfun()" >Save / Next &rarr; </button>  -->

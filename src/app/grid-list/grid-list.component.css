@@ -123,12 +123,6 @@ box-shadow: 0 2.25rem 1.5rem -1.5rem rgba(33,37,41,.3),0 0 1.5rem .5rem rgba(33,
 background: #58666d;
 color: #fff;
 }
- /* .example-card:hover .material-icons{
-font-size: 49px;
-transition: all 0.5s ease-in-out;
-    position: relative;
-    top: 6px;
-}  */
 
 .table td{font-size: 14px;}
 .swal2-popup { font-size: 1.6rem !important; }
