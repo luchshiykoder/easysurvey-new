@@ -14,8 +14,8 @@
              
             </div>
             <span class="example-fill-remaining-space"></span>
-            <span class="user-text"><i class='fa fa-address-book'></i>Welcome </span>
-            <button mat-button [matMenuTriggerFor]="menu">{{ currentUser.firstName }} {{ currentUser.lastName }}</button>
+            <span class="user-text"><i class="fas fa-user-tie"></i>Welcome </span>
+            <button mat-button [matMenuTriggerFor]="menu"  matTooltip="Logout">{{ currentUser.firstName }} {{ currentUser.lastName }} <i class="fa fa-user" aria-hidden="true"></i></button>
               <mat-menu #menu="matMenu">
                 <button class="info user-details"  mat-menu-item  (click)="resetPassword()"><i class="material-icons">cached</i> Change Password</button>
                 <button class="reddy user-details"  mat-menu-item (click)="logoutProfile()"><i class="material-icons">power_settings_new</i> Logout</button>

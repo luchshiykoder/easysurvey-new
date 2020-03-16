@@ -40,6 +40,7 @@ import { ExcelService } from './_services/excel.service';
 import {MatDatepickerModule, MatInputModule,MatNativeDateModule} from '@angular/material';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
