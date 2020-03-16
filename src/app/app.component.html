@@ -8,14 +8,14 @@
     <mat-toolbar *ngIf="currentUser"> 
 
             <div class="example-sidenav-content">
-              <button type="button" mat-button (click)="drawer.toggle()">
-                details
+              <button type="button" mat-button (click)="drawer.toggle()"  matTooltip="All Details">
+             <img src="../assets/logo.png" alt="user" width="120px">
               </button>
-              <img src="../assets/logo.png" alt="user" width="120px">
+             
             </div>
             <span class="example-fill-remaining-space"></span>
-            <span class="user-text">Welcome {{ currentUser.firstName }} {{ currentUser.lastName }}</span>
-            <button mat-button [matMenuTriggerFor]="menu">Admin Details <i class="material-icons">emoji_people </i></button>
+            <span class="user-text"><i class='far fa-address-book'></i>Welcome </span>
+            <button mat-button [matMenuTriggerFor]="menu">{{ currentUser.firstName }} {{ currentUser.lastName }}</button>
               <mat-menu #menu="matMenu">
                 <button class="info user-details"  mat-menu-item  (click)="resetPassword()"><i class="material-icons">cached</i> Change Password</button>
                 <button class="reddy user-details"  mat-menu-item (click)="logoutProfile()"><i class="material-icons">power_settings_new</i> Logout</button>

@@ -39,6 +39,7 @@ import {MatTableModule} from '@angular/material/table';
 import { ExcelService } from './_services/excel.service';
 import {MatDatepickerModule, MatInputModule,MatNativeDateModule} from '@angular/material';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 
@@ -77,8 +78,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 
     ChartsModule,MatFormFieldModule,
     MatDialogModule,
-    HttpClientModule, AngularEditorModule, MatChipsModule, MatTableModule, MatDatepickerModule, MatInputModule,MatNativeDateModule
-    //MatPaginator,// MatSort,//MatTableDataSource// FlexLayoutModule,
+    HttpClientModule, AngularEditorModule, MatChipsModule, MatTableModule, MatDatepickerModule, MatInputModule,MatNativeDateModule,
+    AngularFontAwesomeModule//MatPaginator,// MatSort,//MatTableDataSource// FlexLayoutModule,
    
   ],
   entryComponents:[LessonModalComponent],

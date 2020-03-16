@@ -24,24 +24,30 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
   } */
   
-  .example-sidenav-content {
+  /* .example-sidenav-content {
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;
   }
-  
-  .example-sidenav {
+   */
+  /* .example-sidenav {
     padding: 20px;
-  }
-
+  } */
+/* 
 .user-details{
     font-size: 12px;
   }
   .user-details i{ position: relative;
-  top: 7px;
-}
-.mat-menu-content:not(:empty) {
+  top: 7px; */
+
+/* .mat-menu-content:not(:empty) {
    padding-top: 0px; 
   padding-bottom: 0px;
-}
+} */
+/* mat-sidenav:not(.mat-drawer-opened) {
+  transform: translate3d(0, 0, 0) !important;
+  visibility: visible !important;
+  width: 60px !important;
+  overflow: hidden;
+} */
