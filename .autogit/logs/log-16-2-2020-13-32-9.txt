@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 16 2020 13:32:09 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/app.component.css
+* src/app/app.component.html
+* src/app/app.module.ts
+* src/app/side-bar/side-bar.component.css
+* src/app/side-bar/side-bar.component.html
+
+
+Created files:
+* .autogit/logs/log-16-2-2020-13-2-3.txt
+
+
+Deleted files:
+
+
+Renamed files:
