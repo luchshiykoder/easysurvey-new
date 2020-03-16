@@ -124,10 +124,21 @@ background: #58666d;
 color: #fff;
 }
 
-.table td{font-size: 14px;}
 .swal2-popup { font-size: 1.6rem !important; }
-
-
+.table-custom {}
+.table-bordered td, .table-bordered th {
+ border: 1px solid none;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #dee2e6;
+    background: #5b5959;}
+    .table tr  {
+        background-color: #ffffff;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        color: #979797;
+        font-size: 11px;}
 /* 
 
 .checkmark {
