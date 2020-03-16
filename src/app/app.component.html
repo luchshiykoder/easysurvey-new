@@ -14,7 +14,7 @@
              
             </div>
             <span class="example-fill-remaining-space"></span>
-            <span class="user-text"><i class='far fa-address-book'></i>Welcome </span>
+            <span class="user-text"><i class='fa fa-address-book'></i>Welcome </span>
             <button mat-button [matMenuTriggerFor]="menu">{{ currentUser.firstName }} {{ currentUser.lastName }}</button>
               <mat-menu #menu="matMenu">
                 <button class="info user-details"  mat-menu-item  (click)="resetPassword()"><i class="material-icons">cached</i> Change Password</button>
