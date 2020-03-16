@@ -8,7 +8,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .working{color:#f89d13;}
 .info-btn{background-color:rgb(93, 198, 239);color:#fff;}
 .working-btn{background-color:#f89d13;color:#fff;}
-.reddy-btn{background-color:rgb(222, 13, 13);color:#fff;}
+.start-btn{background-color:#f44241;color:#fff;}
+.save-btn{background-color:#5b5959;color:#fff;}
 p{font-size: 14px;}
    
 #swal2-title {

@@ -31,8 +31,8 @@
         <p>Create your new survey for taking feedback of your users with online coversation.</p>
       </mat-card-content>
       <mat-card-actions >
-        <button mat-raised-button class="primary-btn" matTooltip="Click here to Create New Survey" (click)="onClickTypeSurvey()">Create New</button>
-        <button mat-raised-button color="info"  class="text-info" matTooltip="Check Your Saved Survey" (click)="toggle3()">Your Saved Survey</button>
+        <button mat-raised-button class="start-btn" matTooltip="Click here to Create New Survey" (click)="onClickTypeSurvey()">Create New <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        <button mat-raised-button class="save-btn"  matTooltip="Check Your Saved Survey" (click)="toggle3()">Your Saved Survey <i class="fa fa-pause-circle" aria-hidden="true"></i></button>
       </mat-card-actions>
     </mat-card>
   </div>
@@ -51,7 +51,7 @@
       </mat-card-content>
       <mat-card-actions >
         <!-- <button mat-raised-button  matTooltip="Edit/Update Survey" class="warning" (click)="onClickSelectSurvey()">Manage Survey</button> -->
-        <button mat-raised-button  matTooltip="Active Survey Details" class="working-btn"  (click)="toggle1()">Index Survey</button>
+        <button mat-raised-button  matTooltip="Active Survey Details" class="working-btn"  (click)="toggle1()">Index Survey <i class="fa fa-hourglass-start" aria-hidden="true"></i></button>
         <span class="badge working" style="font-weight: 100;">Last Survey: SBI- 25th Jan 2020, 11AM</span>
       </mat-card-actions>
     </mat-card>
@@ -70,7 +70,7 @@
         <p>Extend date and check your all completed surevy with all status score. Complete Details </p>
       </mat-card-content>
       <mat-card-actions >
-        <button mat-raised-button  matTooltip="All completed Survey"  (click)="onClickCompletedSurvey()" class="complete" >Completed Survey </button>
+        <button mat-raised-button  matTooltip="All completed Survey"  (click)="onClickCompletedSurvey()" class="complete" >Completed Survey <i class="fa fa-check" aria-hidden="true"></i> </button>
         <span class="badge text-success" style="font-weight: 100;">Last Expired Survey: TATA- 10th May 2019, 7 AM </span>
         <!-- <button mat-raised-button  matTooltip="Last Expire Survey"  (click)="toggle2()">Last Expired Survey: TATA- 10th May 2019, 7 AM  </button> -->
       </mat-card-actions>

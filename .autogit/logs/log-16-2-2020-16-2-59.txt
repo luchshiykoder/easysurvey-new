@@ -1,0 +1,24 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 16 2020 16:02:59 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/app.component.css
+* src/app/grid-list/grid-list.component.css
+* src/app/grid-list/grid-list.component.html
+* src/styles.css
+
+
+Created files:
+* .autogit/logs/log-16-2-2020-15-32-54.txt
+* src/assets/complete.png
+* src/assets/ongoing.png
+* src/assets/start.png
+
+
+Deleted files:
+* src/assets/logo-demo.png
+* src/assets/user.jpg
+
+
+Renamed files:

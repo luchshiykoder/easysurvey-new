@@ -341,29 +341,34 @@ editSurveyName(){
 //Tabs on Create survey details 
 selectedUserTab = 1;
    tabs = [
+    {
+      name: 'Upload Logo ',
+      key: 1,
+      active: true
+    },
      {
        name: 'Welcome Template ',
-       key: 1,
+       key: 2,
        active: true
      },
       {
       name: ' Email Template',
-      key: 2,
-      active: false
-    },
-    {
-      name: 'Add Questions',
       key: 3,
       active: false
     },
     {
-      name: ' Respondant',
+      name: 'Add Questions',
       key: 4,
       active: false
     },
     {
-      name: ' End Date',
+      name: ' Respondant',
       key: 5,
+      active: false
+    },
+    {
+      name: ' End Date',
+      key: 6,
       active: false
     }
    ];

@@ -227,39 +227,39 @@ export class GridListComponent implements OnInit {
  // FOR asnc start point of selected survey name 
  onClickCompletedSurvey() {
  
-  (async () => {
-  const { value: survey } = await Swal.fire({
-    allowOutsideClick: false,
-   // position: 'top-end',
-    title: 'Select Completed Survey Name',
-    input: 'select',
-    inputOptions: {
+ // (async () => {
+  // const { value: survey } = await Swal.fire({
+  //   allowOutsideClick: false,
+  //   position: 'top-end',
+  //   title: 'Select Completed Survey Name',
+  //   input: 'select',
+  //   inputOptions: {
 
-      HCL: 'HCL',
-      TATAAIG: 'TATAAIG',
-      CRISIL: 'CRISIL',
-      ARMEZO: 'ARMEZO'
-    },
-    inputPlaceholder: 'Select a survey',
-    showCancelButton: true,
-    cancelButtonColor: '#d33',
-    inputValidator: (value) => {
-      return new Promise((resolve) => {
-        if (value === '') {
-          resolve('You need to select ')
-        }else{
-          resolve();
-        } 
-      })
-    }
-  })
+  //     HCL: 'HCL',
+  //     TATAAIG: 'TATAAIG',
+  //     CRISIL: 'CRISIL',
+  //     ARMEZO: 'ARMEZO'
+  //   },
+  //   inputPlaceholder: 'Select a survey',
+  //   showCancelButton: true,
+  //   cancelButtonColor: '#d33',
+  //   inputValidator: (value) => {
+  //     return new Promise((resolve) => {
+  //       if (value === '') {
+  //         resolve('You need to select ')
+  //       }else{
+  //         resolve();
+  //       } 
+  //     })
+  //   }
+  // })
   
-  if (survey) {
-    Swal.fire(
-      `You have selected: ${survey}`,
-      'To check expired survey details!',
-      'success'
-    )
+  // if (survey) {
+  //   Swal.fire(
+  //     `You have selected: ${survey}`,
+  //     'To check expired survey details!',
+  //     'success'
+  //   )
       this.show = true;
       this.onGoing = true;
       this.expireSurvey =true;
@@ -270,9 +270,9 @@ export class GridListComponent implements OnInit {
       this.menuToggle = false;
       this.main = true;
   
-  }
+  //}
   
-})() // FOR asnc end point of selected survey name 
+//})() // FOR asnc end point of selected survey name 
 }
 
 CreateLaunch(){
