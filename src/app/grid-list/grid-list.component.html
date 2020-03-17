@@ -119,6 +119,18 @@
                   <button  matTooltip="" class="btn btn-xs btn-info">Edit</button> &nbsp;
                   <button  matTooltip="" class="btn btn-xs btn-danger">Delete</button>
                 </td>
+              </tr> 
+              <tr>
+                <td><span class="text-primary">SBI general </span> </td>
+                <td>20 June 2019 / 11am </td>
+                <td><i class="fa fa-times text-danger" aria-hidden="true"></i></td>
+                <td><i class="fa fa-times text-danger" aria-hidden="true"></i></td>
+                <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
+                <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
+                <td>
+                  <button   matTooltip="" class="btn  btn-xs btn-info "  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button  matTooltip="" class="btn  btn-xs btn-danger" >Delete</button>
+                </td>
               </tr>   
             </tbody>
           </table>
@@ -215,7 +227,7 @@
   <div class="col-lg-12">
     <div class="" *ngIf="!closeSelectSurvey">
       <div class="mat-card mt-2">
-        <p>All List of Completed Survey</p> 
+        <h6>All List of Completed Survey</h6> 
         <div class="table-responsive" >
           <table class="table table-bordered">
             <thead>
@@ -233,8 +245,8 @@
             <tbody>
             
               <tr>
-                <td><strong>TATAAIG </strong> <br>
-                  <span style="cursor:pointer;" class="badge badge-secondary" (click)="detailcompltedSurveyGraph()">Details survey</span>  </td>
+                <td><strong>TATAAIG </strong> 
+                <span style="cursor:pointer;" class="badge badge-secondary" (click)="detailcompltedSurveyGraph()">Details survey</span>  </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
                 <td>20 January 2020 /7pm</td>
@@ -242,8 +254,8 @@
                 <td>500</td>
                 <td>1000</td>
                 <td>
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
+                  <button  matTooltip="" class="btn btn-xs btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button  matTooltip="" class="btn btn-xs btn-danger" >Delete</button>
                 </td>
               </tr>
               <tr>
@@ -269,7 +281,7 @@
               </td>
               </tr>
               <tr>
-                <td><strong>TATAAIG </strong> <br>
+                <td><strong>TATAAIG </strong>
                   <span class="badge badge-secondary" style="cursor:pointer;">Details survey</span> </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
@@ -278,8 +290,8 @@
                 <td>500</td>
                 <td>1000</td>
                 <td>
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
+                  <button matTooltip="" class="btn btn-xs btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button  matTooltip="" class="btn btn-xs btn-danger" >Delete</button>
                 </td>
               </tr>
             </tbody>
