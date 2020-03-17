@@ -136,14 +136,14 @@ color: #fff;
 .table thead th {
     vertical-align: bottom;
     border-bottom: 1px solid #dee2e6;
-    background: #5b5959;}
+    background: #5b5959;
+color:#fff; }
     .table tr  {
         background-color: #eeeeee;
-        /* padding-top: 7px; */
-        /* padding-bottom: 7px; */
-        /* color: #979797; */
-        /* font-size: 11px; */
+     
         text-align: center;}
+        .btn-xs{padding: 0px 6px;
+          font-size: 12px;}
 /* 
 
 .checkmark {
