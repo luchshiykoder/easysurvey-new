@@ -165,7 +165,7 @@ color: #fff;
 }
 .custom-table tr:hover{ background: #d2e9ff; }
 .custom-table tr:hover{ background: #d2e9ff; }
-.custom-table tr td:hover{ background: #57666d; color: #fff;}
+.custom-table tr td:hover{ background: #57666d; }
 
 .btn-xs{padding: 0px 6px; font-size: 12px;}
 /* 
