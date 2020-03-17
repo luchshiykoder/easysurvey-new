@@ -41,7 +41,10 @@ export class GridListComponent implements OnInit {
    // welcomeMsg:""
   };
   detailcompltedSurveyGraph(){
-    this.compltedSurveyGraph=false
+    this.compltedSurveyGraph=false;
+  }
+  details(){
+    this.compltedSurveyGraph=true;
   }
   //Type new Survey Name 
   onClickTypeSurvey(){
@@ -68,6 +71,7 @@ export class GridListComponent implements OnInit {
       this.onGoingSelectSurvey = true;
       this.closeSelectSurvey =true;
       this.savedsurvey =true;
+
       this.createNewSurvey = !this.onGoingSelectSurvey;
       this.text=text;
       this.menuToggle = false;
@@ -313,7 +317,9 @@ onClickTypeSurvey1(){
   
 }
 draftEdit(){
-  this.createNewSurvey = !this.onGoingSelectSurvey;
+  this.closeSelectSurvey =true;
+  this.createNewSurvey = true;
+
 }
   
 }
