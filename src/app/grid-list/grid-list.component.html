@@ -141,7 +141,7 @@
   <div class="col-lg-12">
     <div class="" *ngIf="!onGoing">
       <div class="mat-card mt-2">
-        <p>All List of onGoing Survey</p> 
+        <h6>All List of onGoing Survey</h6> 
         <div  *ngIf="!EditSelectedTemplate" class="body-mat-card">
          <app-edit-template></app-edit-template>
         </div>
@@ -162,7 +162,7 @@
             <tbody>
             
               <tr>
-                <td><strong><button class="btn btn-sm btn-primary" (click)="onClickSelectSurvey()">TATAAIG </button></strong>  </td>
+                <td><strong><button class="btn btn-xs btn-block btn-primary" (click)="onClickSelectSurvey()">TATAAIG </button></strong>  </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
                 <td>20 January 2020 /7pm</td>
@@ -170,8 +170,8 @@
                 <td>500</td>
                 <td>1000</td>
                 <td>
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button mat-raised-button  matTooltip="" class="btn btn-sm btn-danger" >Delete</button>
+                  <button  matTooltip="" class="btn btn-xs btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
+                  <button  matTooltip="" class="btn btn-xs btn-danger" >Delete</button>
                 </td>
               </tr>
             </tbody>

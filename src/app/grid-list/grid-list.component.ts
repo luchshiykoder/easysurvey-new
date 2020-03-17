@@ -317,8 +317,9 @@ onClickTypeSurvey1(){
   
 }
 draftEdit(){
+  
   this.closeSelectSurvey =true;
-  this.createNewSurvey = true;
+  this.createNewSurvey =  !this.createNewSurvey;
 
 }
   
