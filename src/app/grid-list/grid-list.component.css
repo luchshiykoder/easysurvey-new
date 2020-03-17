@@ -126,17 +126,17 @@ color: #fff;
 }
 
 .swal2-popup { font-size: 1.6rem !important; }
-.table-custom {} th {
+.custom-table th {
   background: #5b5959;
   color: #fff;
   FONT-SIZE: 13PX;
   font-weight: 400;
 }
-.table td, .table th {
+.custom-table td, .custom-table th {
   border: 4px solid #ffffff;
 
 }
-.table thead th {
+.custom-table thead th {
   vertical-align: bottom;
   border-bottom: 1px solid #dee2e6;
   background: #2c303a;
@@ -144,7 +144,7 @@ color: #fff;
   position: relative;
   text-shadow: 0 1px 0 #000;
 }
-th:after {
+.custom-table th:after {
   background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
   content: '';
   display: block;
@@ -154,18 +154,18 @@ th:after {
   position: absolute;
   top: 25%;
   width: 100%;}
-td{
+.custom-table td{
   font-size: 13px;
   padding: 3px 10px;
 }
-.table tr  {
+.custom-table tr  {
   transition: all 0.5s ease-in-out;
   background-color: #ecf0f3;
   text-align: center;
 }
-.table tr:hover{ background: #d2e9ff; }
-.table tr:hover{ background: #d2e9ff; }
-.table tr td:hover{ background: #57666d; color: #fff;}
+.custom-table tr:hover{ background: #d2e9ff; }
+.custom-table tr:hover{ background: #d2e9ff; }
+.custom-table tr td:hover{ background: #57666d; color: #fff;}
 
 .btn-xs{padding: 0px 6px; font-size: 12px;}
 /* 

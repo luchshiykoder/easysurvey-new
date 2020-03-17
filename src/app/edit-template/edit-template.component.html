@@ -356,7 +356,7 @@
             </div> 
             <div class="panel-body">
               <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table custom-table">
                     <thead>
                     <tr>
                       <th>Full Name</th>
@@ -1376,7 +1376,7 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. education">
       </mat-form-field>
       
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
       
         <!-- id Column -->
         <ng-container matColumnDef="id">
