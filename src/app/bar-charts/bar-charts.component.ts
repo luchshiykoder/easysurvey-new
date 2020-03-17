@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarChartsComponent implements OnInit {
 
-  public pieChartLabels = ['Pending', 'Attendent'];
-  public pieChartData = [1200, 150];
+  public pieChartLabels = ['Pending', 'Attendent', 'Total'];
+  public pieChartData = [1200, 150, 200];
   public pieChartType = 'pie';
 
   constructor() { }
