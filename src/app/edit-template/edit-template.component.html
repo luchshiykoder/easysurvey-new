@@ -4,15 +4,10 @@
       <p>1. Choose your user form the list to send Invitation/Reminder mail, list given below.</p>
       <p>2. Choose type of mail : 
       </p>
-        <table>
-          <tr *ngFor="let user of users">
-            <td>{{user.name}}</td>
-            <td>
-              <button [ngClass]="{'btn btn-danger':user.active, 'btn btn-success':!user.active}" (click)="click(user)"> {{user.active ? 'Deactive':'Active'}}
-            </button>
-            </td>
-          </tr>
-        </table>
+
+<button class="btn btn-sm btn-secondary" [ngClass]="{'active': isActive}" (click)="activeInvitation()">Invitation Mail</button>
+<button class="btn btn-sm btn-secondary" [ngClass]="{'active': isActive}" (click)="activeReminder()">Reminder Mail</button> -->
+           
         <select class="form-control-sm" id="" formControlName="mail-type">
           <option>-type-mail-</option>
           <option>Invitaion</option>

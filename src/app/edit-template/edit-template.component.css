@@ -652,8 +652,10 @@ input[type="radio"], input[type="checkbox"] {
             .custom-table tr:hover{ background: #d2e9ff; }
             .custom-table tr td:hover{ background: #57666d; color: #fff;}
 
-            .active {
-              background-color: green;
+            .btn-secondary.active {
+              background-color: green!important;
+              color:#fff!important;
+              border-color: green!important;
           }
           
           .inactive {
