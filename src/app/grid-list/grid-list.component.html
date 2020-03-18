@@ -205,11 +205,12 @@
           <app-edit-template></app-edit-template>
         </div>
         <div *ngIf="!informationSurvey" >
-          <!-- <hr> -->
+          <hr>
           <!-- <div *ngIf="!compltedSurveyGraph" (click)="details()"> -->
-            <div style="    padding: 30px;">
+            <div style=" ">
               <div class="row">
                 <div class="col-lg-8">
+                  <p class="card-head">Overall details:</p>
                   <div class="row">
                     <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
                       <div class="card-list after-loop ">
@@ -269,6 +270,7 @@
                  </div>
               </div>
               <div class="col-sm-4">
+                <p class="card-head">Overall information:</p>
                 <div class="row">
                   <div class="col-sm-12">
                     <div class="card-list">
@@ -281,6 +283,58 @@
               </div>
               </div>
               </div>
+              <div class="container">
+ 
+                <!-- regular tabs -->
+                <tabset>
+                    <tab title="About me">
+                        Its all about me.
+                    </tab>
+                    <tab title="Contacts">
+                        This is content of the contacts tab
+                    </tab>
+                    <tab title="Map" [disabled]="true">
+                        Content of the Map Tab
+                    </tab>
+                </tabset>
+                
+                <br/><br/>
+                
+                <!-- tabs with custom heading templates -->
+                <tabset>
+                    <tab>
+                        <span *tabHeading>
+                            <b style="color: deepskyblue">About</b> <i style="color: deeppink">me</i>
+                        </span>
+                        Its all about me.
+                    </tab>
+                    <tab>
+                        <span *tabHeading>
+                            <i style="color: deeppink">My</i> <b style="color: deepskyblue">contacts</b>
+                        </span>
+                        This is content of the contacts tab
+                    </tab>
+                    <tab title="Map">
+                        Content of the Map Tab
+                    </tab>
+                </tabset>
+                
+                <br/><br/>
+                
+                <!-- pills tabs -->
+                <tabset [pills]="true">
+                    <tab title="About me">
+                        Its all about me.
+                    </tab>
+                    <tab title="Contacts">
+                        This is content of the contacts tab
+                    </tab>
+                    <tab title="Map">
+                        Content of the Map Tab
+                    </tab>
+                </tabset>
+             
+            </div>
             <!-- </div> -->
 
 
@@ -333,7 +387,9 @@
                 <div style="    padding: 30px;">
                   <div class="row">
                     <div class="col-lg-8">
+                      <p class="card-head">Overall details:</p>
                       <div class="row">
+                        
                         <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
                           <div class="card-list after-loop ">
                             <div class="card-block card-5 text-right">
@@ -392,6 +448,7 @@
                      </div>
                   </div>
                   <div class="col-sm-4">
+                    <p class="card-head">Overall information:</p>
                     <div class="row">
                       <div class="col-sm-12">
                         <div class="card-list">

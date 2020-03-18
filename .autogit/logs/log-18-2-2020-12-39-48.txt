@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Wed Mar 18 2020 12:39:48 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/app/bar-charts/bar-charts.component.html
+* src/app/bar-charts/bar-charts.component.ts
+* src/app/side-bar/side-bar.component.ts
+
+
+Created files:
+* .autogit/logs/log-18-2-2020-12-9-43.txt
+
+
+Deleted files:
+
+
+Renamed files:

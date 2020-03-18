@@ -255,7 +255,16 @@ border-radius: .5rem;
   background-color: #28a745;
 }
 .card-5 {
-background-color: #8c3d09;
+background-color: #2c303a;
+}
+.card-head{
+  margin-top: 0;
+  margin-bottom: 0rem;
+  font-style: italic;
+  color: #2c303a;
+  font-weight: 500;
+
+  text-align: left;
 }
 .card-block:hover {
   transform: translateY(-0.25rem);

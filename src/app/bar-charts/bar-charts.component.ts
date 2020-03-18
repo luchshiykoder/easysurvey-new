@@ -9,17 +9,7 @@ export class BarChartsComponent implements OnInit {
   //for pie
   public pieChartLabels = ['Complete', 'Incomplete', 'Not Started' ];
   public pieChartData = [150, 100, 50];
-  //public pieChartType = 'pie';
-  public pieChartType: pieChartType = 'pie';
-  public pieChartOption: any = {
-    legend: {
-      position: 'right',
-      labels: {
-        fontSize: 10,
-        usePointStyle: true
-      }
-    }
-  }
+  public pieChartType = 'pie';
  
 
   constructor() { }
