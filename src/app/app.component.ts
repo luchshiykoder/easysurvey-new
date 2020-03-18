@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './_services';
 import { User } from './_models';
+import {} from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,12 @@ export class AppComponent {
     this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
  
 }
+
+value: string;
+onSelect(data: TabDirective): void {
+  this.value = data.heading;
+}
+
 
 
 

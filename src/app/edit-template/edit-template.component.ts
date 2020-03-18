@@ -9,6 +9,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {ExcelService} from '../_services/excel.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import {GridListComponent} from '../grid-list/grid-list.component'
+
+
 //import {tableDragger} from 'table-dragger'
 
 //List of All Saved Dimensions 
@@ -407,6 +409,9 @@ private selectedLink: string="";
   
         return (this.selectedLink === name); // if current radio button is selected, return true, else return false  
     }  
+
+    //for sending Invitation/Reminder mail 
+   
   
 
 }
