@@ -411,17 +411,5 @@ private selectedLink: string="";
     }  
 
     //for sending Invitation/Reminder mail 
-    checkModel: any = { left: false, middle: true, right: false };
-    isActive = false;
 
-    active = true;
-    activeInvitation(){
-      this.isActive = !this.isActive;
-      // your code here....
-    }
-    activeReminder(){
-      this.isActive = !this.isActive;
-      // your code here....
-    }
-    radioModel = 'Middle';
 }
