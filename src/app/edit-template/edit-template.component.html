@@ -2,31 +2,22 @@
   <div class="col-lg-12">
     <div class="" *ngIf="!launchSurveyArea">
       <p>1. Choose your user form the list to send Invitation/Reminder mail, list given below.</p>
-      <!-- <p>2. Choose type of mail :  -->
-        <tabset type="pills">
-          <tab heading="Invitaion"><hr><button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Invitaion</button></tab>
-          <tab heading="Reminder"><hr><button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Reminder</button></tab>
-        </tabset>
-        <tabset>
-          <div class="mb-3">
-          <pre class="card card-block card-header" *ngIf="value">Event select is fired. The heading of the selected tab is: {{value}}</pre>
-        </div>
-        <tabset>
-          <tab heading="First tab" class="mt-2" (selectTab)="onSelect($event)">
-            <h4>Title</h4>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          </tab>
-          <tab heading="Second tab" class="mt-2" (selectTab)="onSelect($event)">
-            <h4>Title 2</h4>
-            <p>It has survived not only five centuries, but also the leap into electronic typesetting,
-              remaining essentially unchanged. It was popularised in the 1960s with the release of
-              Letraset sheets containing Lorem Ipsum passages</p>
-          </tab>
-        </tabset>
-      
-        <!-- <button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Mail</button> -->
+      <p>2. Choose type of mail : 
+      </p>
+        <table>
+          <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>
+              <button [ngClass]="{'btn btn-danger':user.active, 'btn btn-success':!user.active}" (click)="click(user)"> {{user.active ? 'Deactive':'Active'}}
+            </button>
+            </td>
+          </tr>
+        </table>
+        <select class="form-control-sm" id="" formControlName="mail-type">
+          <option>-type-mail-</option>
+          <option>Invitaion</option>
+          <option>Reminder</option>
+       </select>&nbsp; <button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Mail</button>
      
       <div class="mat-card body-mat-card mt-4" >
       

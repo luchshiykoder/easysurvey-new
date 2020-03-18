@@ -413,5 +413,26 @@ private selectedLink: string="";
     //for sending Invitation/Reminder mail 
    
   
-
+    users:Array<any>=[{
+      id:1,
+      name:'User 1',
+      active:false
+    },{
+      id:2,
+      name:'User 2',
+      active:true
+    },{
+      id:3,
+      name:'User 3',
+      active:true
+    },{
+      id:4,
+      name:'User 4',
+      active:false
+    }]
+  
+    click(user){
+      user.active = !user.active
+      // your code here....
+    }
 }

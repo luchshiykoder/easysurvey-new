@@ -41,9 +41,6 @@ import {MatDatepickerModule, MatInputModule,MatNativeDateModule} from '@angular/
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { TabsModule, TabDirective } from 'ngx-bootstrap/tabs';
-
-
 
 
 
@@ -67,7 +64,6 @@ import { TabsModule, TabDirective } from 'ngx-bootstrap/tabs';
     
   ],
   imports: [
-    TabsModule.forRoot(),TabDirective,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

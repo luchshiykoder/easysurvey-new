@@ -2,7 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import Swal from 'sweetalert2';
 import {ISurvey} from "../Interfaces/ISurvey"
 import {SurveyDataService} from "../_services/DataServices/survey.data.service"
-import { TabsModule } from 'ngx-bootstrap';
+import { TabDirective } from 'ngx-bootstrap';
 @Component({
   selector: 'app-grid-list',
   templateUrl: './grid-list.component.html',
