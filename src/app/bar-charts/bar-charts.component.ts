@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarChartsComponent implements OnInit {
   //for pie
-  public pieChartLabels = ['Attendent', 'Pending'];
-  public pieChartData = [200, 100];
+  public pieChartLabels = ['Complete', 'Incomplete', 'Not Started' ];
+  public pieChartData = [150, 100, 50];
   public pieChartType = 'pie';
 
   constructor() { }
@@ -16,6 +16,12 @@ export class BarChartsComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true
   };
+  pieChartColor:any = [
+    {
+        backgroundColor: ['#28a745', '#2092ed','#ffc107']
+    }
+]
+
   
   //for barChartData
   // public barChartLabels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];

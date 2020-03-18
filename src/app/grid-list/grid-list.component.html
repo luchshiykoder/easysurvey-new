@@ -43,7 +43,7 @@
         <p>Check your ongoing survey for multiple online business persepective coversation.</p>
       </mat-card-content>
       <mat-card-actions >
-        <button mat-raised-button  matTooltip="Active Survey Details" class="working-btn"  (click)="toggle1()">Index Survey <i class="fa fa-hourglass-start" aria-hidden="true"></i></button>
+        <button mat-raised-button  matTooltip="Active Survey Details" class="working-btn"  (click)="toggle1()">Index Survey <i class="fa fa-list" aria-hidden="true"></i></button>
         <span class="badge working" style="font-weight: 100;">Last Survey: SBI- 25th Jan 2020, 11AM</span>
       </mat-card-actions>
     </mat-card>
@@ -205,20 +205,85 @@
           <app-edit-template></app-edit-template>
         </div>
         <div *ngIf="!informationSurvey" >
-          <hr>
-          <div class="row">
-            <div class="col-lg-4">
-              <p><strong>Had Started:</strong> 20th Jan 2010/2PM</p>
-              <p><strong>Will Expire:</strong> 20th Jan 2010/2PM</p>
-            </div>
-            
-            <div class="col-lg-4">
-              <p><strong>Total Participant</strong> - 1200</p>
-              <p><strong>Attendent Participant</strong> - 300</p>
-              <p><strong>Pending Participant</strong> - 900</p>
-            </div>
-            <div class="col-lg-4"><app-bar-charts></app-bar-charts></div> 
-          </div>
+          <!-- <hr> -->
+          <!-- <div *ngIf="!compltedSurveyGraph" (click)="details()"> -->
+            <div style="    padding: 30px;">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
+                      <div class="card-list after-loop ">
+                        <div class="card-block card-5 text-right">
+                          <h6>Survey Public on</h6>
+                          <h4>23, March 2020</h4>
+                          <i class="fa fa-play" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
+                      <div class="card-list after-loop ">
+                        <div class="card-block card-5 text-right">
+                          <h6>Survey Completed on</h6>
+                          <h4>31, March 2020</h4>
+                          <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
+                      <div class="card-list after-loop ">
+                        <div class="card-block card-1 text-right">
+                          <h6>Assigned Participant</h6>
+                          <h4>300</h4>
+                          <i class="fa fa-users" aria-hidden="true"></i>
+                         
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
+                      <div class="card-list">
+                        <div class="card-block card-2 text-right">
+                          <h6 >Not Started Participant</h6>
+                          <h4>50</h4>
+                          <i class="fa fa-user-times" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
+                      <div class="card-list">
+                        <div class="card-block card-3 text-right">
+                          <h6>Incomplete Participant</h6>
+                          <h4>100</h4>
+                          <i class="fa fa-hourglass-half" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
+                      <div class="card-list">
+                        <div class="card-block card-4 text-right">
+                          <h6>Completed Participant</h6>
+                          <h4>150</h4>
+                          <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div> 
+                 </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="card-list">
+                      <div class="card-block">
+                          <app-bar-charts></app-bar-charts>
+                      </div> 
+                    </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+              </div>
+            <!-- </div> -->
+
+
         </div>
       </div>  
     </div>
@@ -271,19 +336,19 @@
                       <div class="row">
                         <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
                           <div class="card-list after-loop ">
-                            <div class="card-block card-1 text-right">
-                              <h6>Started Time fot the Survey</h6>
-                              <h4>300</h4>
-                              <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <div class="card-block card-5 text-right">
+                              <h6>Survey Public on</h6>
+                              <h4>23, March 2020</h4>
+                              <i class="fa fa-play" aria-hidden="true"></i>
                             </div>
                           </div>
                         </div>
                         <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
                           <div class="card-list after-loop ">
-                            <div class="card-block card-1 text-right">
-                              <h6>Assigned Participant</h6>
-                              <h4>300</h4>
-                              <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <div class="card-block card-5 text-right">
+                              <h6>Survey Completed on</h6>
+                              <h4>31, March 2020</h4>
+                              <i class="fa fa-check-square-o" aria-hidden="true"></i>
                             </div>
                           </div>
                         </div>
@@ -292,7 +357,8 @@
                             <div class="card-block card-1 text-right">
                               <h6>Assigned Participant</h6>
                               <h4>300</h4>
-                              <i class="fa fa-clock-o" aria-hidden="true"></i>
+                              <i class="fa fa-users" aria-hidden="true"></i>
+                             
                             </div>
                           </div>
                         </div>
@@ -301,7 +367,7 @@
                             <div class="card-block card-2 text-right">
                               <h6 >Not Started Participant</h6>
                               <h4>50</h4>
-                              <i class="fa fa-users" aria-hidden="true"></i>
+                              <i class="fa fa-user-times" aria-hidden="true"></i>
                             </div>
                           </div>
                         </div>
@@ -319,7 +385,7 @@
                             <div class="card-block card-4 text-right">
                               <h6>Completed Participant</h6>
                               <h4>150</h4>
-                              <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                              <i class="fa fa-check-circle" aria-hidden="true"></i>
                             </div>
                           </div>
                         </div> 
