@@ -1,28 +1,17 @@
 <div class="row ">
   <div class="col-lg-12">
     <div class="" *ngIf="!launchSurveyArea">
-      <p>1. Choose your user form the list to send Invitation/Reminder mail, list given below.</p>
-      <p>2. Choose type of mail : 
-      </p>
-
-<!-- <button class="btn btn-sm btn-secondary" [ngClass]="{'active': isActive}" (click)="activeInvitation()">Invitation Mail</button>
-<button class="btn btn-sm btn-secondary" [ngClass]="{'active': isActive}" (click)="activeReminder()">Reminder Mail</button> --> 
-<pre class="card card-block card-header">{{radioModel || 'null'}}</pre>
-<div class="btn-group">
-  <label class="btn btn-primary" [(ngModel)]="radioModel"
-         btnRadio="Left" tabindex="0" role="button">Left</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel"
-         btnRadio="Middle" tabindex="0" role="button">Middle</label>
-  <label class="btn btn-primary" [(ngModel)]="radioModel"
-         btnRadio="Right" tabindex="0" role="button">Right</label>
-</div>    
-        <!-- <select class="form-control-sm" id="" formControlName="mail-type">
-          <option>-type-mail-</option>
-          <option>Invitaion</option>
-          <option>Reminder</option>
-       </select>&nbsp; <button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Mail</button> -->
-     
-      <div class="mat-card body-mat-card mt-4" >
+      <h6>Choose your user form the list to send Invitation/Reminder mail, list given below.</h6>
+      <p> Choose type of mail : 
+        <label class="checkbox-inline"><input #invitaionarea type="radio"  name="size" (change)="0" > Invitation</label>&nbsp;
+        <label class="checkbox-inline"><input #reminderarea  type="radio" name="size" (change)="0"> Reminder</label>&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-sm btn-primary" (click)="open(invitation)">Send Mail</button>
+      </p> 
+        
+       
+        
+   
+      <div class="mat-card body-mat-card " >
       
 
         <div class="text-left">
