@@ -5,14 +5,22 @@
       <p>2. Choose type of mail : 
       </p>
 
-<button class="btn btn-sm btn-secondary" [ngClass]="{'active': isActive}" (click)="activeInvitation()">Invitation Mail</button>
-<button class="btn btn-sm btn-secondary" [ngClass]="{'active': isActive}" (click)="activeReminder()">Reminder Mail</button> -->
-           
-        <select class="form-control-sm" id="" formControlName="mail-type">
+<!-- <button class="btn btn-sm btn-secondary" [ngClass]="{'active': isActive}" (click)="activeInvitation()">Invitation Mail</button>
+<button class="btn btn-sm btn-secondary" [ngClass]="{'active': isActive}" (click)="activeReminder()">Reminder Mail</button> --> 
+<pre class="card card-block card-header">{{radioModel || 'null'}}</pre>
+<div class="btn-group">
+  <label class="btn btn-primary" [(ngModel)]="radioModel"
+         btnRadio="Left" tabindex="0" role="button">Left</label>
+  <label class="btn btn-primary" [(ngModel)]="radioModel"
+         btnRadio="Middle" tabindex="0" role="button">Middle</label>
+  <label class="btn btn-primary" [(ngModel)]="radioModel"
+         btnRadio="Right" tabindex="0" role="button">Right</label>
+</div>    
+        <!-- <select class="form-control-sm" id="" formControlName="mail-type">
           <option>-type-mail-</option>
           <option>Invitaion</option>
           <option>Reminder</option>
-       </select>&nbsp; <button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Mail</button>
+       </select>&nbsp; <button type="button" class="btn btn-sm btn-outline-primary" (click)="open(invitation)">Send Mail</button> -->
      
       <div class="mat-card body-mat-card mt-4" >
       
