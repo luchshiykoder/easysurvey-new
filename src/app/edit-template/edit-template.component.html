@@ -288,10 +288,9 @@
           <div class="panel panel-default">
               <div class="panel-heading">
                 You can add Question according to your requirements with option type like Multiple chioce, CheckBox selection etc.
-                <button mat-raised-button (click)="open(addquestion)" class="info-btn">+ Add Question </button>&nbsp;
-                <button mat-raised-button  color="dark-btn" (click)="open(dimensionList)"><i class="material-icons">
-                  format_list_bulleted
-                  </i> Dimension List </button>
+                <button mat-raised-button (click)="open(addquestion)" class="btn btn-sm btn-secondary"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Question </button>&nbsp;
+                <button mat-raised-button  (click)="open(dimensionList)" class="working-btn" >
+                  <i class="fa fa-list-alt" aria-hidden="true"></i> Dimension List </button>
                 <hr>
               </div> 
               <div class="panel-body">
@@ -391,7 +390,7 @@
       <div class="tab-pane active" [ngClass]="{'showTab':selectedUserTab == 6, 'hideTab':selectedUserTab != 6}"> <!-- stripe account tab -->
         <div class="panel panel-default">
             <div class="panel-heading">
-              <h6>Fill end date for this Survey <i class="material-icons"> event_note </i> </h6>
+              <h6>Fill end date for this Survey <i class="fa fa-calendar" aria-hidden="true"></i></h6>
               <hr>
             </div> 
             <div class="panel-body">
@@ -1340,13 +1339,14 @@
   
   <ng-template #addDimension let-modal >
 
-    <div class="modal-header">
+    <!-- <div class="modal-header">
       <h4 class="modal-title" id="modal-basic-title">Add your Dimension </h4>
       <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
-    </div>
+    </div> -->
     <div class="modal-body">
+      <span type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"aria-hidden="true">&times;</span>
       <div class="stardard-area-bg">
       <form>
 

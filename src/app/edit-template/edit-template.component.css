@@ -305,11 +305,13 @@ table {width: 100%;}
     margin-bottom: 2px;}
     .form-group {
       margin-bottom: 4px;}
-  .question-card{background-color: #ffffff!important;
-    border-radius: 25px;
-    /* margin: 5px 0px; */
-  /* box-shadow:0 2px 4px 4px rgba(128, 128, 128, 0.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(35, 31, 31, 0.12);
-  */ padding: 10px;
+  .question-card{    background-color: #eeeeee!important;
+    border-radius: 4px;
+    padding: 10px;
+    /* color: #fff; */
+    border: 1px solid dotted;
+    border-style: dotted;
+    border-color: #dcdada;
 }
 .question-card ul {
   /* background: #fff; */
@@ -643,16 +645,16 @@ input[type="radio"], input[type="checkbox"] {
               width: 100%;}
             .custom-table td{
               font-size: 13px;
-              padding: 3px 10px;
+              padding: 6px 10px;
             }
             .custom-table tr  {
               transition: all 0.5s ease-in-out;
               background-color: #ecf0f3;
               text-align: center!important;
             }
+            /* .custom-table tr:hover{ background: #d2e9ff; }
             .custom-table tr:hover{ background: #d2e9ff; }
-            .custom-table tr:hover{ background: #d2e9ff; }
-            .custom-table tr td:hover{ background: #57666d; color: #fff;}
+            .custom-table tr td:hover{ background: #57666d; color: #fff;} */
 
             .btn-secondary.active {
               background-color: green!important;
