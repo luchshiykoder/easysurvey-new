@@ -73,7 +73,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     ReactiveFormsModule,
     FormsModule,
     MatMenuModule,
-    MatTabsModule,
+    MatTabsModule,TabsModule.forRoot(),
     NgbModule,DragDropModule,
 
     ChartsModule,MatFormFieldModule,
