@@ -15,6 +15,17 @@
 
   <!-- Section 1 -Create New Survey -->
   <div class="col-lg-4 col-sm-6 col-xs-4">
+    <div class="card example-card" *ngIf="!main">
+      <div class="card-body">
+        <h6 class="card-title"  *ngIf="!show"><img src="../assets/start.png" width="25"> Create New Survey </h6>
+        <span class="text-secondary" *ngIf="!show">Start Survey?</span>
+        <p class="card-text" *ngIf="!show">Create your new survey for taking feedback of your users with online coversation.</p>
+        <button type="button" class="btn btn-secondary btn-sm start-btn"   matTooltip="Click here to Create New Survey" (click)="onClickTypeSurvey()">New Create <i class="fa fa-paper-plane" aria-hidden="true"></i></button>&nbsp;
+        <button type="button" class="btn btn-outline-secondary btn-sm save-btn"  matTooltip="Check Your Saved Survey"  (click)="toggle3()">Saved Survey <i class="fa fa-pause-circle" aria-hidden="true"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-lg-4 col-sm-6 col-xs-4">
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
@@ -33,9 +44,9 @@
           Survey <i class="fa fa-pause-circle" aria-hidden="true"></i></button>
       </mat-card-actions>
     </mat-card>
-  </div>
+  </div> -->
   <!-- Section 2 -onGoing All Survey -->
-  <div class="col-lg-4 col-sm-6 col-xs-4">
+  <!-- <div class="col-lg-4 col-sm-6 col-xs-4">
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
@@ -53,9 +64,21 @@
         <span class="badge working" style="font-weight: 100;">Last Publish: SBI- 25th Jan 2020</span>
       </mat-card-actions>
     </mat-card>
+  </div> -->
+  <div class="col-lg-4 col-sm-6 col-xs-4">
+    <div class="card example-card" *ngIf="!main">
+      <div class="card-body">
+        <h6 class="card-title"  *ngIf="!show"><img src="../assets/ongoing.png" width="25"> OnGoing Survey</h6>
+        <span class="working" *ngIf="!show">Running on </span>
+        <p class="card-text" *ngIf="!show">Check your ongoing survey for multiple online business persepective coversation.</p>
+        <button type="button" matTooltip="Active Survey Details" class="btn btn-sm working-btn" (click)="toggle1()">Index
+          Survey <i class="fa fa-list" aria-hidden="true"></i></button>
+        <span class="badge working">Last Publish: SBI- 25th Jan 2020</span>
+      </div>
+    </div>
   </div>
   <!-- Section 3 -Completed All Survey -->
-  <div class="col-lg-4 col-sm-6 col-xs-4">
+  <!-- <div class="col-lg-4 col-sm-6 col-xs-4">
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
@@ -73,6 +96,17 @@
         <span class="badge text-success" style="font-weight: 100;">Last Completed: TATA- 10th May 2019</span>
       </mat-card-actions>
     </mat-card>
+  </div> -->
+  <div class="col-lg-4 col-sm-6 col-xs-4">
+    <div class="card example-card" *ngIf="!main" >
+      <div class="card-body">
+        <h6 class="card-title"  *ngIf="!show"><img src="../assets/complete.png" width="25"> Completed Survey</h6>
+        <span class="text-success" *ngIf="!show">Completed </span>
+        <p class="card-text" *ngIf="!show">Extend date and check your all completed surevy with all status score. Complete Details.</p>
+        <button type="button" (click)="onClickCompletedSurvey()" matTooltip="All completed Survey" class="btn btn-sm btn-success complete">Completed Survey <i class="fa fa-check" aria-hidden="true"></i> </button>
+        <span class="badge text-success">Last Completed: TATA- 10th May 2019</span>
+      </div>
+    </div>
   </div>
 </div>
 

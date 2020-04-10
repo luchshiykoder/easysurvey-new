@@ -1,54 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
+html, body {background-color: #f8f9fa;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* .info{color:rgb(93, 198, 239);} */
-.complete{color:rgb(0, 175, 22);}
-.start{color:rgb(222, 13, 13);}
-.working{color:#f89d13;}
-.save{color:#5b5959;}
-.info-btn{background-color:rgb(93, 198, 239);color:#fff;}
-.working-btn{background-color:#f89d13;color:#fff;}
-.start-btn{background-color:#f44241;color:#fff;}
-.save-btn{background-color:#5b5959;color:#fff;}
+/* .complete{color:rgb(0, 175, 22);} */
+/* .start{color:rgb(222, 13, 13);} */
+
+/* .save{color:#5b5959;}
+.info-btn{background-color:rgb(93, 198, 239);color:#fff;} */
+/* .working-btn{background-color:#f89d13;color:#fff;}
+.start-btn{background-color:#f44241;color:#fff;} */
+/* .save-btn{background-color:#5b5959;color:#fff;} */
 p{font-size: 14px;}
    
 #swal2-title {
-    margin: 0px;
-    font-size: 18px;
-    margin-bottom: 12px;
-    font-weight: 700;
-  
-  }
-  .swal2-styled {
-    padding: .45em 1.5em!important;
-    font-size: 15px!important;
-    line-height: 21px!important;
-  }
-  .swal2-checkbox, .swal2-file, .swal2-input, .swal2-radio, .swal2-select, .swal2-textarea {
-    margin: 0.5em auto!important;
+  margin: 0px;
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.swal2-styled {
+  padding: .45em 1.5em!important;
+  font-size: 15px!important;
+  line-height: 21px!important;
+}
+.swal2-checkbox, .swal2-file, .swal2-input, .swal2-radio, .swal2-select, .swal2-textarea {
+   margin: 0.5em auto!important;
 }
 .swal2-popup {height: 20em!important;}
 .swal2-select {
-
   padding: 4px 12px!important;
+  font-size: 17px!important;
+}
+.swal2-input {
+  height: 2.5em!important;
+  font-size: 17px!important;
+}
+.body-area{
+  padding: 20px;
+}
+  
 
-  font-size: 17px!important;}
-  .swal2-input {
-    height: 2.5em!important;
-
-    font-size: 17px!important;
-  }
 
   .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+
     color: #fbc108!important;
     background-color: #ffffff;
     border-color: #fbc108 #fbc108 #fff!important;}
     a.nav-link{
+
       color: #2c303a!important;    font-size: 13px;
     }
-    .nav-tabs {
-      border-bottom: 1px solid #fbc108!important;}
+  
       .tab-content{
         padding: 20px!important;
         /* text-align: center!important; */
