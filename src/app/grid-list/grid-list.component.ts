@@ -4,6 +4,11 @@ import {ISurvey} from "../Interfaces/ISurvey"
 import {SurveyDataService} from "../_services/DataServices/survey.data.service"
 import { TabDirective } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { surveyModel } from "../_models/surveyModel";
+import { SurveyService } from '../_services/survey-services/survey.service';
+import { PocService} from '../_services/POCServices/poc.service';
+import { AuthenticationService } from '../_services/authentication.service';
+
 @Component({
   selector: 'app-grid-list',
   templateUrl: './grid-list.component.html',
@@ -11,10 +16,11 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 })
 export class GridListComponent implements OnInit {
 
-  constructor(private _surveyDataService:SurveyDataService) { }
-  // onFileComplete(data: any) {
-  // console.log(data); // We just print out data bubbled up from event emitter.
-  //}
+  constructor(
+    private surveyService:SurveyService    
+    ) { }
+
+  
   ngOnInit () 
   {   }
   // FOR TYPE SURVEY NAME 
@@ -37,11 +43,39 @@ export class GridListComponent implements OnInit {
    public launchSurveyArea:boolean = true;
   public golaunchButton:boolean =true;
   public compltedSurveyGraph:boolean = true;
-  CurrSurvey:ISurvey ={
-    SurveryName :"",
-    Respodant:{Name:"",Email:"",DOB:""},
-   // welcomeMsg:""
+
+  currSurvey:surveyModel={
+    surveyId:1,
+    surveyName: "",
+    isPublished: "",
+    qsStatus: "",
+    fromDate: new Date,
+    toDate: new Date,
+    fromTime: "20 June 2019  11am",
+    toTime: "20 June 2019 / 11am",
+    pocEntity: {
+        pocName: "",
+        mail: "",
+        status: "",
+        accesskey: "",
+        companyEntity: {
+            companyId: 1,
+            companyName: "",
+            logo: "",
+        }
+    },
+    DimensionEntity: {
+        dimension_id: 1,
+        dimensionName: "",
+        status: ""
+    }, WelcomeMsgEntity: {
+      welcomeMessage : "",
+      welcomeLogo:""
+      } 
+  
   };
+
+
   detailcompltedSurveyGraph(){
     this.compltedSurveyGraph=false;
   }
@@ -60,8 +94,13 @@ export class GridListComponent implements OnInit {
     })
     
     if (text) {
-      this.CurrSurvey.SurveryName = text;
-      this._surveyDataService.CreateSurvey(this.CurrSurvey);
+
+      localStorage.removeItem("WelcomeImageURL");
+      this.currSurvey.surveyName = text;
+      this.currSurvey.pocEntity.pocName='sagar';
+      this.surveyService.CreateSurvey(this.currSurvey);
+      this.surveyService.saveSurvey(this.currSurvey.surveyName,this.currSurvey.pocEntity.pocName);
+     
       Swal.fire(
         `Survey Name: ${text}`,
         'You have successfully created the survey, now!',
@@ -73,69 +112,16 @@ export class GridListComponent implements OnInit {
       this.onGoingSelectSurvey = true;
       this.closeSelectSurvey =true;
       this.savedsurvey =true;
-
       this.createNewSurvey = !this.onGoingSelectSurvey;
       this.text=text;
       this.menuToggle = false;
-      this.main = true;
-
-     
+      this.main = true;     
      
     }    console.log(text);
-  })() // FOR asnc end point of TYPE SURVEY NAME 
-  } // FOR TYPE SURVEY NAME 
-
-  // savedSurvey(){  
-  //   Swal.fire({
     
-  //     icon: 'success',
-
-  //    // title: 'Your Details Saved for this Survey',
-  //     showConfirmButton: true,
-  //     //'success'.
-  //     //launch:false,
-  //    // timer: 1500
-  //   })
- 
-  
-    
-    
-    
-  // }
-
- //Type new Survey Name 
- onClickSavedSurvey(){
-  (async () => {
-  const { value: text } = await Swal.fire({
-    allowOutsideClick: false,
- 
-    title: 'Enter Survey Name',
-    input: 'text',
-    inputPlaceholder: 'Enter New Survey Name'
-  })
-  
-  if (text) {
-
-
-    Swal.fire(
-      `Survey Name: ${text}`,
-      'You have successfully created the survey!',
-      'success'
-    ) 
-    this.show = true;
-    this.onGoing = true;
-    this.expireSurvey =true;
-    this.onGoingSelectSurvey = true;
-    this.closeSelectSurvey =true;
-    this.createNewSurvey = !this.onGoingSelectSurvey;
-    this.text=text;
-    this.menuToggle = false;
-    this.main = true;
-    
-   
+  })()  
   }
-})() // FOR asnc end point of TYPE SURVEY NAME 
-} // FOR TYPE SURVEY NAME 
+
    
 
 

@@ -1,9 +1,12 @@
 export interface pocModel {    
     pocName:string,
-    pocEmail:string,
+    mail:string,
+    status:string,
+    accesskey:string,  
     companyEntity:{
-         companyName:string,
-         status:string,
-         logo:string,
+      companyId:number,
+      companyName:string,
+      logo:string      
     }
-}
+  
+  }

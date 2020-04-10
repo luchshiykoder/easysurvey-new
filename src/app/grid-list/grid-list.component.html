@@ -1,16 +1,19 @@
-
 <div class="row">
   <div class="col-lg-12 dash-head text-center">
-    <h4 *ngIf="!show" style="padding: 10px 0;">  Armezo will be helpful for you to understand where your trends, now</h4>
+    <p *ngIf="!show" class="mt-2">
+      Armezo will be helpful for you to understand where your trends, now</p>
   </div>
 </div>
 
+<!-- Toggle Show only After Creatred New Survey  -->
 <div class="row">
   <div class="col-lg-12" *ngIf="!menuToggle">
-        <button type="button" matTooltip="Open Menu"   class="btn  btn-outline-secondary btn-sm" (click)="onClickTypeSurvey1()">
-          <i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+    <button type="button" matTooltip="Open Menu" class="btn  btn-outline-secondary btn-sm"
+      (click)="onClickTypeSurvey1()">
+      <i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
   </div>
 
+  <!-- Section 1 -Create New Survey -->
   <div class="col-lg-4 col-sm-6 col-xs-4">
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
@@ -18,18 +21,20 @@
           <img src="../assets/start.png" width="25">
         </div>
         <mat-card-title>Create New Survey </mat-card-title>
-        <mat-card-subtitle  class="start" *ngIf="!show">Start Survey?</mat-card-subtitle>
+        <mat-card-subtitle class="start" *ngIf="!show">Start Survey?</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content *ngIf="!show" >
+      <mat-card-content *ngIf="!show">
         <p>Create your new survey for taking feedback of your users with online coversation.</p>
       </mat-card-content>
-      <mat-card-actions >
-        <button mat-raised-button class="start-btn" matTooltip="Click here to Create New Survey" (click)="onClickTypeSurvey()">Create New <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-        <button mat-raised-button class="save-btn"  matTooltip="Check Your Saved Survey" (click)="toggle3()">Your Saved Survey <i class="fa fa-pause-circle" aria-hidden="true"></i></button>
+      <mat-card-actions>
+        <button mat-raised-button class="start-btn" matTooltip="Click here to Create New Survey"
+          (click)="onClickTypeSurvey()">Create New <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        <button mat-raised-button class="save-btn" matTooltip="Check Your Saved Survey" (click)="toggle3()">Your Saved
+          Survey <i class="fa fa-pause-circle" aria-hidden="true"></i></button>
       </mat-card-actions>
     </mat-card>
   </div>
-        
+  <!-- Section 2 -onGoing All Survey -->
   <div class="col-lg-4 col-sm-6 col-xs-4">
     <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
@@ -37,47 +42,51 @@
           <img src="../assets/ongoing.png" width="25">
         </div>
         <mat-card-title>OnGoing Survey</mat-card-title>
-        <mat-card-subtitle  class="working" *ngIf="!show">Running on </mat-card-subtitle>
+        <mat-card-subtitle class="working" *ngIf="!show">Running on </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content *ngIf="!show">
         <p>Check your ongoing survey for multiple online business persepective coversation.</p>
       </mat-card-content>
-      <mat-card-actions >
-        <button mat-raised-button  matTooltip="Active Survey Details" class="working-btn"  (click)="toggle1()">Index Survey <i class="fa fa-list" aria-hidden="true"></i></button>
-        <span class="badge working" style="font-weight: 100;">Last Survey: SBI- 25th Jan 2020, 11AM</span>
+      <mat-card-actions>
+        <button mat-raised-button matTooltip="Active Survey Details" class="working-btn" (click)="toggle1()">Index
+          Survey <i class="fa fa-list" aria-hidden="true"></i></button>
+        <span class="badge working" style="font-weight: 100;">Last Publish: SBI- 25th Jan 2020</span>
       </mat-card-actions>
     </mat-card>
   </div>
-
+  <!-- Section 3 -Completed All Survey -->
   <div class="col-lg-4 col-sm-6 col-xs-4">
-    <mat-card class="example-card" *ngIf="!main" >
+    <mat-card class="example-card" *ngIf="!main">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image">
-           <img src="../assets/complete.png" width="25">
+          <img src="../assets/complete.png" width="25">
         </div>
         <mat-card-title>Completed Survey</mat-card-title>
-        <mat-card-subtitle  class="text-success" *ngIf="!show">Completed </mat-card-subtitle>
+        <mat-card-subtitle class="text-success" *ngIf="!show">Completed </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content *ngIf="!show">
         <p>Extend date and check your all completed surevy with all status score. Complete Details </p>
       </mat-card-content>
-      <mat-card-actions >
-        <button mat-raised-button  matTooltip="All completed Survey"  (click)="onClickCompletedSurvey()" class="complete" >Completed Survey <i class="fa fa-check" aria-hidden="true"></i> </button>
-        <span class="badge text-success" style="font-weight: 100;">Last Expired Survey: TATA- 10th May 2019, 7 AM </span>
+      <mat-card-actions>
+        <button mat-raised-button matTooltip="All completed Survey" (click)="onClickCompletedSurvey()"
+          class="complete">Completed Survey <i class="fa fa-check" aria-hidden="true"></i> </button>
+        <span class="badge text-success" style="font-weight: 100;">Last Completed: TATA- 10th May 2019</span>
       </mat-card-actions>
     </mat-card>
-  </div> 
+  </div>
 </div>
 
+<!-- New Survey Create section/options, if will be appear after created new survey -->
 <div class="row ">
   <div class="col-lg-12">
     <div class="" *ngIf="!createNewSurvey">
-      <div class="mat-card body-mat-card " >
-        <app-edit-template  *ngIf="!editSurveyDetails"></app-edit-template>
+      <div class="mat-card body-mat-card ">
+        <app-edit-template *ngIf="!editSurveyDetails"></app-edit-template>
       </div>
     </div>
   </div>
-  
+
+  <!-- all Save Survey, it will be appear after on click saved button -->
   <div class="col-lg-12">
     <div class="" *ngIf="!savedsurvey">
       <div class="mat-card mt-2">
@@ -85,7 +94,7 @@
         <div class="table-responsive">
           <table class="table custom-table">
             <thead>
-              <tr>  
+              <tr>
                 <th>Survey Name </th>
                 <th>Start Date/Time</th>
                 <th>Welcome Template</th>
@@ -97,53 +106,31 @@
             </thead>
             <tbody>
               <tr>
-                <td><span class="text-primary">SBI general </span> </td>
-                <td>20 June 2019 / 11am </td>
-                <td><i class="fa fa-times text-danger" aria-hidden="true"></i></td>
-                <td><i class="fa fa-times text-danger" aria-hidden="true"></i></td>
+                <td><span class="text-primary">{{this.currSurvey.surveyName}}</span> </td>
+                <td>{{this.currSurvey.fromTime}}</td>
+                <td><i class="fa fa-times text-danger"  *ngIf="this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
+                <td><i class="fa fa-times text-danger" *ngIf ="!this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
                 <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
                 <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
                 <td>
-                  <button   matTooltip="" class="btn  btn-xs btn-info "  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button  matTooltip="" class="btn  btn-xs btn-danger" >Delete</button>
+                  <button matTooltip="" class="btn  btn-xs btn-info " (click)="draftEdit()">Edit</button> &nbsp;
+                  <button matTooltip="" class="btn  btn-xs btn-danger">Delete</button>
                 </td>
-              </tr>  
-              <tr>
-                <td><span class="text-primary">SBI general</span>  </td>
-                <td>20 June 2019 / 11am </td>
-                <td><i class="fa fa-times  text-danger" aria-hidden="true"></i></td>
-                <td><i class="fa fa-times  text-danger" aria-hidden="true"></i></td>
-                <td><i class="fa fa-times  text-danger" aria-hidden="true"></i></td>
-                <td><i class="fa fa-times  text-danger" aria-hidden="true"></i></td>
-                <td>
-                  <button  matTooltip="" class="btn btn-xs btn-info">Edit</button> &nbsp;
-                  <button  matTooltip="" class="btn btn-xs btn-danger">Delete</button>
-                </td>
-              </tr> 
-              <tr>
-                <td><span class="text-primary">SBI general </span> </td>
-                <td>20 June 2019 / 11am </td>
-                <td><i class="fa fa-times text-danger" aria-hidden="true"></i></td>
-                <td><i class="fa fa-times text-danger" aria-hidden="true"></i></td>
-                <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
-                <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
-                <td>
-                  <button   matTooltip="" class="btn  btn-xs btn-info "  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button  matTooltip="" class="btn  btn-xs btn-danger" >Delete</button>
-                </td>
-              </tr>   
+              </tr>            
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
+  
+  <!-- OnGoing Survey, it will be appear after on click indexSurvey -->
   <div class="col-lg-12">
     <div class="" *ngIf="!onGoing">
       <div class="mat-card mt-2">
-        <h6>All List of onGoing Survey</h6> 
-        <div  *ngIf="!EditSelectedTemplate" class="body-mat-card">
-         <app-edit-template></app-edit-template>
+        <h6>All List of onGoing Survey</h6>
+        <div *ngIf="!EditSelectedTemplate" class="body-mat-card">
+          <app-edit-template></app-edit-template>
         </div>
         <div class="table-responsive" *ngIf="!ListOnGoingSurvey">
           <table class="table custom-table ">
@@ -160,9 +147,10 @@
               </tr>
             </thead>
             <tbody>
-            
+
               <tr>
-                <td><strong><button class="btn btn-xs btn-block btn-primary" (click)="onClickSelectSurvey()">TATAAIG </button></strong>  </td>
+                <td><strong><button class="btn btn-xs btn-block btn-primary" (click)="onClickSelectSurvey()">TATAAIG
+                    </button></strong> </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
                 <td>20 January 2020 /7pm</td>
@@ -170,8 +158,8 @@
                 <td>500</td>
                 <td>1000</td>
                 <td>
-                  <button  matTooltip="" class="btn btn-xs btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button  matTooltip="" class="btn btn-xs btn-danger" >Delete</button>
+                  <button matTooltip="" class="btn btn-xs btn-info" (click)="draftEdit()">Edit</button> &nbsp;
+                  <button matTooltip="" class="btn btn-xs btn-danger">Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -180,112 +168,116 @@
       </div>
     </div>
   </div>
- <div class="col-lg-12">
+
+  <!-- <div class="col-lg-12">
     <div class="" *ngIf="!launchSurveyArea">
-     
-      <div class="mat-card body-mat-card " >
+
+      <div class="mat-card body-mat-card ">
         <div class="text-center">
           launchSurvey area
-          </div>
+        </div>
       </div>
     </div>
-  </div> 
+  </div> -->
 
+<!-- see all details of current ongoing survey -->
   <div class="col-lg-12">
     <div class="" *ngIf="!onGoingSelectSurvey">
-      <div class="mat-card body-mat-card mt-2"> 
-       <h6> Welcome on goning survey name : {{+result}} 
-        <span class="float-right">
-          <span>If you want to update in this HCL SURVEY then click here <button   (click)="editSurvey()" class="btn-sm  btn-danger" matTooltip="Edit Options">Edit Survey</button></span>
-          <span >
-            &nbsp;<button   (click)="detailSurvey()" class="btn-primary btn-sm" matTooltip="detail survey">back to details</button></span>
+      <div class="mat-card body-mat-card mt-2">
+        <h6> Welcome on goning survey name : {{+result}}
+          <span class="float-right">
+            <span>If you want to update in this HCL SURVEY then click here <button (click)="editSurvey()"
+                class="btn-sm  btn-danger" matTooltip="Edit Options">Edit Survey</button></span>
+            <span>
+              &nbsp;<button (click)="detailSurvey()" class="btn-primary btn-sm" matTooltip="detail survey">back to
+                details</button></span>
           </span>
-       </h6>
-        <div  *ngIf="!EditSelectSurvey" ><hr>
+        </h6>
+        <div *ngIf="!EditSelectSurvey">
+          <hr>
           <app-edit-template></app-edit-template>
         </div>
-        <div *ngIf="!informationSurvey" >
+        <div *ngIf="!informationSurvey">
           <hr>
-          <!-- <div *ngIf="!compltedSurveyGraph" (click)="details()"> -->
-            <div>
-              <div class="row">
-                <div class="col-lg-9">
-                  <h6 class="card-head">Overall details:</h6>
-                  <div class="row">
-                    <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
-                      <div class="card-list after-loop ">
-                        <div class="card-block card-5 text-right">
-                          <h6>Survey Public on</h6>
-                          <h5>23, March 2020</h5>
-                          <i class="fa fa-play" aria-hidden="true"></i>
-                        </div>
+          <div>
+            <div class="row">
+              <div class="col-lg-9">
+                <h6 class="card-head">Overall details:</h6>
+                <div class="row">
+                  <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
+                    <div class="card-list after-loop ">
+                      <div class="card-block card-5 text-right">
+                        <h6>Publish</h6>
+                        <h5>23, March 2020</h5>
+                        <i class="fa fa-play" aria-hidden="true"></i>
                       </div>
                     </div>
-                    <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
-                      <div class="card-list after-loop ">
-                        <div class="card-block card-5 text-right">
-                          <h6>will expire on</h6>
-                          <h5>31, March 2020</h5>
-                          <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                        </div>
+                  </div>
+                  <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
+                    <div class="card-list after-loop ">
+                      <div class="card-block card-5 text-right">
+                        <h6>will expire</h6>
+                        <h5>31, March 2020</h5>
+                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
                       </div>
                     </div>
-                    <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
-                      <div class="card-list after-loop ">
-                        <div class="card-block card-1 text-right">
-                          <h6>Assigned Participant</h6>
-                          <h4>300</h4>
-                          <i class="fa fa-users" aria-hidden="true"></i>
-                         
-                        </div>
+                  </div>
+                  <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
+                    <div class="card-list after-loop ">
+                      <div class="card-block card-1 text-right">
+                        <h6>Assigned Participant</h6>
+                        <h4>300</h4>
+                        <i class="fa fa-users" aria-hidden="true"></i>
+
                       </div>
                     </div>
-                    <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
-                      <div class="card-list">
-                        <div class="card-block card-2 text-right">
-                          <h6 >Not Started Participant</h6>
-                          <h4>50</h4>
-                          <i class="fa fa-user-times" aria-hidden="true"></i>
-                        </div>
+                  </div>
+                  <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
+                    <div class="card-list">
+                      <div class="card-block card-2 text-right">
+                        <h6>Not Started Participant</h6>
+                        <h4>50</h4>
+                        <i class="fa fa-user-times" aria-hidden="true"></i>
                       </div>
                     </div>
-                    <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
-                      <div class="card-list">
-                        <div class="card-block card-3 text-right">
-                          <h6>Incomplete Participant</h6>
-                          <h4>100</h4>
-                          <i class="fa fa-hourglass-half" aria-hidden="true"></i>
-                        </div>
+                  </div>
+                  <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
+                    <div class="card-list">
+                      <div class="card-block card-3 text-right">
+                        <h6>Incomplete Participant</h6>
+                        <h4>100</h4>
+                        <i class="fa fa-hourglass-half" aria-hidden="true"></i>
                       </div>
                     </div>
-                    <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
-                      <div class="card-list">
-                        <div class="card-block card-4 text-right">
-                          <h6>Completed Participant</h6>
-                          <h4>150</h4>
-                          <i class="fa fa-check-circle" aria-hidden="true"></i>
-                        </div>
+                  </div>
+                  <div class="col-lg-2 col-md-8 mb-5 mb-lg-0 mx-auto">
+                    <div class="card-list">
+                      <div class="card-block card-4 text-right">
+                        <h6>Completed Participant</h6>
+                        <h4>150</h4>
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
                       </div>
-                    </div> 
-                    <div class="col-sm-12">
-                      <div>
-                        <tabset>
-                          <tab heading="Option1" id="tab1">Basic content1</tab>
-                          <tab heading="Option2">Basic content 2</tab>
-                          <tab heading="Option3">Basic content 3</tab>
-                          <tab heading="Option4">Basic content 4</tab>
-                          <tab heading="Option5">Basic content 5</tab>
-                          <tab heading="Option6">Basic content 6</tab>
-                          <tab heading="Option7">Basic content 7</tab>
-                          <tab heading="Option8">Basic content 8</tab>
-                          <tab heading="Option9">Basic content 9</tab>
-                          <tab heading="Option10">Basic content 10</tab>
-                        </tabset>
-                      </div>
-                       
-                    
                     </div>
-                 </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div>
+                      <tabset>
+                        <tab heading="Option1" id="tab1">  <app-bar-charts></app-bar-charts></tab>
+                        <tab heading="Option2">Basic content 2</tab>
+                        <tab heading="Option3">Basic content 3</tab>
+                        <tab heading="Option4">Basic content 4</tab>
+                        <tab heading="Option5">Basic content 5</tab>
+                        <tab heading="Option6">Basic content 6</tab>
+                        <tab heading="Option7">Basic content 7</tab>
+                        <tab heading="Option8">Basic content 8</tab>
+                        <tab heading="Option9">Basic content 9</tab>
+                        <tab heading="Option10">Basic content 10</tab>
+                      </tabset>
+                    </div>
+
+
+                  </div>
+                </div>
               </div>
               <div class="col-sm-3">
                 <h6 class="card-head">Overall information:</h6>
@@ -293,42 +285,27 @@
                   <div class="col-sm-12">
                     <div class="card-list">
                       <div class="card-block">
-                          <app-bar-charts></app-bar-charts>
-                      </div> 
+                        <app-bar-charts></app-bar-charts>
+                      </div>
                     </div>
-                    </div>
+                  </div>
                 </div>
               </div>
-            
-             
-              </div>
-              </div>
-            
-            <!-- </div> -->
-            <!-- <p class="card-head">Demographic Based Data:</p>
-            <tabset type="pills">
-              <tab heading="Year Wise">Year Wise</tab>
-              <tab heading="Month Wise">Month Wise  </tab>
-              <tab heading="Location Wise">Location Wise</tab>
-              <tab heading="Area Wise">Area Wise</tab>
-      
-            </tabset> -->
-
-
+            </div>
+          </div>
         </div>
-      </div>  
+      </div>
     </div>
   </div>
 
   <div class="col-lg-12">
     <div class="" *ngIf="!closeSelectSurvey">
       <div class="mat-card mt-2">
-        <h6>All List of Completed Survey</h6> 
-        <div class="table-responsive" >
-          <table class="table custom-table custom-table 
-          ">
+        <h6>All List of Completed Survey</h6>
+        <div class="table-responsive">
+          <table class="table custom-table custom-table ">
             <thead>
-              <tr>
+              <tr class="dotted">
                 <th>Survey Name </th>
                 <th>Status</th>
                 <th>Start Date/Time</th>
@@ -340,11 +317,12 @@
               </tr>
             </thead>
             <tbody>
-            
+
               <tr>
-                <td><strong>TATAAIG </strong> 
-                <span style="cursor:pointer;font-weight: 200;font-size: 11px;
-            " class="badge badge-primary" (click)="detailcompltedSurveyGraph()"><i class="fa fa-arrow-down" aria-hidden="true"></i> Details survey</span>  </td>
+                <td><strong>TATAAIG </strong>
+                  <span style="cursor:pointer;font-weight: 200;font-size: 11px;
+            " class="badge badge-primary" (click)="detailcompltedSurveyGraph()"><i class="fa fa-arrow-down"
+                      aria-hidden="true"></i> Details survey</span> </td>
                 <td><span class="text-success">Active</span></td>
                 <td>04 January 2020 /2pm</td>
                 <td>20 January 2020 /7pm</td>
@@ -352,95 +330,100 @@
                 <td>500</td>
                 <td>1000</td>
                 <td>
-                  <button  matTooltip="" class="btn btn-xs btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button  matTooltip="" class="btn btn-xs btn-danger" >Delete</button> &nbsp;
-                  <button  matTooltip="" class="btn btn-xs btn-primary" (click)="detailcompltedSurveyGraph()"><i class="fa fa-arrow-down" aria-hidden="true"></i> Details</button>
+                  <button matTooltip="" class="btn btn-xs btn-info" (click)="draftEdit()">Edit</button> &nbsp;
+                  <button matTooltip="" class="btn btn-xs btn-danger">Delete</button> &nbsp;
+                  <button matTooltip="" class="btn btn-xs btn-primary" (click)="detailcompltedSurveyGraph()"><i
+                      class="fa fa-arrow-down" aria-hidden="true"></i> Details</button>
                 </td>
               </tr>
               <tr>
                 <td colspan="8" style="padding: 0;">
-                <div *ngIf="!compltedSurveyGraph" (click)="details()">
-                <div style="     background: #f7f7f7;   padding: 30px;">
-                  <div class="row">
-                    <div class="col-lg-8">
-                      <p class="card-head">Overall details:</p>
+                  <div *ngIf="!compltedSurveyGraph" (click)="details()">
+                    <div style="     background: #f7f7f7;
+                    padding: 20px;
+                    border: 1px solid #cecdcb;
+                   
+                    border-style: dashed;    ">
                       <div class="row">
-                        
-                        <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
-                          <div class="card-list after-loop ">
-                            <div class="card-block card-5 text-right">
-                              <h6>Survey Public on</h6>
-                              <h4>23, March 2020</h4>
-                              <i class="fa fa-play" aria-hidden="true"></i>
+                        <div class="col-lg-8">
+                          <p class="card-head">Overall details:</p>
+                          <div class="row">
+
+                            <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
+                              <div class="card-list after-loop ">
+                                <div class="card-block card-5 text-right">
+                                  <h6>Publish</h6>
+                                  <h4>23, March 2020</h4>
+                                  <i class="fa fa-play" aria-hidden="true"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
+                              <div class="card-list after-loop ">
+                                <div class="card-block card-5 text-right">
+                                  <h6>Completed</h6>
+                                  <h4>31, March 2020</h4>
+                                  <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
+                              <div class="card-list after-loop ">
+                                <div class="card-block card-1 text-right">
+                                  <h6>Assigned</h6>
+                                  <h4>300</h4>
+                                  <i class="fa fa-users" aria-hidden="true"></i>
+
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
+                              <div class="card-list">
+                                <div class="card-block card-2 text-right">
+                                  <h6>Not Started</h6>
+                                  <h4>50</h4>
+                                  <i class="fa fa-user-times" aria-hidden="true"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
+                              <div class="card-list">
+                                <div class="card-block card-3 text-right">
+                                  <h6>Incomplete</h6>
+                                  <h4>100</h4>
+                                  <i class="fa fa-hourglass-half" aria-hidden="true"></i>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
+                              <div class="card-list">
+                                <div class="card-block card-4 text-right">
+                                  <h6>Completed</h6>
+                                  <h4>150</h4>
+                                  <i class="fa fa-check-circle" aria-hidden="true"></i>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-6 col-md-8 mb-5 mb-lg-0 mx-auto">
-                          <div class="card-list after-loop ">
-                            <div class="card-block card-5 text-right">
-                              <h6>Survey Completed on</h6>
-                              <h4>31, March 2020</h4>
-                              <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                        <div class="col-sm-4">
+                          <p class="card-head">Overall information:</p>
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <div class="card-list">
+                                <div class="card-block">
+                                  <app-bar-charts></app-bar-charts>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
-                          <div class="card-list after-loop ">
-                            <div class="card-block card-1 text-right">
-                              <h6>Assigned Participant</h6>
-                              <h4>300</h4>
-                              <i class="fa fa-users" aria-hidden="true"></i>
-                             
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
-                          <div class="card-list">
-                            <div class="card-block card-2 text-right">
-                              <h6 >Not Started Participant</h6>
-                              <h4>50</h4>
-                              <i class="fa fa-user-times" aria-hidden="true"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
-                          <div class="card-list">
-                            <div class="card-block card-3 text-right">
-                              <h6>Incomplete Participant</h6>
-                              <h4>100</h4>
-                              <i class="fa fa-hourglass-half" aria-hidden="true"></i>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-3 col-md-8 mb-5 mb-lg-0 mx-auto">
-                          <div class="card-list">
-                            <div class="card-block card-4 text-right">
-                              <h6>Completed Participant</h6>
-                              <h4>150</h4>
-                              <i class="fa fa-check-circle" aria-hidden="true"></i>
-                            </div>
-                          </div>
-                        </div> 
-                     </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <p class="card-head">Overall information:</p>
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <div class="card-list">
-                          <div class="card-block">
-                              <app-bar-charts></app-bar-charts>
-                          </div> 
-                        </div>
-                        </div>
+                      </div>
+
+
                     </div>
                   </div>
-                  </div>
-                    
-    
-                  </div>
-                </div>
-              </td>
+                </td>
               </tr>
               <tr>
                 <td><strong>TATAAIG </strong>
@@ -454,15 +437,16 @@
                 <td>500</td>
                 <td>1000</td>
                 <td>
-                  <button matTooltip="" class="btn btn-xs btn-info"  (click)="draftEdit()">Edit</button> &nbsp;
-                  <button  matTooltip="" class="btn btn-xs btn-danger" >Delete</button> &nbsp;
-                  <button  matTooltip="" class="btn btn-xs btn-primary" (click)="detailcompltedSurveyGraph()"><i class="fa fa-arrow-down" aria-hidden="true"></i> Details</button>
+                  <button matTooltip="" class="btn btn-xs btn-info" (click)="draftEdit()">Edit</button> &nbsp;
+                  <button matTooltip="" class="btn btn-xs btn-danger">Delete</button> &nbsp;
+                  <button matTooltip="" class="btn btn-xs btn-primary" (click)="detailcompltedSurveyGraph()"><i
+                      class="fa fa-arrow-down" aria-hidden="true"></i> Details</button>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-       
+
       </div>
     </div>
   </div>

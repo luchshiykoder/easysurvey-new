@@ -8,8 +8,9 @@ import {PeriodicElement}  from './../Interfaces/PeriodicElement';
 import {MatTableDataSource} from '@angular/material/table';
 import {ExcelService} from '../_services/excel.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import {GridListComponent} from '../grid-list/grid-list.component'
-
+import {GridListComponent} from '../grid-list/grid-list.component';
+import { SurveyService } from "../_services/survey-services/survey.service";
+import { surveyModel } from '../_models/surveyModel';
 
 //import {tableDragger} from 'table-dragger'
 
@@ -84,9 +85,12 @@ export class EditTemplateComponent implements OnInit {
   onChange(event) {
     this.selectedType = event.target.value;
   }
-  CurrSurvay:ISurvey;
-  constructor(private _surveyDataService:SurveyDataService, private modalService: NgbModal,
-     private excelService:ExcelService) {}
+  currSurvey:surveyModel;
+  constructor(
+    private _surveyDataService:SurveyDataService,
+    private surveyService:SurveyService,
+    private modalService: NgbModal,
+    private excelService:ExcelService) {}
   
   
   //Welcome Template Model
@@ -97,11 +101,7 @@ export class EditTemplateComponent implements OnInit {
   open1(invitation) {
     this.modalService.open(invitation, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
   }
-  //Reminder Template Model
-  // open2(reminder) {
-  //   this.modalService.open(reminder, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
-  // }
- //Add AddDimension Model
+
   open3(addDimension) {
   this.modalService.open(addDimension, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
  }
@@ -119,10 +119,14 @@ export class EditTemplateComponent implements OnInit {
   }
   
   ngOnInit() {
-    this._surveyDataService.GetCurrentSurvey().subscribe(da=>{
-      this.CurrSurvay=da;
-      console.log(this.CurrSurvay);
-    });
+    this.surveyService.GetCurrentSurvey().subscribe(
+      data =>{
+        this.currSurvey=data;
+        console.log("survey name : "+this.currSurvey.surveyName);
+       
+      }
+    );
+
   }
 
   public editSurveyDetails:boolean = true;
@@ -186,21 +190,34 @@ editorConfig: AngularEditorConfig = {
 //Upload Logo on Welcome Page
 public imagePath;
 imgURL: any;
+imgSize:any;
+imagName:any;
+imgType:any;
+imgModifyDate:any;
 public message: string;
-preview(files) {
-  if (files.length === 0)
-    return;
-  var mimeType = files[0].type;
-  if (mimeType.match(/image\/*/) == null) {
-    this.message = "Only images are supported.";
-    return;
+
+
+preview(event) {
+  for (var i = 0; i < event.target.files.length; i++) {
+    this.imagName = event.target.files[i].name;
+    this.imgType = event.target.files[i].type;
+    this.imgSize = event.target.files[i].size;
+    this.imgSize = Math.round(this.imgSize / 1024) + " KB";
+    this.imgModifyDate = event.target.files[i].lastModifiedDate;     
   }
   var reader = new FileReader();
-  this.imagePath = files;
-  reader.readAsDataURL(files[0]); 
-  reader.onload = (_event) => { 
-    this.imgURL = reader.result; 
-  }
+  reader.readAsDataURL(event.target.files[0]);
+  reader.onload = (event) => {
+  this.imgURL = (<FileReader>event.target).result;
+  this.currSurvey.WelcomeMsgEntity.welcomeLogo = this.imgURL;
+  this.surveyService.CreateSurvey(this.currSurvey);
+  localStorage.setItem("WelcomeImageURL",this.imgURL);
+  console.log("Image url : "+this.imgURL);     
+}
+console.log('Name: ' + this.imagName + "\n" +
+'Type: ' + this.imgType + "\n" +
+'Last-Modified-Date: ' + this.imgModifyDate + "\n" +
+'Size: ' + this.imgSize);
 }
 
 //uplaod image for options
@@ -219,14 +236,9 @@ fileChangeEvent(fileInput: any) {
       if (fileInput.target.files[0].size > max_size) {
           this.imageError =
               'Maximum size allowed is ' + max_size / 1000 + 'Mb';
-
           return false;
       }
-
-      // if (!_.includes(allowed_types, fileInput.target.files[0].type)) {
-      //     this.imageError = 'Only Images are allowed ( JPG | PNG )';
-      //     return false;
-      // }
+      
       const reader = new FileReader();
       reader.onload = (e: any) => {
           const image = new Image();
@@ -234,10 +246,7 @@ fileChangeEvent(fileInput: any) {
           image.onload = rs => {
               const img_height = rs.currentTarget['height'];
               const img_width = rs.currentTarget['width'];
-
               console.log(img_height, img_width);
-
-
               if (img_height > max_height && img_width > max_width) {
                   this.imageError =
                       'Maximum dimentions allowed ' +
@@ -254,7 +263,6 @@ fileChangeEvent(fileInput: any) {
               }
           };
       };
-
       reader.readAsDataURL(fileInput.target.files[0]);
   }
 }
@@ -410,6 +418,49 @@ private selectedLink: string="";
         return (this.selectedLink === name); // if current radio button is selected, return true, else return false  
     }  
 
-    //for sending Invitation/Reminder mail 
+    //for sending Invitation/Reminder mail
+    
+    
+    
+   SaveWelecomeLogo(){      
+  console.log("Welcome logo : "+ this.currSurvey.WelcomeMsgEntity.welcomeLogo);
+  this.surveyService.CreateSurvey(this.currSurvey);
+  if(this.currSurvey.WelcomeMsgEntity.welcomeLogo!=""){
+      this.tabs[0].active = true;
+      
+  }
+  else
+  {
+    this.tabs[0].active = false;
+  }
+ 
+  Swal.fire({
+    icon: 'success',
+    title: 'Welcome Logo Saved for this Survey',
+    showConfirmButton: true,
+    launch:false,
+    timer: 2000
+  })
+}
+
+SaveWelcomTempalte(){      
+  console.log("Welcome Messaage : "+ this.currSurvey.WelcomeMsgEntity.welcomeMessage); 
+
+  if(this.currSurvey.WelcomeMsgEntity.welcomeMessage!=""){
+      this.tabs[2].active = true;      
+  }
+  else
+  {
+    this.tabs[2].active = false;
+  }
+ 
+  Swal.fire({
+    icon: 'success',
+    title: 'Welcome Message Saved for this Survey',
+    showConfirmButton: true,
+    launch:false,
+    timer: 2000
+  })
+}
 
 }

@@ -1,13 +1,60 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpResponse,HttpHeaders}  from '@angular/common/http'
-import {Observable} from 'rxjs'
-import {API_URL} from '../../app.constant'
-import {} from '../../_models'
+import {Observable,BehaviorSubject} from "rxjs"
+import { environment } from '../../../environments/environment';
+import {surveyModel} from '../../_models/surveyModel'
 
 @Injectable({
   providedIn: 'root'
 })
 export class SurveyService {
+
+  emptySurvey:surveyModel={
+    surveyId: 1,
+    surveyName: "",
+    isPublished: "",
+    qsStatus: "",
+    fromDate: new Date,
+    toDate: new Date,
+    fromTime: "",
+    toTime: "",
+    pocEntity: {
+        pocName: "",
+        mail: "",
+        status: "",
+        accesskey: "",
+        companyEntity: {
+            companyId: 1,
+            companyName: "",
+            logo: "",
+        }
+    },
+    DimensionEntity: {
+        dimension_id: 1,
+        dimensionName: "",
+        status: ""
+    }, WelcomeMsgEntity: {
+      welcomeMessage : "",
+      welcomeLogo:""
+      }
+  
+  };
+
+  surveyData = new BehaviorSubject<surveyModel>(this.emptySurvey);
+ 
+    CreateSurvey(survey:surveyModel)
+    {
+      this.surveyData.next(survey);      
+    }   
+
+    GetCurrentSurvey()
+    {
+      return this.surveyData.asObservable();
+    }
+
+    
+
+    
   constructor(private http:HttpClient) { }
 
   headers={
@@ -18,21 +65,12 @@ export class SurveyService {
 
   retrieveAllSurvey() : Observable<any> {  
     console.log("Execute retrieveAllSurvey Services ");
-    return this.http.get(`${API_URL}/company/comapnyList/`);
+    return this.http.get(`${environment.apiUrl}/company/comapnyList/`);
   }
-
-
-  deleteSurveyById(username, id){
-    return this.http.delete(`${API_URL}/company/${username}/company/${id}`);
-  }
-
-  updateSurvey(username, id, AddUserComponent){
-    return this.http.put(`${API_URL}/company/${username}/company/${id}`, AddUserComponent);
-  }
-
-  createSurvey(company: any): Observable<any> {
-    console.log("Execute User Service")
-    return this.http.post<any>(`${API_URL}/survey/addSurvey/`,company,this.headers);
+  
+  saveSurvey(surveyName: string, pocName: string ): Observable<any> {
+    console.log("surveyName : "+surveyName+" pocName : "+pocName);
+    return this.http.post<any>(`${environment.apiUrl}/survey/addSurvey/`, { surveyName, pocName},this.headers);
   }
 
 }
