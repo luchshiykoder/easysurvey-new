@@ -347,12 +347,28 @@
       aria-hidden="true">&times;</span>
     <form>
       <div class="form-group">
-        <img src="../assets/logo.png" alt="" width="150px" />
-        <img style="float: right;" src="../assets/logo.png" alt="" width="150px" />
+        <div class="d-flex">
+          <div>
+            <div class="company-logo">
+              <img src="../assets/logo.png" alt="" width="100%" />
+            </div>
+          </div>
+          <div class="ml-auto">
+            <div class="company-logo">
+              <img src="../assets/survey-logo.jpg" alt="" width="100%" />
+             </div>
+          </div>
+     </div>
+        
+       
+       
+       <style>
+
+       </style>
       </div>
       <div class="stardard-area-full">
         <div class="stardard-area-bg">
-          <h4 style="text-align: center;margin-bottom: 30px;"> {{this.CurrSurvay.SurveryName}}</h4>
+          <h4 class="text-center"> {{this.currSurvey.surveyName}}</h4>
           <p><b>Dear (username),</b></p>
           <p>The objective of conducting this Annual Survey is to measure your experience on IT Services in 2019.</p>
           <p>Kindly complete the survey before 17 January 2020.</p>
@@ -370,7 +386,7 @@
         </div>
       </div>
     </form>
-    <div class="footer">
+    <div class=" footer">
       <p>
         <span>For technical support, please contact us at
           <a href="mailto:support@armezo.com">support@armezo.com</a> </span>

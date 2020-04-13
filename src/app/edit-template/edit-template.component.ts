@@ -92,7 +92,9 @@ export class EditTemplateComponent implements OnInit {
     private modalService: NgbModal,
     private excelService:ExcelService) {}
   
-  
+  //   open(welcome) {
+  //     this.modalService.open(welcome);
+  // }
   //Welcome Template Model
   open(welcome) {
     this.modalService.open(welcome, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
@@ -456,7 +458,7 @@ SaveWelcomTempalte(){
  
   Swal.fire({
     icon: 'success',
-    title: 'Welcome Message Saved for this Survey',
+    title: 'Logo Saved for this Survey',
     showConfirmButton: true,
     launch:false,
     timer: 2000
