@@ -123,9 +123,9 @@
   <!-- all Save Survey, it will be appear after on click saved button -->
   <div class="col-lg-12">
     <div class="" *ngIf="!savedsurvey">
-      <div class="mat-card mt-2">
+      <div class="mat-card body-mat-card ">
         <h6>You and Launch your Survey and edit it before launch</h6>
-        <div class="table-responsive">
+        <div class="table-responsive  custom-table-area">
           <table class="table custom-table">
             <thead>
               <tr>
@@ -140,9 +140,9 @@
             </thead>
             <tbody>
               <tr>
-                <td><span class="text-primary">{{this.currSurvey.surveyName}}</span> </td>
+                <td><span class="text-primary">{{this.currSurvey.surveyName}}</span></td>
                 <td>{{this.currSurvey.fromTime}}</td>
-                <td><i class="fa fa-times text-danger"  *ngIf="this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
+                <td><i class="fa fa-times text-danger"  *ngIf="!this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
                 <td><i class="fa fa-times text-danger" *ngIf ="!this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
                 <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
                 <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
@@ -150,7 +150,33 @@
                   <button matTooltip="" class="btn  btn-xs btn-info " (click)="draftEdit()">Edit</button> &nbsp;
                   <button matTooltip="" class="btn  btn-xs btn-danger">Delete</button>
                 </td>
-              </tr>            
+              </tr>    
+              <tr>
+                <td><span class="text-primary">{{this.currSurvey.surveyName}}</span> </td>
+                <td>{{this.currSurvey.fromTime}}</td>
+                <td><i class="fa fa-times text-danger"  *ngIf="!this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
+                <td><i class="fa fa-times text-danger" *ngIf ="!this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
+                <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
+                <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
+                <td>
+                  <button matTooltip="" class="btn  btn-xs btn-info " (click)="draftEdit()">Edit</button> &nbsp;
+                  <button matTooltip="" class="btn  btn-xs btn-danger">Delete</button>
+                </td>
+              </tr>  
+              <tr>
+                <td><span class="text-primary">{{this.currSurvey.surveyName}}</span></td>
+                <td>{{this.currSurvey.fromTime}}</td>
+                <td><i class="fa fa-times text-danger"  *ngIf="!this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
+                <td><i class="fa fa-times text-danger" *ngIf ="!this.currSurvey.WelcomeMsgEntity.welcomeMessage" aria-hidden="true"></i></td>
+                <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
+                <td><i class="fa fa-check text-success" aria-hidden="true"></i></td>
+                <td>
+                  <button matTooltip="" class="btn  btn-xs btn-info " (click)="draftEdit()">Edit</button> &nbsp;
+                  <button matTooltip="" class="btn  btn-xs btn-danger">Delete</button>
+                </td>
+              </tr>  
+             
+                        
             </tbody>
           </table>
         </div>

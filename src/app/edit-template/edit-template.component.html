@@ -319,11 +319,21 @@
           <div class="panel-body">
             <div class="stardard-area-normal ">
               <div class="">
-                <mat-form-field>
-                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" placeholder="yyyy-mm-dd"
+                             name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                
+                <hr/>
+                <pre>Date select value: {{ model | json }}</pre>
+          
               </div>
               <div class="text-center">
                 <!-- <button class="btn btn-primary btn-sm btn-next " matTooltip="Save Details" (click)="saveSurvey()">Save /

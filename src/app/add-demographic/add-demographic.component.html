@@ -1,3 +1,40 @@
 <button mat-raised-button (click)="addDemographic()">Choose your Demographics <i class="material-icons">
     post_add
     </i></button>
+    <div class=" ">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title" id="modal-basic-title">Add Demographics and select options </h6>
+            </div>
+      
+            <div class="modal-body">
+              <form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="example-container">
+                      <p>List of Demographics </p>
+                      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" [cdkDropListConnectedTo]="[doneList]"
+                        class="example-list" (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="example-container">
+                      <p>Selected Demographics</p>
+                      <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+                        class="example-list" (cdkDropListDropped)="drop($event)">
+                        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <button type="button" class="btn btn-sm btn-info">Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
