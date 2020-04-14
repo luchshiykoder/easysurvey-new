@@ -1,15 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e2e2e2; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c1bebe; 
+}
 html, body {background-color: #f8f9fa;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-/* .info{color:rgb(93, 198, 239);} */
-/* .complete{color:rgb(0, 175, 22);} */
-/* .start{color:rgb(222, 13, 13);} */
-
-/* .save{color:#5b5959;}
-.info-btn{background-color:rgb(93, 198, 239);color:#fff;} */
-/* .working-btn{background-color:#f89d13;color:#fff;}
-.start-btn{background-color:#f44241;color:#fff;} */
-/* .save-btn{background-color:#5b5959;color:#fff;} */
 p{font-size: 14px;}
    
 #swal2-title {

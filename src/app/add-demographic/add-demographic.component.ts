@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LessonModalComponent } from '../lesson-modal/lesson-modal.component';
 import { MatDialog} from '@angular/material';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-add-demographic',
   templateUrl: './add-demographic.component.html',
@@ -8,14 +10,44 @@ import { MatDialog} from '@angular/material';
 })
 export class AddDemographicComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,  private modalService: NgbModal,) { }
 
   ngOnInit() {
   }
 
-  addDemographic(){
-    
-    this.dialog.open(LessonModalComponent);
-  }
+
+    //open modal of add demographics 
+    open(AddDemographic) {
+      this.modalService.open(AddDemographic, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
+    }
+
+    todo = [
+      'Address',
+      'Zone',
+      'Option1',
+      'Option2',
+      'Option3',
+      'Option4',
+      'Option5',
+    ];
+  
+    done = [
+      'Full Name',
+      'Date of Birth',
+      'Email ID',
+      'Mobile'
+    ];
+  
+    drop(event: CdkDragDrop<string[]>) {
+      if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      } else {
+        transferArrayItem(event.previousContainer.data,
+                          event.container.data,
+                          event.previousIndex,
+                          event.currentIndex);
+      }
+
  
+}
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LessonModalComponent } from '../lesson-modal/lesson-modal.component';
 import { MatDialog} from '@angular/material';
 
 @Component({
@@ -15,8 +14,8 @@ export class AddQuestionsComponent implements OnInit {
   }
 
   openAddQuestion(){
-    
-    this.dialog.open(LessonModalComponent);
+    alert('add question');
+    //this.dialog.open(LessonModalComponent);
   }
  
 

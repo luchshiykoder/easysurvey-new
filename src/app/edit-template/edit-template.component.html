@@ -227,7 +227,7 @@
             You can add Question according to your requirements ie: Multiple chioce, CheckBox selection etc.
             <button mat-raised-button (click)="open(addquestion)" class="btn btn-sm btn-secondary"><i
                 class="fa fa-plus-circle" aria-hidden="true"></i> Add Question </button>&nbsp;
-            <button mat-raised-button (click)="open(dimensionList)" class="working-btn">
+            <button mat-raised-button (click)="open(DimensionList)"  class="working-btn ">
               <i class="fa fa-list-alt" aria-hidden="true"></i> Dimension List </button>
 
           </div>
@@ -465,17 +465,19 @@
       aria-hidden="true">×</span>
     <div class="stardard-area-bg">
       <div class="stardard-area">
-        <h4 class="modal-title" id="modal-basic-title">Add Question </h4>
+        <h4 class="modal-title " id="modal-basic-title">Add Question 
+        <button type="button" class="btn btn-info btn-sm float-right" (click)="open(addNewDimension)">
+          Add New Dimension<i class="material-icons" style="font-size: 16px;">
+            add
+          </i>
+        </button>
+      </h4>
         <hr>
         <form>
           <div class="form-group">
             <label>Select Dimension </label> &nbsp;
 
-            <button type="button" class="btn btn-info btn-sm" style="float: right;" (click)="open(addDimension)">
-              Add New Dimension<i class="material-icons" style="font-size: 16px;">
-                add
-              </i>
-            </button>
+           
             <select class="form-control" id="" formControlName="dimension-name">
               <option>-Choose Dimension-</option>
               <option>Testing</option>
@@ -949,7 +951,7 @@
 </ng-template>
 
 <!-- Add new Dimension  -->
-<ng-template #addDimension let-modal>
+<ng-template #addNewDimension let-modal>
   <div class="modal-body">
     <span type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"
       aria-hidden="true">&times;</span>
@@ -968,7 +970,7 @@
 </ng-template>
 
 <!-- Choose Dimention List  -->
-<ng-template #dimensionList let-modal>
+<ng-template #DimensionList let-modal>
   <div class="modal-body">
     <span type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"
       aria-hidden="true">&times;</span>
@@ -979,7 +981,7 @@
           <mat-label>Search Dimension</mat-label>
           <input matInput (keyup)="applyFilter($event)" placeholder="Ex. education">
         </mat-form-field>
-
+      <div class="responsive-table custom-table-area">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
 
           <!-- id Column -->
@@ -1009,6 +1011,7 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
+      </div>
       </div>
     </div>
   </div>

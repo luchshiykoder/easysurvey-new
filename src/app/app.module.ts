@@ -20,7 +20,6 @@ import { ChartsModule } from 'ng2-charts';
 import { BarChartsComponent } from './bar-charts/bar-charts.component';
 import { EditTemplateComponent } from './edit-template/edit-template.component';
 import { AddQuestionsComponent } from './add-questions/add-questions.component';
-import { LessonModalComponent } from './lesson-modal/lesson-modal.component';
 //import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
@@ -59,7 +58,6 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     BarChartsComponent,
     EditTemplateComponent,
     AddQuestionsComponent,
-    LessonModalComponent,
     AddDemographicComponent,
     HomeComponent
     
@@ -82,7 +80,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     AngularFontAwesomeModule,FontAwesomeModule//MatPaginator,// MatSort,//MatTableDataSource// FlexLayoutModule,
    
   ],
-  entryComponents:[LessonModalComponent],
+  entryComponents:[],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
