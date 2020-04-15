@@ -21,6 +21,7 @@ export class AddDemographicComponent implements OnInit {
       this.modalService.open(AddDemographic, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
     }
 
+    //drag-drop for add demographics 
     todo = [
       'Address',
       'Zone',
@@ -47,7 +48,6 @@ export class AddDemographicComponent implements OnInit {
                           event.previousIndex,
                           event.currentIndex);
       }
-
- 
+      //end drag-drop for add demographics  
 }
 }

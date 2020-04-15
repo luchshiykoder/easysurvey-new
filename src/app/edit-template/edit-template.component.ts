@@ -1,32 +1,45 @@
 import { Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
 import Swal from 'sweetalert2';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import {ISurvey} from "../Interfaces/ISurvey";
 import {SurveyDataService} from "../_services/DataServices/survey.data.service";
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import {PeriodicElement}  from './../Interfaces/PeriodicElement';
-import {MatTableDataSource} from '@angular/material/table';
 import {ExcelService} from '../_services/excel.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import {GridListComponent} from '../grid-list/grid-list.component';
 import { SurveyService } from "../_services/survey-services/survey.service";
 import { surveyModel } from '../_models/surveyModel';
 
-//import {tableDragger} from 'table-dragger'
 
 //List of All Saved Dimensions 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, name: 'Education', status: 'Active', survey: 'SBI '},
-  {id: 2, name: 'HR', status: 'Active', survey: 'Demo'},
-  {id: 3, name: 'Performance Employee',status: 'Active', survey: 'Demo Survey'},
-  {id: 4, name: 'Testing', status: 'Active', survey: 'Demo'},
-  {id: 5, name: 'Ability', status: 'Active', survey: 'Demo Survey'},
-  {id: 6, name: 'Performance', status: 'Inactive', survey: 'Survey'},
-  {id: 7, name: 'Utility', status: 'Active', survey: 'Demo Survey'},
-  {id: 8, name: 'AP Test',status: 'Active', survey: 'Demo'},
-  {id: 9, name: 'Appraisal',status: 'Active', survey: 'Parnod'},
-  {id: 10, name: 'Attendance', status: 'Active', survey: 'Sbi'},
+interface Dimension {
+  name: string;
+  status: string;
+  survey: string;
+}
+
+const DIMENSIONS: Dimension[] = [
+  {
+    name: 'Education',
+    status: 'active',
+    survey: 'SBI'
+  },
+  {
+    name: 'Performance',
+    status: 'Inactive',
+    survey: 'Kotak'
+  },
+  {
+    name: 'Appraisel',
+    status: 'Active',
+    survey: 'CRISIL'
+  },
+  {
+    name: 'Attendance',
+    status: 'Active',
+    survey: 'Hyndai'
+  }
 ];
+
+
 @Component({
   selector: 'app-edit-template',
   templateUrl: './edit-template.component.html',
@@ -36,50 +49,36 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
       `]
 })
-export class EditTemplateComponent implements OnInit {
-  movies = ['Question 1: Question according to your requirements with option type?',
-    ' Question 2: Question according to your requirements with option type?',
-    ' Question 3: Question according to your requirements with option type?'
-  ];
- 
- 
-    _ref:any;   
-    removeObject(){
-      this._ref.destroy();
-    }   
-    save(){
-      alert('Saved Successfully!');
+
+//Sample survey question list in ADD QUESTION TAB 
+  export class EditTemplateComponent implements OnInit {
+    dimensions = DIMENSIONS;//saved dimension list 
+    qs = ['Question 1: Question according to your requirements with option type?',
+      ' Question 2: Question according to your requirements with option type?',
+      ' Question 3: Question according to your requirements with option type?'
+    ];
+  // qs: number[] = [1, 2, 3];
+    copy() {
+    alert('check ts code' );
+      //this.qs.push(this.qs.length + 1)
     }
+  //end Sample survey question list in ADD QUESTION TAB 
 
+ //drag - drop for add demograpgics
+    drop(event: CdkDragDrop<string[]>) {
+      moveItemInArray(this.qs, event.previousIndex, event.currentIndex);
+    }
+  //end drag - drop for add demograpgics
 
-
- heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
-
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
-  }
-
-  
-  displayedColumns: string[] = ['id', 'name', 'status', 'survey'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-  
-  checkTabSelection:boolean
-  data: any = [{
-    fname: 'NA',
-    dob: 'NA',
-    email: 'NA',
-    mobile:'NA'
-  },
-  {
-    fname: 'NA',
-    dob: 'NA',
-    email: 'NA',
-    mobile:'NA'
-  }];
+  //respondant list-sample data 
+    checkTabSelection:boolean
+    data: any = [{
+      fname: 'NA',
+      dob: 'NA',
+      email: 'NA',
+      mobile:'NA'
+    }];
+  //end respondant list-sample data 
 
   selectedType = '';
   onChange(event) {
@@ -92,33 +91,31 @@ export class EditTemplateComponent implements OnInit {
     private modalService: NgbModal,
     private excelService:ExcelService) {}
   
-  //   open(welcome) {
-  //     this.modalService.open(welcome);
-  // }
   //Welcome Template Model
-  open(welcome) {
-    this.modalService.open(welcome, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
-  }
-  //Invitation Template Model
-  open1(invitation) {
-    this.modalService.open(invitation, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
-  }
-
-  open3(addDimension) {
-  this.modalService.open(addDimension, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
- }
- //Add Question Model
- open4(addquestion) {
-  this.modalService.open(addquestion, { ariaLabelledBy: 'modal-basic-title', windowClass:'lgModal',  backdrop: 'static', keyboard: false});
- }
+    open(welcome) {
+      this.modalService.open(welcome, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
+    }
+  //Add new dimention 
+    open2(addDimension) {
+    this.modalService.open(addDimension, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
+    }
+  //Add Question Model
+    open3(addquestion) {
+    this.modalService.open(addquestion, { ariaLabelledBy: 'modal-basic-title', windowClass:'lgModal',  backdrop: 'static', keyboard: false});
+    }
+     //Add DimensionList Model
+     open4(invitation) {
+      this.modalService.open(invitation, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
+    }
   //Add DimensionList Model
-  open5(dimensionList) {
-    this.modalService.open(dimensionList, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
-  }
+    open5(dimensionList) {
+      this.modalService.open(dimensionList, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
+    }
+    
 
-  exportAsXLSX():void {
-    this.excelService.exportAsExcelFile(this.data, 'sample');
-  }
+    exportAsXLSX():void {
+      this.excelService.exportAsExcelFile(this.data, 'sample');
+    }
   
   ngOnInit() {
     this.surveyService.GetCurrentSurvey().subscribe(
@@ -136,8 +133,8 @@ export class EditTemplateComponent implements OnInit {
   public main:boolean = true;
   public launchSurvey:boolean = true;
   public golaunchButton:boolean = false;
- public launchSurveyArea:boolean = true;
- public hideAfterReady:boolean =false;
+  public launchSurveyArea:boolean = true;
+  public hideAfterReady:boolean =false;
   
 
 
@@ -268,14 +265,14 @@ fileChangeEvent(fileInput: any) {
       reader.readAsDataURL(fileInput.target.files[0]);
   }
 }
-
+//remove upload sample image for options
 removeImage() {
   this.cardImageBase64 = null;
   this.isImageSaved = false;
 }
+//last save survey for launch
 saveSurvey(){
   this.golaunchButton=true;
-  //this.launchSurveyArea=false;
 }
 golaunchButtonSurvey(){
   this.launchSurveyArea=false;
@@ -283,78 +280,42 @@ golaunchButtonSurvey(){
   this.golaunchButton=false;
 
 }
+
+//edit survey after creation
 editSurveyName(){  
-    (async () => {
-      const { value: text } = await Swal.fire({
-        allowOutsideClick: false,
-     
-        title: 'Re-Enter Survey Name',
-        input: 'text',
-        inputPlaceholder: 'Enter New Survey Name'
-      })
+      (async () => {
+        const { value: text } = await Swal.fire({
+          allowOutsideClick: false,
       
-      if (text) {
+          title: 'Re-Enter Survey Name',
+          input: 'text',
+          inputPlaceholder: 'Enter New Survey Name'
+        })
         
-        //const answers = JSON.stringify(result.value)
-       // this.CurrSurvey.SurveryName = text;
-       //this._surveyDataService.CreateSurvey(this.CurrSurvey);
-        Swal.fire(
-          //`Survey Name ${answers}`,
-          'You have successfully changed the survey name, now!',
-          'success'
-        )       
-       
-      }    console.log(text);
-    })() // FOR asnc end point of TYPE SURVEY NAME 
-    } // FOR TYPE SURVEY NAME 
+        if (text) {
+          
+          //const answers = JSON.stringify(result.value)
+        // this.CurrSurvey.SurveryName = text;
+        //this._surveyDataService.CreateSurvey(this.CurrSurvey);
+          Swal.fire(
+            //`Survey Name ${answers}`,
+            'You have successfully changed the survey name, now!',
+            'success'
+          )       
+        
+        }    console.log(text);
+      })() // FOR asnc end point of TYPE SURVEY NAME 
+  } // FOR TYPE SURVEY NAME 
  
 
-// editSurveyName(){
-//   alert('qoehdiued');
-// }
-//Saved Survey after fill all details 
 
-
-
-//Launch Survey after Saved all details 
-// LaunchSurvey(){
-//   const swal = Swal.mixin({
-//   })
-//   Swal.fire({
-//     title: 'Are you sure for Launching this Survey?',
-//     text: "You would be able to update this after launch!",
-//     icon: 'warning',
-//     showCancelButton: true,
-//     confirmButtonColor: '#28a745',
-//     cancelButtonColor: '#dc3545',
-//     confirmButtonText: 'Yes, launch it!',
-//     cancelButtonText: 'No, cancel!',
-//     reverseButtons: true
-//   }).then((result) => {
-//     if (result.value) {
-
-
-//       swal.fire(
-//         'Survey Launched :)',
-//         'You can check this survey details in OnGoing list',
-//         'success'
-//       )
-
-//     } else if (
-//       Read more about handling dismissals below */
-//       result.dismiss === Swal.DismissReason.cancel
-//     ) {
-  
-//     }
-//   })
-// }
 
 
 //Tabs on Create survey details 
 selectedUserTab = 1;
    tabs = [
     {
-      name: 'Upload Logo ',
+      name: 'Upload Survey Logo ',
       key: 1,
       active: true
     },
@@ -397,10 +358,7 @@ selectedUserTab = 1;
          // console.log('showTab');
       }
     } 
-//   movies: number[] = [1, 2, 3];
-//   copy() {
-//     this.movies.push(this.movies.length + 1)
-//  }
+
 private selectedLink: string="";        
   
   setradio(e: string): void   
@@ -410,7 +368,7 @@ private selectedLink: string="";
           
   }  
   
-    isSelected(name: string): boolean   
+  isSelected(name: string): boolean   
   {  
   
         if (!this.selectedLink) { // if no radio button is selected, always return false so every nothing is shown  
@@ -423,8 +381,8 @@ private selectedLink: string="";
     //for sending Invitation/Reminder mail
     
     
-    
-   SaveWelecomeLogo(){      
+  //ask from sagar  
+  SaveLogoTempalte(){      
   console.log("Welcome logo : "+ this.currSurvey.WelcomeMsgEntity.welcomeLogo);
   this.surveyService.CreateSurvey(this.currSurvey);
   if(this.currSurvey.WelcomeMsgEntity.welcomeLogo!=""){
@@ -445,9 +403,9 @@ private selectedLink: string="";
   })
 }
 
+//SAVED LOGO notification
 SaveWelcomTempalte(){      
   console.log("Welcome Messaage : "+ this.currSurvey.WelcomeMsgEntity.welcomeMessage); 
-
   if(this.currSurvey.WelcomeMsgEntity.welcomeMessage!=""){
       this.tabs[2].active = true;      
   }
@@ -455,14 +413,15 @@ SaveWelcomTempalte(){
   {
     this.tabs[2].active = false;
   }
- 
   Swal.fire({
     icon: 'success',
-    title: 'Logo Saved for this Survey',
+    title: 'Welcome Template Saved for this Survey',
     showConfirmButton: true,
     launch:false,
     timer: 2000
   })
-}
+}//end SAVED LOGO notification
+
+
 
 }

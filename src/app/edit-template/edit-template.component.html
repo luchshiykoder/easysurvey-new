@@ -7,7 +7,7 @@
           Invitation</label>&nbsp;
         <label class="checkbox-inline"><input #reminderarea type="radio" name="size" (change)="0">
           Reminder</label>&nbsp;&nbsp;&nbsp;
-        <button type="button" class="btn btn-sm btn-primary" (click)="open(invitation)">Send Mail</button>
+        <button type="button" class="btn btn-sm btn-primary" (click)="open4(invitation)">Send Mail</button>
       </p>
 
       <div class="mat-card body-mat-card ">
@@ -115,7 +115,7 @@
 
               <div class="text-center">
 
-                  <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details" (click)="SaveWelcomTempalte()">Save </button>&nbsp;
+                  <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details" (click)="SaveLogoTempalte()">Save </button>&nbsp;
                   <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Next " >Next &rarr; </button>
                   
               </div>
@@ -141,7 +141,7 @@
               <div class="text-center">
                 <!-- <button class="btn btn-primary btn-sm btn-next " matTooltip="Save Details" (click)="SaveWelcomTempalte()">Save
                   / Next &rarr; </button> -->
-                  <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details">Save </button>&nbsp;
+                  <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details" (click)="SaveWelcomTempalte()">Save </button>&nbsp;
                   <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Next " >Next &rarr; </button>
               </div>
             </div>
@@ -165,11 +165,8 @@
             <div class="row" style="margin: 0;">
               <div class="col-sm-12" *ngIf="invitaionarea.checked">
                 <div class="invitaion">
-                  <h6>Invitation Format: please write your invitation email content
-                    <button mat-raised-button matTooltip="Send Invivation">Send Invitation on your mail address <i
-                        class="material-icons">
-                        remove_red_eye
-                      </i></button></h6>
+                  <p>Invitation Format: please write your invitation email content
+                    <button mat-raised-button matTooltip="Send Invivation"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Send Invitation on your mail address</button></p>
                   <div class="form-group">
                     <label class="" for="subject">Subject:</label>
                     <input type="text" style=" background: #efefef;
@@ -192,11 +189,8 @@
               </div>
               <div class="col-sm-12" *ngIf="reminderarea.checked">
                 <div class="invitaion">
-                  <h6>Reminder Format: please write your Reminder email content
-                    <button mat-raised-button matTooltip="Send Reminder">Send Invivation on your mail address <i
-                        class="material-icons">
-                        remove_red_eye
-                      </i></button></h6>
+                  <p>Reminder Format: please write your Reminder email content
+                    <button mat-raised-button matTooltip="Send Reminder" click="open()mailre"><i class="fa fa-bell-o" aria-hidden="true"></i> Send Reminder on your mail address </button></p>
                   <div class="form-group">
                     <label class="" for="subject">Subject:</label>
                     <input type="text" class=" col-sm-12 form-control" id="subject" placeholder="Enter subject " style="  background: #efefef;
@@ -225,17 +219,17 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             You can add Question according to your requirements ie: Multiple chioce, CheckBox selection etc.
-            <button mat-raised-button (click)="open(addquestion)" class="btn btn-sm btn-secondary"><i
+            <button mat-raised-button (click)="open3(addquestion)" class="btn btn-sm btn-secondary"><i
                 class="fa fa-plus-circle" aria-hidden="true"></i> Add Question </button>&nbsp;
-            <button mat-raised-button (click)="open(DimensionList)"  class="working-btn ">
+            <button mat-raised-button (click)="open2(DimensionList)"  class="working-btn ">
               <i class="fa fa-list-alt" aria-hidden="true"></i> Dimension List </button>
 
           </div>
           <div class="panel-body">
             <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-              <div class="example-box" *ngFor="let movie of movies" cdkDrag>
+              <div class="example-box" *ngFor="let q of qs" cdkDrag>
                 <div class="example-custom-placeholder " *cdkDragPlaceholder> </div>
-                <h6>{{movie}} <span class="float-right"><span style="font-size: 13px;">Page:1/1</span>&nbsp;
+                <h6>{{q}} <span class="float-right"><span style="font-size: 13px;">Page:1/1</span>&nbsp;
                     <button class="btn btn-sm btn-info" (click)="copy()">Copy</button>&nbsp;
                     <button class="btn btn-sm btn-secondary" (click)="open(addquestion)">Edit</button>&nbsp; <button
                       class="btn btn-sm btn-danger">Delete</button></span></h6>
@@ -249,7 +243,7 @@
                 </div>
               </div>
             </div>
-            <button mat-raised-button (click)="open(addquestion)" class="info-btn">+ Add Question </button>&nbsp;
+            <!-- <button mat-raised-button (click)="open(addquestion)" class="info-btn">+ Add Question </button>&nbsp; -->
             <button mat-raised-button color="danger" class="btn-danger">x Break Page</button>
             <hr>
             <div class="text-center">
@@ -271,7 +265,7 @@
           </div>
           <div class="panel-body">
             <div class="stardard-area-normal ">
-              <div class="table-responsive">
+              <div class="table-responsive area-fixed-small">
                 <table class="table custom-table">
                   <thead>
                     <tr>
@@ -289,14 +283,17 @@
                   </tr>
                 </table>
               </div>
-
-              <button mat-raised-button matTooltip="Save Details" (click)="exportAsXLSX()" class="btn-info">First - <i
+              <!--download-->
+              <button mat-raised-button matTooltip="Save Details" (click)="exportAsXLSX()" class=" btn-secondary">First - <i
                   class="material-icons">
                   cloud_download
                 </i> Download Excel Format Sheet </button> &nbsp;
-              <button mat-raised-button matTooltip="Save Details">Second - <i class="material-icons">
-                  cloud_upload
-                </i> Upload Respondent List </button>
+              <!--upload-->
+              <div class="btn btn-sm btn-light"> 
+                  <input mat-raised-button  type="file">
+              </div>&nbsp;&nbsp;
+              <button mat-raised-button matTooltip="Save Details" class="btn btn-sm"><i class="fa fa-share-square-o" aria-hidden="true"></i>  Importer</button>
+
             </div>
 
             <div class="text-center">
@@ -338,8 +335,8 @@
               <div class="text-center">
                 <!-- <button class="btn btn-primary btn-sm btn-next " matTooltip="Save Details" (click)="saveSurvey()">Save /
                   Next &rarr; </button> -->
-                  <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details" (click)="saveSurvey()">Save </button>&nbsp;
-                  <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Next " >Next &rarr; </button>
+                  <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details" >Save </button>&nbsp;
+                  <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Final Submit" (click)="saveSurvey()" >Final Submit </button>
               </div>
             </div>
           </div>
@@ -370,11 +367,6 @@
           </div>
      </div>
         
-       
-       
-       <style>
-
-       </style>
       </div>
       <div class="stardard-area-full">
         <div class="stardard-area-bg">
@@ -409,8 +401,8 @@
 
 
 
-<!-- Invitation mail formate -->
-<ng-template #invitation let-modal>
+<!-- Invitation mail formate before launch-->
+ <ng-template #invitation let-modal>
   <div class="modal-body">
     <span type="button" class="cross" aria-label="Close" (click)="modal.dismiss('Cross click')"
       aria-hidden="true">&times;</span>
@@ -421,7 +413,7 @@
       </div>
       <div class="stardard-area-full">
         <div class="stardard-area-bg">
-          <h4 style="text-align: center;margin-bottom: 30px;"> {{this.CurrSurvay.SurveryName}}</h4>
+          <h4 style="text-align: center;margin-bottom: 30px;">email </h4>
           <p><b>Welcome to Pernod Ricard Asia IT User Satisfaction Survey 2019.</b></p>
           <p>We are pleased to invite you to share your feedback on IT Services for year 2019.</p>
           <p>This survey is administered Online and you can easily access the below link on your computer and/or your
@@ -455,7 +447,7 @@
       </p>
     </div>
   </div>
-</ng-template>
+</ng-template> 
 
 
 <!-- Add new Questions -->
@@ -977,42 +969,71 @@
     <div class="stardard-area-bg">
       <div class="stardard-area">
         <h6 class="modal-title" id="modal-basic-title">Check your Dimension </h6>
-        <mat-form-field>
-          <mat-label>Search Dimension</mat-label>
-          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. education">
-        </mat-form-field>
-      <div class="responsive-table custom-table-area">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
+      
+
+ 
+ 
+        <div class="row">
+            <div class="col-8">
+                <input [(ngModel)]="listFilter" type="text" class="form-control" id="filterInput" placeholder="Type to filter">
+            </div>
+            <div class="col">
+                <div *ngIf='listFilter' class="form-text text-muted">Filtered by: {{listFilter}}</div>
+            </div>
+        </div>
+        <hr>
+        <div class='table-responsive custom-table-area'>
+          <table class="table custom-table">
+            <thead>
+            <tr>
+              <th scope="col">Dimension Id</th>
+              <th scope="col">Dimension Name</th>
+              <th scope="col">Dimension Status</th>
+              <th scope="col">Dimension Survey </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dimension of dimensions; index as i">
+              <td>{{ i + 1 }}</td>
+              <td>{{ dimension.name }}</td>
+              <td>{{ dimension.status }}</td>
+              <td>{{ dimension.survey }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+
+        <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table"> -->
 
           <!-- id Column -->
-          <ng-container matColumnDef="id">
+          <!-- <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> Dimension ID</th>
             <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-          </ng-container>
+          </ng-container> -->
 
           <!-- Name Column -->
-          <ng-container matColumnDef="name">
+          <!-- <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>Dimension Name </th>
             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
+          </ng-container> -->
 
           <!-- status Column -->
-          <ng-container matColumnDef="status">
+          <!-- <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef> Status </th>
             <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-          </ng-container>
+          </ng-container> -->
 
           <!-- survey Column -->
-          <ng-container matColumnDef="survey">
+          <!-- <ng-container matColumnDef="survey">
             <th mat-header-cell *matHeaderCellDef> Survey Name </th>
             <td mat-cell *matCellDef="let element"> {{element.survey}} </td>
-          </ng-container>
+          </ng-container> -->
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+        </table> -->
       </div>
       </div>
-    </div>
-  </div>
+ 
 </ng-template>

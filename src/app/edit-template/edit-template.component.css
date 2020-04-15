@@ -320,6 +320,12 @@ left: 50%;transform: translate(-50%, -50%);}
     border-style: dotted;
     border-color: #dcdada;
 }
+.area-fixed-small{
+  height: 200px;
+  margin-bottom: 20px;
+  overflow: auto;
+  background: #fff;
+}
 .question-card ul {
   /* background: #fff; */
     padding: 0px 6px;
