@@ -2,42 +2,59 @@ import { Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
 import Swal from 'sweetalert2';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import {SurveyDataService} from "../_services/DataServices/survey.data.service";
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ExcelService} from '../_services/excel.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { SurveyService } from "../_services/survey-services/survey.service";
 import { surveyModel } from '../_models/surveyModel';
+import {  PipeTransform } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+import { FormControl } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
-//List of All Saved Dimensions 
 interface Dimension {
   name: string;
-  status: string;
-  survey: string;
+  status: number;
+  survey: number;
 }
 
 const DIMENSIONS: Dimension[] = [
   {
     name: 'Education',
-    status: 'active',
-    survey: 'SBI'
+    status: 0,
+    survey: 1
+  },
+  {
+    name: 'HR',
+    status: 1,
+    survey: 2
   },
   {
     name: 'Performance',
-    status: 'Inactive',
-    survey: 'Kotak'
-  },
-  {
-    name: 'Appraisel',
-    status: 'Active',
-    survey: 'CRISIL'
+    status: 0,
+    survey: 3
   },
   {
     name: 'Attendance',
-    status: 'Active',
-    survey: 'Hyndai'
+    status: 1,
+    survey: 4
   }
 ];
+
+
+
+function search(text: string, pipe: PipeTransform): Dimension[] {
+  return DIMENSIONS.filter(dimension => {
+    const term = text.toLowerCase();
+    return dimension.name.toLowerCase().includes(term)
+        || pipe.transform(dimension.status).includes(term)
+        || pipe.transform(dimension.survey).includes(term);
+  });
+}
+
 
 
 @Component({
@@ -45,9 +62,8 @@ const DIMENSIONS: Dimension[] = [
   templateUrl: './edit-template.component.html',
   styleUrls: ['./edit-template.component.css'],
   encapsulation: ViewEncapsulation.None,
-  styles: [`
-
-      `]
+  providers: [DecimalPipe],
+ // styles: [``]
 })
 
 //Sample survey question list in ADD QUESTION TAB 
@@ -62,6 +78,7 @@ const DIMENSIONS: Dimension[] = [
     alert('check ts code' );
       //this.qs.push(this.qs.length + 1)
     }
+    
   //end Sample survey question list in ADD QUESTION TAB 
 
  //drag - drop for add demograpgics
@@ -84,12 +101,21 @@ const DIMENSIONS: Dimension[] = [
   onChange(event) {
     this.selectedType = event.target.value;
   }
+  dimensions$: Observable<Dimension[]>;
+  filter = new FormControl('');
   currSurvey:surveyModel;
   constructor(
+    pipe:DecimalPipe,
     private _surveyDataService:SurveyDataService,
     private surveyService:SurveyService,
     private modalService: NgbModal,
-    private excelService:ExcelService) {}
+    private excelService:ExcelService) {
+      this.dimensions$ = this.filter.valueChanges.pipe(
+        startWith(''),
+        map(text => search(text, pipe))
+      );
+    }
+    
   
   //Welcome Template Model
     open(welcome) {
