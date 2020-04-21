@@ -21,50 +21,72 @@
         <span class="text-secondary" *ngIf="!show">Start Survey?</span>
         <p class="card-text" *ngIf="!show">Create your new survey for taking feedback of your users with online coversation.</p>
         <button type="button" class="btn btn-secondary btn-sm start-btn"   matTooltip="Click here to Create New Survey" (click)="onClickTypeSurvey()">New Create <i class="fa fa-paper-plane" aria-hidden="true"></i></button>&nbsp;
-        <button type="button" class="btn btn-outline-secondary btn-sm save-btn"  matTooltip="Check Your Saved Survey"  (click)="toggle3()">Saved Survey <i class="fa fa-pause-circle" aria-hidden="true"></i></button>
+        <button type="button" class="btn btn-outline-secondary btn-sm save-btn"  matTooltip="Check Your Saved Survey"  (click)="toggle3()">Saved Survey <i class="fa fa-pause-circle" aria-hidden="true"></i></button>&nbsp;
+        <button type="button" class="btn btn-outline-secondary btn-sm save-btn"  matTooltip="Check Your Saved Survey"   (click)="alertbutton()">demoss</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm save-btn"  matTooltip="Check Your Saved Survey"   (click)="demo()">demo2</button>
       </div>
     </div>
   </div>
-  <!-- <div class="col-lg-4 col-sm-6 col-xs-4">
-    <mat-card class="example-card" *ngIf="!main">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image">
-          <img src="../assets/start.png" width="25">
-        </div>
-        <mat-card-title>Create New Survey </mat-card-title>
-        <mat-card-subtitle class="start" *ngIf="!show">Start Survey?</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content *ngIf="!show">
-        <p>Create your new survey for taking feedback of your users with online coversation.</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button class="start-btn" matTooltip="Click here to Create New Survey"
-          (click)="onClickTypeSurvey()">Create New <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-        <button mat-raised-button class="save-btn" matTooltip="Check Your Saved Survey" (click)="toggle3()">Your Saved
-          Survey <i class="fa fa-pause-circle" aria-hidden="true"></i></button>
-      </mat-card-actions>
-    </mat-card>
-  </div> -->
-  <!-- Section 2 -onGoing All Survey -->
-  <!-- <div class="col-lg-4 col-sm-6 col-xs-4">
-    <mat-card class="example-card" *ngIf="!main">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image">
-          <img src="../assets/ongoing.png" width="25">
-        </div>
-        <mat-card-title>OnGoing Survey</mat-card-title>
-        <mat-card-subtitle class="working" *ngIf="!show">Running on </mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content *ngIf="!show">
-        <p>Check your ongoing survey for multiple online business persepective coversation.</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button matTooltip="Active Survey Details" class="working-btn" (click)="toggle1()">Index
-          Survey <i class="fa fa-list" aria-hidden="true"></i></button>
-        <span class="badge working" style="font-weight: 100;">Last Publish: SBI- 25th Jan 2020</span>
-      </mat-card-actions>
-    </mat-card>
-  </div> -->
+ <div class="alertbox" *ngIf="!alert">
+  <h4 clas="text-center">New Survey process!</h4>
+  <div class="form-group">
+    <label>Enter Survey Name</label>
+    <input type="text" formControlName="question" class="form-control" />
+  </div>
+
+
+  
+  <div class="form-group">
+    <label>Select Dimension </label> &nbsp;
+    <button type="button" class="btn btn-info btn-sm float-right" (click)="open(addNewDimension)">
+      Add New Dimension<i class="material-icons" style="font-size: 16px;">
+        add
+      </i>
+    </button>
+
+
+   
+    <select class="form-control" id="" formControlName="dimension-name">
+      <option>-Choose Dimension-</option>
+      <option>Testing</option>
+      <option>Engagement</option>
+      <option>Development</option>
+      <option>HR</option>
+      <option>Marketing</option>
+    </select>
+  
+  </div>
+ 
+    <!-- <p>Home page text: <input type="text" [(ngModel)]="bodyText" /></p> -->
+    <button class="btn btn-secondary btn-sm start-btn" (click)="close">Create</button>
+ </div>
+ <style>
+.alertbox{
+  
+    box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 32em;
+    max-width: 100%;
+    padding: 1.25em;
+    border: none;
+    border-radius: .3125em;
+    background: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+  animation:.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    border: 1px solid #fff;
+    box-shadow: 0px -2px 57px black;
+}
+ </style>
   <div class="col-lg-4 col-sm-6 col-xs-4">
     <div class="card example-card" *ngIf="!main">
       <div class="card-body">
@@ -77,26 +99,7 @@
       </div>
     </div>
   </div>
-  <!-- Section 3 -Completed All Survey -->
-  <!-- <div class="col-lg-4 col-sm-6 col-xs-4">
-    <mat-card class="example-card" *ngIf="!main">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image">
-          <img src="../assets/complete.png" width="25">
-        </div>
-        <mat-card-title>Completed Survey</mat-card-title>
-        <mat-card-subtitle class="text-success" *ngIf="!show">Completed </mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content *ngIf="!show">
-        <p>Extend date and check your all completed surevy with all status score. Complete Details </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button matTooltip="All completed Survey" (click)="onClickCompletedSurvey()"
-          class="complete">Completed Survey <i class="fa fa-check" aria-hidden="true"></i> </button>
-        <span class="badge text-success" style="font-weight: 100;">Last Completed: TATA- 10th May 2019</span>
-      </mat-card-actions>
-    </mat-card>
-  </div> -->
+  
   <div class="col-lg-4 col-sm-6 col-xs-4">
     <div class="card example-card" *ngIf="!main" >
       <div class="card-body">
@@ -229,16 +232,7 @@
     </div>
   </div>
 
-  <!-- <div class="col-lg-12">
-    <div class="" *ngIf="!launchSurveyArea">
 
-      <div class="mat-card body-mat-card ">
-        <div class="text-center">
-          launchSurvey area
-        </div>
-      </div>
-    </div>
-  </div> -->
 
 <!-- see all details of current ongoing survey -->
   <div class="col-lg-12">
@@ -511,3 +505,23 @@
     </div>
   </div>
 </div>
+
+
+<!-- Add new Dimension  -->
+<ng-template #addNewDimension let-modal>
+  <div class="modal-body">
+    <span type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"
+      aria-hidden="true">&times;</span>
+    <div class="stardard-area-bg">
+      <form>
+        <div class="form-group">
+          <label>Add Dimension </label> &nbsp;
+          <input type="text" formControlName="dimension" class="form-control" />
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

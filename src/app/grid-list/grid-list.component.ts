@@ -8,6 +8,10 @@ import { surveyModel } from "../_models/surveyModel";
 import { SurveyService } from '../_services/survey-services/survey.service';
 import { PocService} from '../_services/POCServices/poc.service';
 import { AuthenticationService } from '../_services/authentication.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { MatTabBody } from '@angular/material';
+import { $ } from 'protractor';
+//declare var $: any;
 
 @Component({
   selector: 'app-grid-list',
@@ -17,10 +21,11 @@ import { AuthenticationService } from '../_services/authentication.service';
 export class GridListComponent implements OnInit {
 
   constructor(
-    private surveyService:SurveyService    
+    private surveyService:SurveyService,
+    private modalService: NgbModal
     ) { }
-
   
+    
   ngOnInit () 
   {   }
   // FOR TYPE SURVEY NAME 
@@ -43,6 +48,14 @@ export class GridListComponent implements OnInit {
    public launchSurveyArea:boolean = true;
   public golaunchButton:boolean =true;
   public compltedSurveyGraph:boolean = true;
+  public alert:boolean = true;
+  selected :any;
+
+  alertbutton(){
+    this.alert = false;
+    //$("body").addClass("active");
+    
+  }
 
   currSurvey:surveyModel={
     surveyId:1,
@@ -157,8 +170,65 @@ export class GridListComponent implements OnInit {
     this.savedsurvey =  !this.savedsurvey;
   }
   
+  demo() {
+    (async () => {
+      Swal.mixin({
+        input: 'select',
+        inputOptions: {
+  
+          HCL: 'HCL',
+          TATAAIG: 'TATAAIG',
+          CRISIL: 'CRISIL',
+          ARMEZO: 'ARMEZO'
+        },
+        confirmButtonText: 'Next &rarr;',
+        showCancelButton: true,
+       // progressSteps: ['1', '2', '3']
+      }).queue([         
+        {
+          title: 'Enter Survey Name',
+          input: 'text'
+        },
+        
+        'Choose your dimention'
+      ]).then((result) => {
+     
+        if (result.value) {
+          const answers = JSON.stringify(result.value)
+          Swal.fire({
+            
+            title: 'Your Survey Name / Dimension  ',
+           
+            html: `
+
+              <pre><code>${answers}</code></pre>
+            `,
+            confirmButtonText: 'ok',
+            showCancelButton: true,
+            cancelButtonColor: '#d33',
+          }).then((result) => {
+              if (result.value) {
+                Swal.fire(
+                  `You selected: ${result}`,
+                  'You have successfully created the survey, now!',
+                  'success'
+                )
+              }
+            })
+        }
+      })
+        // if (survey) {
+    //   Swal.fire(
+    //     `You selected: ${survey}`,
+    //     'To continee click the button!',
+    //     'success',
+        
+    //   ) 
+    })() // FOR asnc end point of TYPE SURVEY NAME 
+    } // FOR TYPE SURVEY NAME 
+
   // FOR asnc start point of selected survey name 
-  onClickSelectSurvey() {
+  //onClickSelectSurvey() {
 
     // (async () => {
    
@@ -200,19 +270,19 @@ export class GridListComponent implements OnInit {
     //     'success',
         
     //   )                                                                                                     
-      this.show = true;
-      this.onGoing = true;
-      this.expireSurvey =true;
+    //   this.show = true;
+    //   this.onGoing = true;
+    //   this.expireSurvey =true;
     
-      this.onGoingSelectSurvey = !this.onGoingSelectSurvey;
-      this.closeSelectSurvey =true;
-      this.createNewSurvey = true;
-      this.savedsurvey = true;
-      this.menuToggle = false;
-      this.informationSurvey = false;
-      this.EditSelectSurvey = true;
-      this.main = true;
-    }
+    //   this.onGoingSelectSurvey = !this.onGoingSelectSurvey;
+    //   this.closeSelectSurvey =true;
+    //   this.createNewSurvey = true;
+    //   this.savedsurvey = true;
+    //   this.menuToggle = false;
+    //   this.informationSurvey = false;
+    //   this.EditSelectSurvey = true;
+    //   this.main = true;
+    // }
   // })() // FOR asnc end point of selected survey name 
 
 
