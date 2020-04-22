@@ -7,7 +7,7 @@
           Invitation</label>&nbsp;
         <label class="checkbox-inline"><input #reminderarea type="radio" name="size" (change)="0">
           Reminder</label>&nbsp;&nbsp;&nbsp;
-        <button type="button" class="btn btn-sm btn-primary" (click)="open4(invitation)">Send Mail</button>
+        <button type="button" class="btn btn-sm btn-primary" (click)="mailSend()">Send Mail</button>
       </p>
 
       <div class="mat-card body-mat-card ">
@@ -165,10 +165,10 @@
             <div class="row" style="margin: 0;">
               <div class="col-sm-12" *ngIf="invitaionarea.checked">
                 <div class="invitaion">
-                  <p>Invitation Format: please write your invitation email content
-                    <button mat-raised-button matTooltip="Send Invivation"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Send Invitation on your mail address</button></p>
+                  <!-- <p>Invitation Format: please write your invitation email content
+                   </p> -->
                   <div class="form-group">
-                    <label class="" for="subject">Subject:</label>
+                    <label class="" for="subject">Invitation Subject:</label>
                     <input type="text" style=" background: #efefef;
                             border: 1px solid #595f63;   height: 39px;
                             " class=" col-sm-12 form-control" id="subject" placeholder="Enter subject ">
@@ -182,17 +182,18 @@
                       <!-- <button class="btn btn-primary btn-sm btn-next" matTooltip="Save Details">Save / Next &rarr;
                       </button> -->
                       <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details">Save </button>&nbsp;
-                      <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Next " >Next &rarr; </button>
+                      <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Next " >Next &rarr; </button>&nbsp;
+                      <button mat-raised-button matTooltip="Send Invivation" (click)="open4(invitation)"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Invitation sample send on your mail address</button>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-sm-12" *ngIf="reminderarea.checked">
                 <div class="invitaion">
-                  <p>Reminder Format: please write your Reminder email content
-                    <button mat-raised-button matTooltip="Send Reminder" click="open()mailre"><i class="fa fa-bell-o" aria-hidden="true"></i> Send Reminder on your mail address </button></p>
+                  <!-- <p>Reminder Format: please write your Reminder email content -->
+                    <!-- <button mat-raised-button matTooltip="Send Reminder" click="open()mailre"><i class="fa fa-bell-o" aria-hidden="true"></i> Send Reminder on your mail address </button></p> -->
                   <div class="form-group">
-                    <label class="" for="subject">Subject:</label>
+                    <label class="" for="subject">Reminder Subject :</label>
                     <input type="text" class=" col-sm-12 form-control" id="subject" placeholder="Enter subject " style="  background: #efefef;
                             border: 1px solid #595f63;  height: 39px;
                             ">
@@ -203,8 +204,10 @@
                       </angular-editor>
                     </div>
                     <div class="text-center">
-                      <button class="btn btn-primary btn-sm btn-next" matTooltip="Save Details">Save / Next &rarr;
-                      </button>
+                      <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details">Save </button>&nbsp;
+                      <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Next " >Next &rarr; </button>&nbsp;
+                      <button mat-raised-button matTooltip="Send Reminder" (click)="open4(invitation)"><i class="fa fa-bell-o" aria-hidden="true"></i> Reminder sample end on your mail address </button> 
+                      <!-- <button mat-raised-button matTooltip="Send Reminder" click="open()mailre" open4(invitation)><i class="fa fa-bell-o" aria-hidden="true"></i> Send sample Reminder on your mail address </button> -->
                     </div>
                   </div>
                 </div>
@@ -250,6 +253,7 @@
               <!-- <button class="btn btn-primary  btn-sm btn-next" matTooltip="Save Details"> Save / Next &rarr; </button> -->
               <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details">Save </button>&nbsp;
               <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Next " >Next &rarr; </button>
+            
             </div>
           </div>
         </div>
@@ -406,13 +410,14 @@
   <div class="modal-body">
     <span type="button" class="cross" aria-label="Close" (click)="modal.dismiss('Cross click')"
       aria-hidden="true">&times;</span>
+      <div class="stardard-area-full">
+        <div class="stardard-area-bg">
     <form>
       <div class="form-group">
         <img src="https://armezo.com/images/logo/armezo_logo.png" alt="" width="150px" />
         <img style="float: right;" src="../assets/logo.png" alt="" width="150px" />
       </div>
-      <div class="stardard-area-full">
-        <div class="stardard-area-bg">
+   
           <h4 style="text-align: center;margin-bottom: 30px;">email </h4>
           <p><b>Welcome to Pernod Ricard Asia IT User Satisfaction Survey 2019.</b></p>
           <p>We are pleased to invite you to share your feedback on IT Services for year 2019.</p>
@@ -432,19 +437,22 @@
             (on behalf of Pernod Ricard Asia IT)</p>
           <div class="text-center">
             <button class="btn btn-sm btn-info" type="button" disabled>Take Survey</button>&nbsp;
-            <button class="btn btn-sm btn-secondary" type="button">Edit</button>&nbsp;
-            <button class="btn btn-sm btn-primary" type="button" (click)="modal.close('Save click')">Send Mail</button>
+            <button class="btn btn-sm btn-secondary" type="button" (click)="modal.close('Save click')">Edit</button>&nbsp;
+            <button class="btn btn-sm btn-primary" type="button" (click)="mailSend()">Send Mail</button>
           </div>
-        </div>
-      </div>
+        
     </form>
     <div class="footer">
       <p>
         <span>For technical support, please contact us at
           <a href="mailto:support@armezo.com">support@armezo.com</a> </span>
-        <span class="float-right">
+      </p>
+      <p>
+        <span>
           © ARMEZO ™ Solutions Private Limited 2019. </span>
       </p>
+    </div>
+    </div>
     </div>
   </div>
 </ng-template> 

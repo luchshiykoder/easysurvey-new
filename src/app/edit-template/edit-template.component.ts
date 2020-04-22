@@ -334,6 +334,9 @@ editSurveyName(){
   } // FOR TYPE SURVEY NAME 
  
 
+  
+//edit survey after creation
+
 
 
 
@@ -448,6 +451,47 @@ SaveWelcomTempalte(){
   })
 }//end SAVED LOGO notification
 
+//mail send 
+mailSend(){  
+    (async () => {
+    const { value: text } = await Swal.fire({
+      allowOutsideClick: false,
+   
+      title: 'Enter mail Address',
+      input: 'email',
+      inputPlaceholder: 'Enter email Address'
+    })
+    
+    if (text) {
+
+      // localStorage.removeItem("WelcomeImageURL");
+      // this.currSurvey.surveyName = text;
+      // this.currSurvey.pocEntity.pocName='sagar';
+      // this.surveyService.CreateSurvey(this.currSurvey);
+      // this.surveyService.saveSurvey(this.currSurvey.surveyName,this.currSurvey.pocEntity.pocName);
+     
+      Swal.fire(
+        `Sample Email Address: ${text}`,
+        'You have successfully sent mail, now!',
+        'success'
+      ) 
+      // this.show = true;
+      // this.onGoing = true;
+      // this.expireSurvey =true;
+      // this.onGoingSelectSurvey = true;
+      // this.closeSelectSurvey =true;
+      // this.savedsurvey =true;
+      // this.createNewSurvey = !this.onGoingSelectSurvey;
+      // this.text=text;
+      // this.menuToggle = false;
+      // this.main = true;     
+     
+    }    console.log(text);
+    
+  })()  
+  }
+
+   
 
 
 }
