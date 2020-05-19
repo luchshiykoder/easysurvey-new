@@ -7,4 +7,3 @@ export class ModalService {
 
   constructor() { }
 }
-providers: [NgbModalConfig, NgbModal]

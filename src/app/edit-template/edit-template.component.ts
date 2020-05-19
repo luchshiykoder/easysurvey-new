@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
 import Swal from 'sweetalert2';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import {SurveyDataService} from "../_services/DataServices/survey.data.service";
-import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {ExcelService} from '../_services/excel.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { SurveyService } from "../_services/survey-services/survey.service";
@@ -62,7 +62,7 @@ function search(text: string, pipe: PipeTransform): Dimension[] {
   templateUrl: './edit-template.component.html',
   styleUrls: ['./edit-template.component.css'],
   encapsulation: ViewEncapsulation.None,
-  providers: [DecimalPipe, NgbModalConfig, NgbModal],
+  providers: [DecimalPipe],
  // styles: [``]
 })
 
