@@ -179,8 +179,6 @@
                       </angular-editor>
                     </div>
                     <div class="text-center">
-                      <!-- <button class="btn btn-primary btn-sm btn-next" matTooltip="Save Details">Save / Next &rarr;
-                      </button> -->
                       <button class="btn btn-secondary btn-sm btn-next " matTooltip="Save Details">Save </button>&nbsp;
                       <button class="btn btn-outline-secondary btn-sm btn-next " matTooltip="Next " >Next &rarr; </button>&nbsp;
                       <button mat-raised-button matTooltip="Send Invivation" (click)="open4(invitation)"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Invitation sample send on your mail address</button>
@@ -352,7 +350,7 @@
 
 
 <!-- Welcome Template Formate -->
-<ng-template #welcome let-modal>
+<ng-template #welcome let-modal let-c="close" let-d="dismiss">
   <div class="modal-body">
     <span type="button" class="cross" aria-label="Close" (click)="modal.dismiss('Cross click')"
       aria-hidden="true">&times;</span>
@@ -466,11 +464,11 @@
     <div class="stardard-area-bg">
       <div class="stardard-area">
         <h4 class="modal-title " id="modal-basic-title">Add Question 
-        <button type="button" class="btn btn-info btn-sm float-right" (click)="open(addNewDimension)">
+        <!--<button type="button" class="btn btn-info btn-sm float-right" (click)="open(addNewDimension)">
           Add New Dimension<i class="material-icons" style="font-size: 16px;">
             add
           </i>
-        </button>
+        </button>-->
       </h4>
         <hr>
         <form>
@@ -950,7 +948,7 @@
   </div>
 </ng-template>
 
-<!-- Add new Dimension  -->
+<!-- Add new Dimension  -
 <ng-template #addNewDimension let-modal>
   <div class="modal-body">
     <span type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"
@@ -967,7 +965,7 @@
       </form>
     </div>
   </div>
-</ng-template>
+</ng-template>-->
 
 <!-- Choose Dimention List  -->
 <ng-template #DimensionList let-modal>

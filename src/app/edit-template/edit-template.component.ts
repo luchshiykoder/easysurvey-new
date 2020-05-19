@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewEncapsulation} from '@angular/core';
 import Swal from 'sweetalert2';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import {SurveyDataService} from "../_services/DataServices/survey.data.service";
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 import {ExcelService} from '../_services/excel.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { SurveyService } from "../_services/survey-services/survey.service";
@@ -62,7 +62,7 @@ function search(text: string, pipe: PipeTransform): Dimension[] {
   templateUrl: './edit-template.component.html',
   styleUrls: ['./edit-template.component.css'],
   encapsulation: ViewEncapsulation.None,
-  providers: [DecimalPipe],
+  providers: [DecimalPipe, NgbModalConfig, NgbModal],
  // styles: [``]
 })
 
@@ -109,6 +109,7 @@ function search(text: string, pipe: PipeTransform): Dimension[] {
     private _surveyDataService:SurveyDataService,
     private surveyService:SurveyService,
     private modalService: NgbModal,
+    
     private excelService:ExcelService) {
       this.dimensions$ = this.filter.valueChanges.pipe(
         startWith(''),
@@ -119,15 +120,16 @@ function search(text: string, pipe: PipeTransform): Dimension[] {
   
   //Welcome Template Model
     open(welcome) {
-      this.modalService.open(welcome, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
+      this.modalService.open(welcome, { size: 'xl' });
+      
     }
   //Add new dimention 
     open2(addDimension) {
-    this.modalService.open(addDimension, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
+    this.modalService.open(addDimension, { size: 'xl' });
     }
   //Add Question Model
     open3(addquestion) {
-    this.modalService.open(addquestion, { ariaLabelledBy: 'modal-basic-title', windowClass:'lgModal',  backdrop: 'static', keyboard: false});
+    this.modalService.open(addquestion, { size: 'xl' });
     }
      //Add DimensionList Model
      open4(invitation) {
@@ -135,7 +137,7 @@ function search(text: string, pipe: PipeTransform): Dimension[] {
     }
   //Add DimensionList Model
     open5(dimensionList) {
-      this.modalService.open(dimensionList, {ariaLabelledBy: 'modal-basic-title', windowClass:'smModal'});
+      this.modalService.open(dimensionList, { size: 'sm' });
     }
     
 

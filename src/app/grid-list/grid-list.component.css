@@ -21,6 +21,9 @@
   overflow: initial;    margin-top: 4px;padding:10px;
 
 } 
+.form-control {    font-size: 14px;
+  height: 30px;    padding: 0px 6px;
+  }
 .working{color:#f89d13;}
 .working-btn{background-color: #f89d13;color:#fff;}
 

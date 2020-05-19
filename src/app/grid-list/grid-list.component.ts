@@ -51,12 +51,6 @@ export class GridListComponent implements OnInit {
   public alert:boolean = true;
   selected :any;
 
-  alertbutton(){
-    this.alert = false;
-    //$("body").addClass("active");
-    
-  }
-
   currSurvey:surveyModel={
     surveyId:1,
     surveyName: "",
@@ -95,6 +89,20 @@ export class GridListComponent implements OnInit {
   details(){
     this.compltedSurveyGraph=true;
   }
+
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
+  }
+
+  isShown: boolean = false ; // hidden by default
+
+
+toggleShow() {
+
+this.isShown = ! this.isShown;
+
+}
+  
   //Type new Survey Name 
   onClickTypeSurvey(){
     (async () => {
@@ -169,63 +177,7 @@ export class GridListComponent implements OnInit {
     this.createNewSurvey = true;
     this.savedsurvey =  !this.savedsurvey;
   }
-  
-  demo() {
-    (async () => {
-      Swal.mixin({
-        input: 'select',
-        inputOptions: {
-  
-          HCL: 'HCL',
-          TATAAIG: 'TATAAIG',
-          CRISIL: 'CRISIL',
-          ARMEZO: 'ARMEZO'
-        },
-        confirmButtonText: 'Next &rarr;',
-        showCancelButton: true,
-       // progressSteps: ['1', '2', '3']
-      }).queue([         
-        {
-          title: 'Enter Survey Name',
-          input: 'text'
-        },
-        
-        'Choose your dimention'
-      ]).then((result) => {
-     
-        if (result.value) {
-          const answers = JSON.stringify(result.value)
-          Swal.fire({
-            
-            title: 'Your Survey Name / Dimension  ',
-           
-            html: `
 
-              <pre><code>${answers}</code></pre>
-            `,
-            confirmButtonText: 'ok',
-            showCancelButton: true,
-            cancelButtonColor: '#d33',
-          }).then((result) => {
-              if (result.value) {
-                Swal.fire(
-                  `You selected: ${result}`,
-                  'You have successfully created the survey, now!',
-                  'success'
-                )
-              }
-            })
-        }
-      })
-        // if (survey) {
-    //   Swal.fire(
-    //     `You selected: ${survey}`,
-    //     'To continee click the button!',
-    //     'success',
-        
-    //   ) 
-    })() // FOR asnc end point of TYPE SURVEY NAME 
-    } // FOR TYPE SURVEY NAME 
 
   // FOR asnc start point of selected survey name 
   //onClickSelectSurvey() {

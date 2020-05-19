@@ -18,7 +18,7 @@ export class AddDemographicComponent implements OnInit {
 
     //open modal of add demographics 
     open(AddDemographic) {
-      this.modalService.open(AddDemographic, {ariaLabelledBy: 'modal-basic-title',  windowClass:'lgModal'});
+      this.modalService.open(AddDemographic, { size: 'lg' });
     }
 
     //drag-drop for add demographics 
